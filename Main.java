@@ -1,4 +1,4 @@
-import Criaturas.*;
+import Criatura.*;
 /** Main: documentação...
  *
  *
@@ -10,7 +10,7 @@ public class Main {
     }
 
     public static void main(String[] args) {
-	Criaturas criatura = new Criaturas(100);
+	Criatura criatura = new Criatura(100);
 
 	criatura.andar("esquerda"); // Move
 	System.out.println(criatura.getPos()[0]);
