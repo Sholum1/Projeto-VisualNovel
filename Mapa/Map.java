@@ -1,12 +1,12 @@
 import java.util.ArrayList;
 
-public class Mapa {
+public class Map {
     ArrayList<npc> npc =new ArrayList<npc>();
     ArrayList<Monster> monster =new ArrayList<Monster>();
     ArrayList<Integer> chest =new ArrayList<Integer>(); //baú
 
     
-    public Mapa (ArrayList<Integer> chest, ArrayList<npc> npc,ArrayList<Monster> monster ){
+    public Map (ArrayList<Integer> chest, ArrayList<npc> npc,ArrayList<Monster> monster ){
         this.chest=chest;
         this.npc=npc;
         this.monster=monster;
@@ -57,6 +57,16 @@ public class Mapa {
         for (int i=0; i< npc.size();i++){
             if (npcToRemove.equals(npc.get(i))){
                 npc.remove(i);
+              
+            }
+        }
+
+    }
+
+    public void RemoveChest(Integer chestToRemove){
+        for (int i=0; i< chest.size();i++){
+            if (chestToRemove.equals(chest.get(i))){
+                chest.remove(i);
               
             }
         }
