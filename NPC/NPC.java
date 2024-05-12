@@ -1,3 +1,3 @@
-public class npc{
-    
+public class NPC{
+
 }

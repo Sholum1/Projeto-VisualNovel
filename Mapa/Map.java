@@ -1,12 +1,18 @@
 import java.util.ArrayList;
 
+import Criatura.Criatura;
+
 public class Map {
-    ArrayList<npc> npc =new ArrayList<npc>();
-    ArrayList<Monster> monster =new ArrayList<Monster>();
+    ArrayList<NPC> npc =new ArrayList<NPC>();
+    ArrayList<Criatura> monster =new ArrayList<Criatura>();
     ArrayList<Integer> chest =new ArrayList<Integer>(); //baú
 
+
+    static final int DIMENSIONx= 32;
+    static final int DIMENSIONy= 32;
+
     
-    public Map (ArrayList<Integer> chest, ArrayList<npc> npc,ArrayList<Monster> monster ){
+    public Map (ArrayList<Integer> chest, ArrayList<NPC> npc,ArrayList<Criatura> monster ){
         this.chest=chest;
         this.npc=npc;
         this.monster=monster;
@@ -18,7 +24,7 @@ public class Map {
         return chest;
     }
 
-    public ArrayList<npc> GetNPC(){
+    public ArrayList<NPC> GetNPC(){
         return npc;
     }
 
@@ -26,52 +32,7 @@ public class Map {
         return monster;
     }
 
-    //add in the array
-
-    public void addMonster(Monster monsterToAdd){
-        monster.add(monsterToAdd);
-    }
-
-    public void addChest(int chestToAdd){
-        chest.add(chestToAdd);
-    }
-
-    public void addNPC(npc NPCToAdd){
-        npc.add(NPCToAdd);
-    }
-
-
-    //remove from array
-
-    public void RemoveMonster(Monster monsterToRemove){
-        for (int i=0; i< monster.size();i++){
-            if (monsterToRemove.equals(monster.get(i))){
-                monster.remove(i);
-              
-            }
-        }
-
-    }
-
-    public void RemoveNPC(npc npcToRemove){
-        for (int i=0; i< npc.size();i++){
-            if (npcToRemove.equals(npc.get(i))){
-                npc.remove(i);
-              
-            }
-        }
-
-    }
-
-    public void RemoveChest(Integer chestToRemove){
-        for (int i=0; i< chest.size();i++){
-            if (chestToRemove.equals(chest.get(i))){
-                chest.remove(i);
-              
-            }
-        }
-
-    }
+    
 
 
 
