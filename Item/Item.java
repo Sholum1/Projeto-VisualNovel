@@ -3,21 +3,23 @@ package Item;
 public class Item {
 
     enum Itens { // O que fazer com a quantidade de cada item? Não pode estar no enum porque não faz sentido
-        ESPADA(false, 0, 0),
-        ARCO(false, 0, 0),
-        FLECHA(false, 0, 0),
-        POCAO(true, 0, 0),
-        FRUTO(true, 10, 5),
-        RAIZ(true, -2, 0);
+        ESPADA(false, 0, 0, false),
+        ARCO(false, 0, 0, false),
+        FLECHA(false, 0, 0, true),
+        POCAO(true, 0, 0, true),
+        FRUTO(true, 10, 5, true),
+        RAIZ(true, -2, 0, true);
 
         private final boolean consumivel;
         private final int vida;
         private final int energia;
+        private final boolean stackable;
 
-        Itens(boolean consumivel, int vida, int energia) {
+        Itens(boolean consumivel, int vida, int energia, boolean stackable) {
             this.consumivel = consumivel;
             this.vida = vida;
             this.energia = energia;
+            this.stackable = stackable;
         }
         // Se o item não estiver no enum, não pode ser colocado na mochila
 
@@ -32,11 +34,22 @@ public class Item {
         private int getEnergia() {
             return energia;
         }
+
+        private boolean getStackable() {
+            return stackable;
+        }
     
     }
     // Classe que será a "mochila" do protagonista
     protected void adicionarItem(Itens item) { // Se precisar ser acessado fora do pacote, provável ter que mudar para public
         // Se o item encontrado estiver presente no emun, pode ser guardado na mochila
+        for (Itens i : Itens.values()) {
+            if (item == i) {
+                // Confere se já consta na mochila e se é stackable
+                // Se tudo ok, adiciona no array de itens que representa a mochila
+                // Calcula a nova quantidade existente nela
+            }
+        }
     }
 
     protected void removerItem(Itens item) {
@@ -46,7 +59,7 @@ public class Item {
 
     protected void consumirItem(Itens item) {
         // Se o item estiver presente na mochila e for "consumível"
-        if (item.getConsumivel() == true) {
+        if (item.getConsumivel()) {
             // Calcular a cura e a energia obtidas em relação ao personagem
             System.out.println("Giu tem mais " + item.getEnergia() + " pontos de energia");
             System.out.println("A vida de Giu foi alterada em " + item.getVida() + " pontos");
@@ -57,9 +70,7 @@ public class Item {
 
     protected void verItens() {
         System.out.println("Dentro da mochila há: ");
-        for (Itens i : Itens.values()) {
-            System.out.println(i + " ");
-        }
+        // Percorrer o array que representa os itens guardados na mochila
     }
 
 }
