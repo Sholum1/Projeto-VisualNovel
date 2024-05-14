@@ -1,8 +1,19 @@
 package Item;
 
+import java.util.ArrayList;
+
 public class Item {
 
-    enum Itens { // O que fazer com a quantidade de cada item? Não pode estar no enum porque não faz sentido
+    enum Itens {
+        /*
+         * O que fazer com a quantidade de cada item?
+         * Não pode estar no enum porque não faz sentido
+         * 
+         * Java permite adicionar itens iguais no array? Se sim, dá pra fazer isso e ter método para contar
+         * 
+         * Mas isso é meio burrinho. Então, se pá que dá para stackar os itens iguais de fato, Porém... como fazer isso?
+         */
+
         ESPADA(false, 0, 0, false),
         ARCO(false, 0, 0, false),
         FLECHA(false, 0, 0, true),
@@ -40,16 +51,32 @@ public class Item {
         }
     
     }
+
+    ArrayList<Item> mochila = new ArrayList<Item>();
+
+    private ArrayList<Item> getMochila() {
+        return mochila;
+    }
+
     // Classe que será a "mochila" do protagonista
-    protected void adicionarItem(Itens item) { // Se precisar ser acessado fora do pacote, provável ter que mudar para public
+    protected void adicionarItem(Itens item, ArrayList<Item> mochila) { // Se precisar ser acessado fora do pacote, provável ter que mudar para public
         // Se o item encontrado estiver presente no emun, pode ser guardado na mochila
         for (Itens i : Itens.values()) {
             if (item == i) {
+                for (int j = 0; j < mochila.size(); j++) {
+                    if (item.equals(mochila.get(j)) && item.getStackable()) {
+                        // Adicionar o item
+                    }
+                }
                 // Confere se já consta na mochila e se é stackable
                 // Se tudo ok, adiciona no array de itens que representa a mochila
                 // Calcula a nova quantidade existente nela
+            } else {
+                System.out.println("O item não pode ser guardado na mochila");
             }
         }
+
+        // Caso não possa ser adicionado, dispensar o item
     }
 
     protected void removerItem(Itens item) {
@@ -71,6 +98,10 @@ public class Item {
     protected void verItens() {
         System.out.println("Dentro da mochila há: ");
         // Percorrer o array que representa os itens guardados na mochila
+    }
+
+    protected void dispensarItem(Itens item) { // Talvez esse método não precise existir
+        System.out.println("O tem foi abandonado por Giu");
     }
 
 }

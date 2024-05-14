@@ -4,13 +4,13 @@ import Criatura.Criatura;
 
 public class Map {
 
-    ArrayList<npc> npc =new ArrayList<npc>();
-    ArrayList<Criatura> monster =new ArrayList<Criatura>();
-    ArrayList<Integer> chest =new ArrayList<Integer>(); //baú
+    ArrayList<npc> npc = new ArrayList<npc>();
+    ArrayList<Criatura> monster = new ArrayList<Criatura>();
+    ArrayList<Integer> chest = new ArrayList<Integer>(); //baú
 
 
-    static final int DIMENSION_X= 32;
-    static final int DIMENSION_Y= 32;
+    static final int DIMENSION_X = 32;
+    static final int DIMENSION_Y = 32;
 
     
     public Map ( ){
