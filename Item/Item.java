@@ -12,8 +12,10 @@ public class Item {
          * Java permite adicionar itens iguais no array? Se sim, dá pra fazer isso e ter método para contar
          * 
          * Mas isso é meio burrinho. Então, se pá que dá para stackar os itens iguais de fato, Porém... como fazer isso?
+         * 
+         * Fazer uma lista de ITEM, QUANT dentro do array mochila
          */
-
+        
         ESPADA(false, 0, 0, false),
         ARCO(false, 0, 0, false),
         FLECHA(false, 0, 0, true),
