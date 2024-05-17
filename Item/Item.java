@@ -107,5 +107,4 @@ public class Item {
     protected void dispensarItem(Itens item) { // Talvez esse método não precise existir
         System.out.println("O tem foi abandonado por Giu");
     }
-
 }
