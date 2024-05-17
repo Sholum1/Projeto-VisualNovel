@@ -1,4 +1,5 @@
 package Item;
+// Mudar mochila para a classe Personagem
 
 import java.util.ArrayList;
 
@@ -15,7 +16,7 @@ public class Item {
          * 
          * Fazer uma lista de ITEM, QUANT dentro do array mochila
          */
-        
+
         ESPADA(false, 0, 0, false),
         ARCO(false, 0, 0, false),
         FLECHA(false, 0, 0, true),
@@ -54,6 +55,7 @@ public class Item {
     
     }
 
+<<<<<<< HEAD
     // Mudar para o personagem
     ArrayList<Item> mochila = new ArrayList<Item>();
 
