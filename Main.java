@@ -22,4 +22,4 @@ public class Main {
 }
 
 // Fim do meu exemplo chato, qualquer coisa especifica de documentação do java
-// a gente pode ver junto do material da Esther, mas no geral gosot desta maneira
+// a gente pode ver junto do material da Esther, mas no geral gosto desta maneira

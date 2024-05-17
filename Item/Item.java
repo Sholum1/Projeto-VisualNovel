@@ -54,6 +54,7 @@ public class Item {
     
     }
 
+    // Mudar para o personagem
     ArrayList<Item> mochila = new ArrayList<Item>();
 
     private ArrayList<Item> getMochila() {
