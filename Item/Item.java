@@ -4,7 +4,6 @@ package Item;
 import java.util.ArrayList;
 
 public class Item {
-
     enum Itens {
         /*
          * O que fazer com a quantidade de cada item?

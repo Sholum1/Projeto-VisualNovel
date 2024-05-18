@@ -23,43 +23,43 @@ public class Personagem {
     }
 
     // Getters e Setters
-    private int[] getPos(){
+    public int[] getPos(){
         return pos;
     }
 
-    private void setId(int[] pos){
+    public void setId(int[] pos){
         this.pos = pos;
     }
 
-    private int getVida(){
+    public int getVida(){
         return vida;
     }
 
-    private void setVida(int vida){
+    public void setVida(int vida){
         this.vida = vida;
     }
 
-    private int getEnergia(){
+    public int getEnergia(){
         return energia;
     }
 
-    private void setEnergia(int energia){
+    public void setEnergia(int energia){
         this.energia = energia;
     }
 
-    private int getMedo(){
+    public int getMedo(){
         return medo;
     }
 
-    private void setMedo(int medo){
+    public void setMedo(int medo){
         this.medo = medo;
     }
 
-    private int getFelicidade(){
+    public int getFelicidade(){
         return felicidade;
     }
 
-    private void setFelicidade(int felicidade){
+    public void setFelicidade(int felicidade){
         this.felicidade = felicidade;
     }
 
