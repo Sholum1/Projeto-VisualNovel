@@ -3,7 +3,7 @@ package Personagem;
 import java.util.ArrayList;
 
 import Criatura.Criatura;
-import Item.Item;
+import Item. *;
 
 public class Personagem {
     private int[] pos = {0, 0};
@@ -126,35 +126,48 @@ public class Personagem {
         return mochila;
     }
 
-    // Classe que será a "mochila" do protagonista
-    protected void adicionarItem(Itens item, ArrayList<Item> mochila) { // Se precisar ser acessado fora do pacote, provável ter que mudar para public
-        // Se o item encontrado estiver presente no emun, pode ser guardado na mochila
-        for (Itens i : Itens.values()) {
-            if (item == i) {
-                for (int j = 0; j < mochila.size(); j++) {
-                    if (item.equals(mochila.get(j)) && item.getStackable()) {
-                        // Adicionar o item
-                    }
-                }
-                // Confere se já consta na mochila e se é stackable
-                // Se tudo ok, adiciona no array de itens que representa a mochila
-                // Calcula a nova quantidade existente nela
-            } else {
-                System.out.println("O item não pode ser guardado na mochila");
+    protected void adicionarItem(Item item, ArrayList<Item> mochila) {
+        // Confere se já consta na mochila e se é stackable
+        // Se tudo ok, adiciona no array de itens que representa a mochila
+        // Calcula a nova quantidade existente nela
+        // Caso não possa ser adicionado, dispensa o item
+
+        for (int i = 0; i < mochila.size(); i++) {
+            if ((item == mochila.get(i)) && item.isStackable()) {
+                mochila.add(item);
+                item.setQuant(item.getQuant() + 1);
+                System.out.println("O item " + item + " foi adicionado à mochila.");
+                break;
+
+            } else if ((item == mochila.get(i)) && !item.isStackable()) {
+                System.out.println("Giu só pode ter uma unidade de " + item + " em sua mochila.");
+                break;
             }
         }
 
-        // Caso não possa ser adicionado, dispensar o item
+        mochila.add(item);
+        item.setQuant(item.getQuant() + 1);
+        System.out.println("O item " + item + " foi adicionado à mochila.");        
     }
 
-    protected void removerItem(Itens item) {
+    protected void removerItem(Item item) {
         // Se o item estiver dentro da mochila, pode ser removido
+        for (int i = 0; i < mochila.size(); i++) {
+            if (item == mochila.get(i)) {
+                mochila.remove(i);
+                item.setQuant(item.getQuant() - 1);
+                System.out.println("O item " + item + " foi removido da mochila.");
+                break;
+            }
+        }
+
+        System.out.println("Não há item " + item + " na mochila.");
 
     }
 
-    protected void consumirItem(Itens item) {
+    protected void consumirItem(Item item) {
         // Se o item estiver presente na mochila e for "consumível"
-        if (item.getConsumivel()) {
+        if (item.isConsumivel()) {
             // Calcular a cura e a energia obtidas em relação ao personagem
             System.out.println("Giu tem mais " + item.getEnergia() + " pontos de energia");
             System.out.println("A vida de Giu foi alterada em " + item.getVida() + " pontos");
@@ -163,12 +176,12 @@ public class Personagem {
 
     }
 
-    protected void verItens() {
+    protected void verItens() { // método próprio da mochila
         System.out.println("Dentro da mochila há: ");
         // Percorrer o array que representa os itens guardados na mochila
     }
 
-    protected void dispensarItem(Itens item) { // Talvez esse método não precise existir
+    protected void dispensarItem(Item item) { // Talvez esse método não precise existir
         System.out.println("O tem foi abandonado por Giu");
     }
 

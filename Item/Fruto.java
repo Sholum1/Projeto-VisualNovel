@@ -6,8 +6,8 @@ public class Fruto extends Item {
     private final int felicidade;
     private final int medo;
 
-    public Fruto(boolean consumivel, boolean stackable, int vida, int energia, int felicidade, int medo) {
-        super(consumivel, stackable);
+    public Fruto(boolean consumivel, boolean stackable, int quant, int vida, int energia, int felicidade, int medo) {
+        super(consumivel, stackable, quant);
         this.vida = vida;
         this.energia = energia;
         this.felicidade = felicidade;
