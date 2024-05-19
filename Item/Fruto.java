@@ -1,14 +1,16 @@
-package Item_novo;
+package Item;
 
-public class Pocao extends Item {
+public class Fruto extends Item {
     private final int vida;
     private final int energia;
+    private final int felicidade;
     private final int medo;
 
-    public Pocao(boolean consumivel, boolean stackable, int vida, int energia, int medo) {
+    public Fruto(boolean consumivel, boolean stackable, int vida, int energia, int felicidade, int medo) {
         super(consumivel, stackable);
         this.vida = vida;
         this.energia = energia;
+        this.felicidade = felicidade;
         this.medo = medo;
     }
 
@@ -20,6 +22,10 @@ public class Pocao extends Item {
         return energia;
     }
 
+    public int getFelicidade() {
+        return felicidade;
+    }
+    
     public int getMedo() {
         return medo;
     }

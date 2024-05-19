@@ -1,4 +1,4 @@
-package Item_novo;
+package Item;
 
 public class Raiz extends Item {
     private final int energia;
@@ -13,7 +13,7 @@ public class Raiz extends Item {
     public int getEnergia() {
         return energia;
     }
-    
+
     public int getFelicidade() {
         return felicidade;
     }
