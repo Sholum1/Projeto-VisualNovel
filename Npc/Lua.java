@@ -5,10 +5,10 @@ package Npc;
  */
 public class Lua extends Npc {
     public Lua() {
-	super("Lua");
+	    super("Lua");
     }
 
     @Override
-    public void dialogo() {
+    public void dialogo(){
     }
 }

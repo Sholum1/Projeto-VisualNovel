@@ -6,7 +6,7 @@ import Tabuleiro.Elemento;
 
 public class Personagem implements Elemento {
     private Lua lua = new Lua(Lua.Fase.NOVA);
-    private int vida;
+    private int vida ;
     private int energia;
     private int medo;
     private int felicidade;
@@ -20,7 +20,6 @@ public class Personagem implements Elemento {
         this.medo = medo;
         this.felicidade = felicidade;
         this.dano = dano;
-        ArrayList<Item> mochila = new ArrayList<Item>();
     }
 
     // Getters e Setters
@@ -64,13 +63,12 @@ public class Personagem implements Elemento {
         this.dano = dano;
     }
 
-    // Ação de receber dano
-    protected void tomarDano(int dano) {
-        int vidaPosDano = vida - dano;
-        // Caso o resultado der menor que zero, a vida vai pra zero
-        this.vida = (vidaPosDano < 0) ? 0 : vidaPosDano;
-        System.out.println("Giu recebeu " + dano + " de dano!");
-        }
+    // Ação de atacar
+    protected void atacar(Criatura monstro) {
+	    int novaVida = (criatura.getVida() - getDano());
+        //Confere se a vida após o ataque é menor que zero, se for, é igualada à zero
+	    criatura.setVida((novaVida < 0) ? 0 : novaVida);
+    }
 
     // Parte da Mochila
     private ArrayList<Item> getMochila() {
