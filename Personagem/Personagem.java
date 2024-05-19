@@ -1,8 +1,6 @@
 package Personagem;
 
 import java.util.ArrayList;
-
-import Criatura.Criatura;
 import Item.Item;
 
 public class Personagem {
