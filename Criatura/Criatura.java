@@ -6,17 +6,16 @@ import Personagem.*;
 public class Criatura {
     private Item drop;
     private int dano, vida;
-    final String nome;
+    private final String nome;
 
-    public Criatura(int dano, int vida, int x, int y, String nome) {
+    public Criatura(int dano, int vida, String nome) {
 	this.dano = dano;
 	this.vida = vida;
 	this.nome = nome;
     }
-    // Caso  seja uma criatura com drop
-    public Criatura(Item item, int dano, int vida, int x, int y,
-		       String nome) {
-	this(dano, vida, x, y, nome);
+    // Caso seja uma criatura com drop
+    public Criatura(Item item, int dano, int vida, String nome) {
+	this(dano, vida, nome);
 	this.drop = item;
     }
 
@@ -47,6 +46,18 @@ public class Criatura {
     }
     // Fim dos Getters e Setters
 
-    // Caso a criatura esteja perto ela ataca o jogador
+    // Ataca o jogador
+    public void atacar(Personagem jogador) {
+	int novaVida = (jogador.getVida() - getDano());
+	jogador.setVida((novaVida < 0) ? 0 : novaVida);
+    }
 
+    // Confere se a criatura solta algum item
+    public boolean confereDrop() {
+	return (getDrop() != null);
+    }
+    // Confere se a criatura morreu
+    public boolean confereMorte() {
+	return (getVida() == 0);
+    }
 }

@@ -6,7 +6,6 @@ import Criatura.Criatura;
 import Item.Item;
 
 public class Personagem {
-    private int[] pos = {0, 0};
     private int vida;
     private int energia;
     private int medo;
@@ -25,19 +24,11 @@ public class Personagem {
     }
 
     // Getters e Setters
-    private int[] getPos(){
-        return pos;
-    }
-
-    private void setId(int[] pos){
-        this.pos = pos;
-    }
-
-    private int getVida(){
+    public int getVida(){
         return vida;
     }
 
-    private void setVida(int vida){
+    public void setVida(int vida){
         this.vida = vida;
     }
 
@@ -80,46 +71,6 @@ public class Personagem {
         this.vida = (vidaPosDano < 0) ? 0 : vidaPosDano;
         System.out.println("Giu recebeu " + dano + " de dano!");
         }
-
-    // Ações de andar
-    protected void andar(String dir){
-        if (dir.equals("esquerda")){
-            this.pos[0] -= 1;
-        } 
-        else if(dir.equals("direita")){
-            this.pos[0] += 1;
-        } 
-        else if (dir.equals("baixo")){
-            this.pos[1] -= 1;
-        } 
-        else if(dir.equals("cima")){
-            this.pos[1] += 1;
-            // Sempre adicionar os possíveis erros
-            // Trate o usuário como uma criança
-        }
-        else {
-            System.err.println("Opção inválida");
-        }
-    }
-
-    // Suponha que o usuário é a pessoa mais burra possível
-    protected void andarOutra(String dir){
-        if (dir.equalsIgnoreCase("esquerda")){
-            this.pos[0] -= 1;
-        } 
-        else if(dir.equalsIgnoreCase("direita")){
-            this.pos[0] += 1;
-        } 
-        else if (dir.equalsIgnoreCase("baixo")){
-            this.pos[1] -= 1;
-        } 
-        else if(dir.equalsIgnoreCase("cima")){
-            this.pos[1] += 1;
-        }
-        else {
-            System.err.println("Opção inválida");
-        }
-    }
 
     // Parte da Mochila
     private ArrayList<Item> getMochila() {
