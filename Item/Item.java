@@ -1,19 +1,17 @@
 package Item;
 
 public abstract class Item {
-    private final boolean consumivel;
-    private final boolean stackable;
+    public final String nome;
+    public final boolean stackable;
     public int quant;
 
-    public Item(boolean consumivel, boolean stackable, int quantidade) {
-        this.consumivel = consumivel;
+    public Item(boolean stackable, int quantidade, String nome) {
+        this.nome = nome;
         this.stackable = stackable;
         this.quant = 0;
     }
 
-    public boolean isConsumivel() {
-        return consumivel;
-    }
+    
 
     public boolean isStackable() {
         return stackable;
@@ -25,5 +23,9 @@ public abstract class Item {
 
     public void setQuant(int quantidade) {
         this.quant = quantidade;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }
