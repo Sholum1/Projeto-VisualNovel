@@ -11,56 +11,66 @@ public class Personagem {
     private int energia;
     private int medo;
     private int felicidade;
+    private int dano;
     ArrayList<Item> mochila;
     
-    // Fiz o Construtor aqui, mas como é só um Personagem, e ele vai ter valores iniciais, n sei se precisa, podia ta na definição da classe
-    public Personagem(int vida, int energia, int medo, int felicidade){
+    // Fiz o Construtor aqui, mas como é só 1 Personagem, e ele vai ter valores iniciais, n sei se precisa, podia ta na definição da classe
+    public Personagem(int vida, int energia, int medo, int felicidade, int dano){
         this.vida = vida;
         this.energia = energia;
         this.medo = medo;
         this.felicidade = felicidade;
-        ArrayList<Item> mochila = new ArrayList<Item>(); // Acho que ela ia começar com arma né mas n lembro
+        this.dano = dano;
+        ArrayList<Item> mochila = new ArrayList<Item>();
     }
 
     // Getters e Setters
-    public int[] getPos(){
+    private int[] getPos(){
         return pos;
     }
 
-    public void setId(int[] pos){
+    private void setId(int[] pos){
         this.pos = pos;
     }
 
-    public int getVida(){
+    private int getVida(){
         return vida;
     }
 
-    public void setVida(int vida){
+    private void setVida(int vida){
         this.vida = vida;
     }
 
-    public int getEnergia(){
+    private int getEnergia(){
         return energia;
     }
 
-    public void setEnergia(int energia){
+    private void setEnergia(int energia){
         this.energia = energia;
     }
 
-    public int getMedo(){
+    private int getMedo(){
         return medo;
     }
 
-    public void setMedo(int medo){
+    private void setMedo(int medo){
         this.medo = medo;
     }
 
-    public int getFelicidade(){
+    private int getFelicidade(){
         return felicidade;
     }
 
-    public void setFelicidade(int felicidade){
+    private void setFelicidade(int felicidade){
         this.felicidade = felicidade;
+    }
+
+    private int getDano(){
+        return dano;
+    }
+
+    private void setDano(int dano){
+        this.dano = dano;
     }
 
     // Ação de receber dano
