@@ -1,6 +1,8 @@
 package Item;
 
-public abstract class Item {
+import Tabuleiro.Elemento;
+
+public abstract class Item implements Elemento {
     private final boolean consumivel;
     private final boolean stackable;
 

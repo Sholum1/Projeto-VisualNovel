@@ -1,6 +1,8 @@
 package Npc;
 
-public abstract class Npc {
+import Tabuleiro.Elemento;
+
+public abstract class Npc implements Elemento {
 
    protected final String nome;
 

@@ -2,8 +2,9 @@ package Personagem;
 
 import java.util.ArrayList;
 import Item.Item;
+import Tabuleiro.Elemento;
 
-public class Personagem {
+public class Personagem implements Elemento {
     private Lua lua = new Lua(Lua.Fase.NOVA);
     private int vida;
     private int energia;
