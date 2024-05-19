@@ -9,11 +9,11 @@ public class Lua {
     // A ideia é que conforme a fase a Lua possa refletir mais luz,
     // aumentando assim seu ataque, mas também o intervalo de tempo entre
     // cada ataque
-    private enum Fase {
-        Nova(1, 3, 2), // A Lua nova praticamente não reflete luz na terra
-        Crescente(4, 7, 4), // A Lua crescente reflete um pouco mais de luz
-        Cheia(8, 12, 16), // A Lua nova é a que mais reflete luz
-        Minguante(6, 10, 8); // A Lua minguante começa a refazer o ciclo
+    public enum Fase {
+        NOVA(1, 3, 2), // A Lua nova praticamente não reflete luz na terra
+        CRESCENTE(4, 7, 4), // A Lua crescente reflete um pouco mais de luz
+        CHEIA(8, 12, 16), // A Lua nova é a que mais reflete luz
+        MINGUANTE(6, 10, 8); // A Lua minguante começa a refazer o ciclo
 
         private final int dano, tempoAtaque, distanciaAtaque;
 
@@ -67,14 +67,14 @@ public class Lua {
     // para cada troca de fase)
     public void mudaFase() {
 	if (tempoCiclo-- == 0) {
-	    if (getFase() == Fase.Nova) {
-		setFase(Fase.Crescente);
-	    } else if (getFase() == Fase.Crescente) {
-		setFase(Fase.Cheia);
-	    } else if (getFase() == Fase.Cheia) {
-		setFase(Fase.Minguante);
-	    } else if (getFase() == Fase.Minguante) {
-		setFase(Fase.Nova);
+	    if (getFase() == Fase.NOVA) {
+		setFase(Fase.CRESCENTE);
+	    } else if (getFase() == Fase.CRESCENTE) {
+		setFase(Fase.CHEIA);
+	    } else if (getFase() == Fase.CHEIA) {
+		setFase(Fase.MINGUANTE);
+	    } else if (getFase() == Fase.MINGUANTE) {
+		setFase(Fase.NOVA);
 	    }
 	    this.tempoCiclo = 29;
 	}

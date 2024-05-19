@@ -6,12 +6,13 @@ import Criatura.Criatura;
 import Item.Item;
 
 public class Personagem {
+    private Lua lua = new Lua(Lua.Fase.NOVA);
     private int vida;
     private int energia;
     private int medo;
     private int felicidade;
     private int dano;
-    ArrayList<Item> mochila;
+    private ArrayList<Item> mochila = new ArrayList<Item>();
     
     // Fiz o Construtor aqui, mas como é só 1 Personagem, e ele vai ter valores iniciais, n sei se precisa, podia ta na definição da classe
     public Personagem(int vida, int energia, int medo, int felicidade, int dano){
@@ -32,35 +33,35 @@ public class Personagem {
         this.vida = vida;
     }
 
-    private int getEnergia(){
+    public int getEnergia(){
         return energia;
     }
 
-    private void setEnergia(int energia){
+    public void setEnergia(int energia){
         this.energia = energia;
     }
 
-    private int getMedo(){
+    public int getMedo(){
         return medo;
     }
 
-    private void setMedo(int medo){
+    public void setMedo(int medo){
         this.medo = medo;
     }
 
-    private int getFelicidade(){
+    public int getFelicidade(){
         return felicidade;
     }
 
-    private void setFelicidade(int felicidade){
+    public void setFelicidade(int felicidade){
         this.felicidade = felicidade;
     }
 
-    private int getDano(){
+    public int getDano(){
         return dano;
     }
 
-    private void setDano(int dano){
+    public void setDano(int dano){
         this.dano = dano;
     }
 
