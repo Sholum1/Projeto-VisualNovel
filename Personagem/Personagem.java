@@ -16,8 +16,13 @@ public class Personagem implements Elemento {
         this.medo = 0;
         this.felicidade = 5;
         this.dano = 3;
+<<<<<<< HEAD
         this.mochila = new ArrayList<Item>();
 	this.lua = new Lua(Lua.Fase.Nova);
+=======
+        ArrayList<Item> mochila = new ArrayList<Item>();
+	lua = new Lua(Lua.Fase.NOVA);
+>>>>>>> d394055 (Personagem)
     }
 
     // Inicio dos Getters e Setters
