@@ -5,48 +5,64 @@ import Item.Item;
 import Tabuleiro.Elemento;
 
 public class Personagem implements Elemento {
-    private Lua lua = new Lua(Lua.Fase.NOVA);
-    private int vida ;
-    private int energia;
-    private int medo;
-    private int felicidade;
-    private int dano;
-    private ArrayList<Item> mochila = new ArrayList<Item>();
+    private final Lua lua;
+    private int vida, energia, medo, felicidade;
+    private final int dano;
+    private ArrayList<Item> mochila;
     
-    // Fiz o Construtor aqui, mas como é só 1 Personagem, e ele vai ter valores iniciais, n sei se precisa, podia ta na definição da classe
-    public Personagem(int vida, int energia, int medo, int felicidade, int dano){
-        this.vida = vida;
-        this.energia = energia;
-        this.medo = medo;
-        this.felicidade = felicidade;
-        this.dano = dano;
+    public Personagem() {
+        this.vida = 20;
+        this.energia = 10;
+        this.medo = 0;
+        this.felicidade = 5;
+        this.dano = 3;
+        this.mochila = new ArrayList<Item>();
+	this.lua = new Lua(Lua.Fase.Nova);
     }
 
-    // Getters e Setters
-    public int getVida(){
-        return vida;
+    // Inicio dos Getters e Setters
+    public Lua getLua() {
+	return lua;
     }
 
-    public void setVida(int vida){
-        this.vida = vida;
+    public int getDano() {
+	return dano;
     }
 
-    public int getEnergia(){
-        return energia;
+    public int getEnergia() {
+	return energia;
+    }
+    public void setEnergia(int energia) {
+	this.energia = energia;
+    }
+    public int getFelicidade() {
+	return felicidade;
+    }
+    public void setFelicidade(int felicidade) {
+	this.felicidade = felicidade;
     }
 
-    public void setEnergia(int energia){
-        this.energia = energia;
+    public int getMedo() {
+	return medo;
+    }
+    public void setMedo(int medo) {
+	this.medo = medo;
+    }
+    public int getVida() {
+	return vida;
+    }
+    public void setVida(int vida) {
+	this.vida = vida;
     }
 
-    public int getMedo(){
-        return medo;
+    public ArrayList<Item> getMochila() {
+	return mochila;
+    }
+    public void setMochila(ArrayList<Item> mochila) {
+	this.mochila = mochila;
     }
 
-    public void setMedo(int medo){
-        this.medo = medo;
-    }
-
+<<<<<<< HEAD
     public int getFelicidade(){
         return felicidade;
     }
@@ -70,24 +86,13 @@ public class Personagem implements Elemento {
 	    criatura.setVida((novaVida < 0) ? 0 : novaVida);
     }
 
+=======
+>>>>>>> 023f94f (Varias pikas)
     // Parte da Mochila
-    private ArrayList<Item> getMochila() {
-        return mochila;
-    }
 
-    // Classe que será a "mochila" do protagonista
-    protected void adicionarItem(Itens item, ArrayList<Item> mochila) { // Se precisar ser acessado fora do pacote, provável ter que mudar para public
-        // Se o item encontrado estiver presente no emun, pode ser guardado na mochila
-        for (Itens i : Itens.values()) {
+    public void adicionarItem(Item item) {
+        for (Item i : getMochila()) {
             if (item == i) {
-                for (int j = 0; j < mochila.size(); j++) {
-                    if (item.equals(mochila.get(j)) && item.getStackable()) {
-                        // Adicionar o item
-                    }
-                }
-                // Confere se já consta na mochila e se é stackable
-                // Se tudo ok, adiciona no array de itens que representa a mochila
-                // Calcula a nova quantidade existente nela
             } else {
                 System.out.println("O item não pode ser guardado na mochila");
             }
@@ -96,12 +101,12 @@ public class Personagem implements Elemento {
         // Caso não possa ser adicionado, dispensar o item
     }
 
-    protected void removerItem(Itens item) {
+    protected void removerItem(Item item) {
         // Se o item estiver dentro da mochila, pode ser removido
 
     }
 
-    protected void consumirItem(Itens item) {
+    protected void consumirItem(Item item) {
         // Se o item estiver presente na mochila e for "consumível"
         if (item.getConsumivel()) {
             // Calcular a cura e a energia obtidas em relação ao personagem
@@ -112,12 +117,12 @@ public class Personagem implements Elemento {
 
     }
 
-    protected void verItens() {
+    protected void verItem() {
         System.out.println("Dentro da mochila há: ");
         // Percorrer o array que representa os itens guardados na mochila
     }
 
-    protected void dispensarItem(Itens item) { // Talvez esse método não precise existir
+    protected void dispensarItem(Item item) { // Talvez esse método não precise existir
         System.out.println("O tem foi abandonado por Giu");
     }
 

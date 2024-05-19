@@ -1,8 +1,10 @@
 import java.util.ArrayList;
 
+import Criatura.*;
 import Item.*;
 import Npc.*;
 import Tabuleiro.*;
+import Personagem.*;
 
 /** Main: documentação...
  *
@@ -10,9 +12,10 @@ import Tabuleiro.*;
  */
 public class Main {
     public static void main(String[] args) {
-	Tabuleiro tabuleiro = new Tabuleiro(16);
+	Tabuleiro tabuleiro = new Tabuleiro(8);
+	Personagem giu = new Personagem(20, 20, 20, 20, 20);
+	tabuleiro.adicionarElemento(giu, 3, 5);
 
-	System.out.println(tabuleiro.getMapa());
-	tabuleiro.getMapa().get(0).add(null);
+	tabuleiro.mostraMapa();
     }
 }

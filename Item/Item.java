@@ -11,11 +11,11 @@ public abstract class Item implements Elemento {
         this.stackable = stackable;
     }
 
-    public boolean isConsumivel() {
+    public boolean getConsumivel() {
         return consumivel;
     }
 
-    public boolean isStackable() {
+    public boolean getStackable() {
         return stackable;
     }
 }

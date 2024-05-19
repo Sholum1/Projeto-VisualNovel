@@ -2,6 +2,11 @@ package Tabuleiro;
 
 import java.util.ArrayList;
 
+import Personagem.*;
+import Criatura.*;
+import Npc.*;
+import Item.*;
+
 /**
  * Mapa
  */
@@ -35,7 +40,7 @@ public class Tabuleiro {
     public void adicionarElemento(Elemento elem, int x, int y) {
 	if (x < tamanho) {
 	    ArrayList<Elemento> coluna = mapa.get(x);
-	    if (y < tamanho) coluna.add(elem);
+	    if (y < tamanho) coluna.set(y, elem);
 	}
     }
     public Elemento removerElemento(int x, int y) {
@@ -44,5 +49,32 @@ public class Tabuleiro {
 	    if (y < tamanho) return coluna.remove(y);
 	}
 	return null;
+    }
+
+    public void mostraMapa() {
+	for (int i = 0; i < tamanho; i++) {
+	    for (int j = 0; j < tamanho; j++) {
+		Elemento pos = mapa.get(i).get(j);
+		if (pos == null) {
+		    System.out.print(". ");
+		} else if (pos instanceof Personagem) {
+		    System.out.print("P ");
+		} else if (pos instanceof Criatura) {
+		    Criatura criatura = (Criatura)pos;
+		    char primeiraLetra = Character.toLowerCase
+			(criatura.getNome().charAt(0));
+		    System.out.print(primeiraLetra+" ");
+		} else if (pos instanceof Item) {
+		    System.out.println("I ");
+		} else if (pos instanceof Npc) {
+		    Npc npc = (Npc)pos;
+		    char primeiraLetra = Character.toLowerCase
+			(npc.getNome().charAt(0));
+		    System.out.print(primeiraLetra+" ");
+		}
+	    }
+	    System.out.println();
+
+	}
     }
 }
