@@ -11,8 +11,6 @@ public abstract class Item {
         this.quant = 0;
     }
 
-    
-
     public boolean isStackable() {
         return stackable;
     }

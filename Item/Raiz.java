@@ -4,8 +4,8 @@ public class Raiz extends Item {
     private final int energia;
     private final int felicidade;
 
-    public Raiz(boolean stackable, int quant, int energia, int felicidade) {
-        super(stackable, quant);
+    public Raiz(boolean stackable, int quantidade, String nome, int energia, int felicidade) {
+        super(stackable, quantidade, nome);
         this.energia = energia;
         this.felicidade = felicidade;
     }

@@ -6,8 +6,8 @@ public class Fruto extends Item {
     private final int felicidade;
     private final int medo;
 
-    public Fruto(boolean stackable, int quant, int vida, int energia, int felicidade, int medo) {
-        super(stackable, quant);
+    public Fruto(boolean stackable, int quantidade, String nome, int vida, int energia, int felicidade, int medo) {
+        super(stackable, quantidade, nome);
         this.vida = vida;
         this.energia = energia;
         this.felicidade = felicidade;
