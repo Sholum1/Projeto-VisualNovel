@@ -16,13 +16,8 @@ public class Personagem implements Elemento {
         this.medo = 0;
         this.felicidade = 5;
         this.dano = 3;
-<<<<<<< HEAD
         this.mochila = new ArrayList<Item>();
-	this.lua = new Lua(Lua.Fase.Nova);
-=======
-        ArrayList<Item> mochila = new ArrayList<Item>();
-	lua = new Lua(Lua.Fase.NOVA);
->>>>>>> d394055 (Personagem)
+	this.lua = new Lua(Lua.Fase.NOVA);
     }
 
     // Inicio dos Getters e Setters
@@ -66,33 +61,6 @@ public class Personagem implements Elemento {
     public void setMochila(ArrayList<Item> mochila) {
 	this.mochila = mochila;
     }
-
-<<<<<<< HEAD
-    public int getFelicidade(){
-        return felicidade;
-    }
-
-    public void setFelicidade(int felicidade){
-        this.felicidade = felicidade;
-    }
-
-    public int getDano(){
-        return dano;
-    }
-
-    public void setDano(int dano){
-        this.dano = dano;
-    }
-
-    // Ação de atacar
-    protected void atacar(Criatura monstro) {
-	    int novaVida = (criatura.getVida() - getDano());
-        //Confere se a vida após o ataque é menor que zero, se for, é igualada à zero
-	    criatura.setVida((novaVida < 0) ? 0 : novaVida);
-    }
-
-=======
->>>>>>> 023f94f (Varias pikas)
     // Parte da Mochila
 
     public void adicionarItem(Item item) {
