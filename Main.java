@@ -18,6 +18,7 @@ public class Main {
 	System.out.println("Bem vindo ao nosso jogo, deseja" +
 			   " iniciar o tutorial? [S/n]");
 	String opcao = scan.nextLine();
+	// Inicia o jogo
 	if (opcao.equalsIgnoreCase("Sim") || opcao.equalsIgnoreCase("S")) {
 	    Tabuleiro tabuleiro = new Tabuleiro(8);
 	    Personagem giu = new Personagem();
@@ -27,12 +28,10 @@ public class Main {
 	    boolean jogando = true;
 	    lua1.dialogo();
 	    while (jogando) {
-		boolean perto = tabuleiro.interagir(giu, lua1);
 		tabuleiro.mostraMapa();
+		boolean perto = tabuleiro.interagir(giu, lua1);
 		opcao = scan.nextLine();
-		tabuleiro.moverPersonagem(opcao, giu);
 		if(perto) {
-		    opcao = scan.nextLine();
 		    if (opcao.equals("i")) {
 			LuaTutorial2 lua2 = new LuaTutorial4();
 			lua2.dialogo();
@@ -40,6 +39,7 @@ public class Main {
 			break;
 		    }
 		}
+		tabuleiro.moverPersonagem(opcao, giu);
 	    }
 	}
 	scan.close();

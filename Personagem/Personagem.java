@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import Item.Item;
 import Tabuleiro.Elemento;
 
+/* Personagem: Representa o personagem
+ *
+ */
 public class Personagem implements Elemento {
     private final Lua lua;
     private int vida, energia, medo, felicidade;

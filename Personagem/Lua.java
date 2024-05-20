@@ -3,7 +3,7 @@ package Personagem;
 import Criatura.*;
 
 /**
- * Lua
+ * Lua: Classe que representa a Lua e suas fases
  */
 public class Lua {
     // A ideia é que conforme a fase a Lua possa refletir mais luz,
