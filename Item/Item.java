@@ -1,21 +1,35 @@
 package Item;
 
 import Tabuleiro.Elemento;
+import Personagem.Personagem;
 
 public abstract class Item implements Elemento {
-    private final boolean consumivel;
-    private final boolean stackable;
+    private final String nome;
+    private int quantidade;
 
-    public Item(boolean consumivel, boolean stackable) {
-        this.consumivel = consumivel;
-        this.stackable = stackable;
+    public Item(String nome) {
+	this.nome = nome;
+	this.quantidade = 0;
     }
 
-    public boolean getConsumivel() {
-        return consumivel;
+    public String getNome() {
+	return nome;
     }
 
-    public boolean getStackable() {
-        return stackable;
+    public int getQuantidade() {
+	return quantidade;
     }
+    public void setQuantidade(int quantidade) {
+	this.quantidade = quantidade;
+    }
+
+    public void operaQuantidade(char sinal) {
+	if (sinal == '+') {
+	    this.quantidade++;
+	} else if (sinal == '-') {
+	    this.quantidade--;
+	}
+    }
+
+    public abstract void consumir(Personagem personagem);
 }

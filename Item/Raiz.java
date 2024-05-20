@@ -1,20 +1,16 @@
 package Item;
 
+import Personagem.Personagem;
+
 public class Raiz extends Item {
-    private final int energia;
-    private final int felicidade;
-
-    public Raiz(boolean consumivel, boolean stackable, int energia, int felicidade) {
-        super(consumivel, stackable);
-        this.energia = energia;
-        this.felicidade = felicidade;
+    public Raiz() {
+	super("Raiz");
     }
 
-    public int getEnergia() {
-        return energia;
+    @Override
+    public void consumir(Personagem personagem) {
+	personagem.setEnergia(personagem.getEnergia() + 3);
+	personagem.setFelicidade(personagem.getFelicidade() - 2);
     }
 
-    public int getFelicidade() {
-        return felicidade;
-    }
 }

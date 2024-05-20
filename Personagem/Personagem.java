@@ -13,7 +13,7 @@ public class Personagem implements Elemento {
     public Personagem() {
         this.vida = 20;
         this.energia = 10;
-        this.medo = 0;
+        this.medo = 5;
         this.felicidade = 5;
         this.dano = 3;
         this.mochila = new ArrayList<Item>();
@@ -66,37 +66,39 @@ public class Personagem implements Elemento {
     public void adicionarItem(Item item) {
         for (Item i : getMochila()) {
             if (item == i) {
-            } else {
-                System.out.println("O item não pode ser guardado na mochila");
-            }
-        }
-
-        // Caso não possa ser adicionado, dispensar o item
+		i.operaQuantidade('+');
+		System.out.println("Giu possui: " + item.getQuantidade()
+				   + item.getNome() + "s");
+	    } else {
+		getMochila().add(item);
+		System.out.println("Giu adicionou " + item.getQuantidade()
+				   + "na mochila");
+	    }
+	}
     }
 
-    protected void removerItem(Item item) {
-        // Se o item estiver dentro da mochila, pode ser removido
-
+    private void removerItem(Item item) {
+	mochila.remove(item);
     }
 
-    protected void consumirItem(Item item) {
-        // Se o item estiver presente na mochila e for "consumível"
-        if (item.getConsumivel()) {
-            // Calcular a cura e a energia obtidas em relação ao personagem
-            System.out.println("Giu tem mais " + item.getEnergia() + " pontos de energia");
-            System.out.println("A vida de Giu foi alterada em " + item.getVida() + " pontos");
-            // Talvez seja melhor implementar com o toString depois
-        }
-
+    public void consumirItem(Item item) {
+	for (Item i : getMochila()) {
+	    if(item == i) {
+		i.consumir(this);
+		i.operaQuantidade('-');
+		if (i.getQuantidade() == 0) {
+		    removerItem(item);
+		}
+	    }
+	}
     }
 
-    protected void verItem() {
-        System.out.println("Dentro da mochila há: ");
-        // Percorrer o array que representa os itens guardados na mochila
-    }
 
-    protected void dispensarItem(Item item) { // Talvez esse método não precise existir
-        System.out.println("O tem foi abandonado por Giu");
+   public void verMochila() {
+        System.out.print("Dentro da mochila há: ");
+	for (Item i : getMochila()) {
+	    System.out.print(i.getNome() + "[" + i.getQuantidade() + "], ");
+	}
     }
 
 }
