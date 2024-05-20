@@ -7,15 +7,11 @@ import Npc.*;
 import Tabuleiro.*;
 import Personagem.*;
 
-/** Main: documentação...
+/** Main: Inicia o jogo
  *
  *
  */
 public class Main {
-    private static void err() {
-	System.err.println("Opção inválida, tente novamente");
-    }
-
     public static void main(String[] args) {
 	Scanner scan = new Scanner(System.in);
 	System.out.println("\t\t   Afundando");
@@ -31,15 +27,17 @@ public class Main {
 	    boolean jogando = true;
 	    lua1.dialogo();
 	    while (jogando) {
+		boolean perto = tabuleiro.interagir(giu, lua1);
 		tabuleiro.mostraMapa();
 		opcao = scan.nextLine();
 		tabuleiro.moverPersonagem(opcao, giu);
-		boolean perto = tabuleiro.interagir(giu, lua1);
 		if(perto) {
 		    opcao = scan.nextLine();
 		    if (opcao.equals("i")) {
 			LuaTutorial2 lua2 = new LuaTutorial4();
 			lua2.dialogo();
+			jogando = false;
+			break;
 		    }
 		}
 	    }

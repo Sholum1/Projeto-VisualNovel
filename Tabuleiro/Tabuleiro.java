@@ -1,9 +1,6 @@
 package Tabuleiro;
 
 import java.util.ArrayList;
-import java.util.Scanner;
-
-import javax.lang.model.util.Elements.Origin;
 
 import Personagem.*;
 import Criatura.*;
@@ -17,7 +14,7 @@ public class Tabuleiro {
     private ArrayList<ArrayList<Elemento>> mapa = new ArrayList<>();
     private final int tamanho;
 
-	// Construtor
+    // Construtor
     public Tabuleiro(int tamanho) {
 		this.tamanho = tamanho;
 		for (int i = 0; i < tamanho; i++) {
@@ -57,7 +54,7 @@ public class Tabuleiro {
 		return null;
     }
 
-	// Imprime o estado atual do mapa
+    // Imprime o estado atual do mapa
     public void mostraMapa() {
 	for (int i = 0; i < tamanho; i++) {
 	    System.out.print("\t\t");
@@ -84,6 +81,7 @@ public class Tabuleiro {
 	}
     }
 
+    // Acha a posição de um dado elemento
     private int[] achePosicao(Elemento elem) {
 	int[] pos = null;
 	for (int i = 0; i < tamanho; i++) {
@@ -98,6 +96,7 @@ public class Tabuleiro {
 	return pos;
     }
 
+    // Vê a possibilidade de interagir com algo
     public boolean interagir(Personagem personagem, Elemento elem) {
 	int[] posPersonagem = achePosicao(personagem),
 	    posElem = achePosicao(elem);
@@ -119,6 +118,7 @@ public class Tabuleiro {
 	return false;
     }
 
+    // Move um elemento
     private void mover(int xObjetivo, int yObjetivo, int xOriginal,
 		       int yOriginal, Elemento elem) {
 	if ((xObjetivo < tamanho - 1 && xObjetivo > 0)
@@ -128,6 +128,7 @@ public class Tabuleiro {
 	}
     }
 
+    // Move a Giu
     public void moverPersonagem(String opcao, Personagem personagem) {
 	int[] pos = achePosicao(personagem);
 	if (opcao.equals("w")) {
