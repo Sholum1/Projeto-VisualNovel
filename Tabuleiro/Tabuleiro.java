@@ -56,9 +56,9 @@ public class Tabuleiro {
 	    for (int j = 0; j < tamanho; j++) {
 		Elemento pos = mapa.get(i).get(j);
 		if (pos == null) {
-		    System.out.print(". ");
+		    System.out.print("~ ");
 		} else if (pos instanceof Personagem) {
-		    System.out.print("P ");
+		    System.out.print("G ");
 		} else if (pos instanceof Criatura) {
 		    Criatura criatura = (Criatura)pos;
 		    char primeiraLetra = Character.toLowerCase

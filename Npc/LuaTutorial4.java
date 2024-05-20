@@ -3,11 +3,11 @@ package Npc;
 /**
  * LuaTutorial2
  */
-public class LuaTutorial4 extends LuaTutorial {
+public class LuaTutorial4 extends LuaTutorial3 {
 
     @Override
     public void dialogo() {
-	System.out.println("Lua: Você está com vida baixa por causa da +
+	System.out.println("Lua: Você está com vida baixa por causa da" +
 			   "batalha");
 	System.out.println("Lua: Tome uma Alga, você se sentirá cansado" +
 			   "mas recuperará vida");

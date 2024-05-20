@@ -1,6 +1,6 @@
 package Npc;
 
-public class LuaTutorial3 extends LuaTutorial {
+public class LuaTutorial3 extends LuaTutorial2 {
 
     @Override
     public void dialogo() {

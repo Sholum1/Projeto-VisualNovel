@@ -3,7 +3,11 @@ package Npc;
 /**
  * LuaTutorial1
  */
-public class LuaTutorial1 extends LuaTutorial {
+public class LuaTutorial1 extends Npc {
+
+    public LuaTutorial1() {
+	    super("Lua");
+    }
 
     @Override
     public void dialogo() {
