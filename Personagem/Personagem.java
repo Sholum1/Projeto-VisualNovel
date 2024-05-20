@@ -62,6 +62,7 @@ public class Personagem implements Elemento {
     public void setMochila(ArrayList<Item> mochila) {
 	this.mochila = mochila;
     }
+
     // Parte da Mochila
 
     // Confere se o item já existe na mochila e o adiciona ou aumenta seu número
