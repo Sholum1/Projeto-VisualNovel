@@ -10,12 +10,11 @@ public abstract class Npc implements Elemento {
        this.nome = nome;
     }
 
-    // Inicio dos Getters e Setters
+    // Só possui um get, já que é final
     public String getNome(){
         return nome;
     }
 
-    // Fim dos Getters e Setters
-
+    // Apresenta os diálogos do NPC
     protected abstract void dialogo();
 }

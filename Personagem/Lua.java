@@ -17,7 +17,7 @@ public class Lua {
 
         private final int dano, tempoAtaque, distanciaAtaque;
 
-	// Construtor da fase
+	// Construtor da Fase
         private Fase(int dano, int tempoAtaque, int distanciaAtaque) {
             this.dano = dano;
             this.tempoAtaque = tempoAtaque;
@@ -41,6 +41,7 @@ public class Lua {
     private Fase fase;
     private int tempoCiclo = 29;
 
+    // Construtor da Lua
     public Lua(Fase fase) {
 	this.fase = fase;
     }
@@ -80,6 +81,7 @@ public class Lua {
 	}
     }
 
+    // Ação de ataque da Lua, seu dano depende da Fase
     public void refletir(Criatura criatura, int tempo) {
 	if (tempo == getTempoLua()) {
 	    int novaVida = (criatura.getVida() - getDanoLua());

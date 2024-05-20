@@ -9,6 +9,7 @@ public class Criatura implements Elemento {
     private int dano, vida;
     private final String nome;
 
+    // Construtor
     public Criatura(int dano, int vida, String nome) {
 	this.dano = dano;
 	this.vida = vida;

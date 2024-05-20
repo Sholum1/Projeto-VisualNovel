@@ -7,11 +7,13 @@ public abstract class Item implements Elemento {
     private final String nome;
     private int quantidade;
 
+    // Construtor
     public Item(String nome) {
 	this.nome = nome;
 	this.quantidade = 0;
     }
 
+    // Getters e Setters (nome é final, então só tem get)
     public String getNome() {
 	return nome;
     }
@@ -23,6 +25,7 @@ public abstract class Item implements Elemento {
 	this.quantidade = quantidade;
     }
 
+    // Faz a quantidade aumentar ou diminuir
     public void operaQuantidade(char sinal) {
 	if (sinal == '+') {
 	    this.quantidade++;
@@ -31,5 +34,6 @@ public abstract class Item implements Elemento {
 	}
     }
 
+    // Dá os efeitos do item
     public abstract void consumir(Personagem personagem);
 }

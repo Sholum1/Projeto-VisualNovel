@@ -14,43 +14,47 @@ public class Tabuleiro {
     private ArrayList<ArrayList<Elemento>> mapa = new ArrayList<>();
     private final int tamanho;
 
+	// Construtor
     public Tabuleiro(int tamanho) {
-	this.tamanho = tamanho;
-	for (int i = 0; i < tamanho; i++) {
-	    mapa.add(new ArrayList<Elemento>());
-	    for (int j = 0; j < tamanho; j++) {
-		mapa.get(i).add(null);
-	    }
-	}
+		this.tamanho = tamanho;
+		for (int i = 0; i < tamanho; i++) {
+			mapa.add(new ArrayList<Elemento>());
+			for (int j = 0; j < tamanho; j++) {
+			mapa.get(i).add(null);
+			}
+		}
     }
 
-    // Inicio dos Getters e Setters
+    //  Getters e Setters (tamanho é final, então só possui get)
     public ArrayList<ArrayList<Elemento>> getMapa() {
-	return mapa;
+		return mapa;
     }
     public void setMapa(ArrayList<ArrayList<Elemento>> mapa) {
-	this.mapa = mapa;
+		this.mapa = mapa;
     }
 
     public int getTamanho() {
-	return tamanho;
+		return tamanho;
     }
-    // Fim dos Getters e Setters
 
+	// Adiciona um elemento novo no mapa, na posição selecionada
     public void adicionarElemento(Elemento elem, int x, int y) {
-	if (x < tamanho) {
-	    ArrayList<Elemento> coluna = mapa.get(x);
-	    if (y < tamanho) coluna.set(y, elem);
-	}
-    }
-    public Elemento removerElemento(int x, int y) {
-	if (x < tamanho) {
-	    ArrayList<Elemento> coluna = mapa.get(x);
-	    if (y < tamanho) return coluna.remove(y);
-	}
-	return null;
+		if (x < tamanho) {
+			ArrayList<Elemento> coluna = mapa.get(x);
+			if (y < tamanho) coluna.set(y, elem);
+		}
     }
 
+	// Remove o elemento da posição selecionada
+    public Elemento removerElemento(int x, int y) {
+		if (x < tamanho) {
+			ArrayList<Elemento> coluna = mapa.get(x);
+			if (y < tamanho) return coluna.remove(y);
+		}
+		return null;
+    }
+
+	// Imprime o estado atual do mapa
     public void mostraMapa() {
 	for (int i = 0; i < tamanho; i++) {
 	    for (int j = 0; j < tamanho; j++) {

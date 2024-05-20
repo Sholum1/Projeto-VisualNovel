@@ -10,6 +10,7 @@ public class Personagem implements Elemento {
     private final int dano;
     private ArrayList<Item> mochila;
     
+    // Construtor
     public Personagem() {
         this.vida = 20;
         this.energia = 10;
@@ -20,7 +21,7 @@ public class Personagem implements Elemento {
 	this.lua = new Lua(Lua.Fase.NOVA);
     }
 
-    // Inicio dos Getters e Setters
+    // Getters e Setters
     public Lua getLua() {
 	return lua;
     }
@@ -63,6 +64,7 @@ public class Personagem implements Elemento {
     }
     // Parte da Mochila
 
+    // Confere se o item já existe na mochila e o adiciona ou aumenta seu número
     public void adicionarItem(Item item) {
         for (Item i : getMochila()) {
             if (item == i) {
@@ -77,10 +79,12 @@ public class Personagem implements Elemento {
 	}
     }
 
+    // Remove o item da mochila
     private void removerItem(Item item) {
 	mochila.remove(item);
     }
 
+    // Usa o item, reduzindo a quantidade da mochila e aplicando seus efeitos
     public void consumirItem(Item item) {
 	for (Item i : getMochila()) {
 	    if(item == i) {
@@ -93,12 +97,12 @@ public class Personagem implements Elemento {
 	}
     }
 
-
-   public void verMochila() {
+    // Mostra os elementos da mochila e suas quantidades
+    public void verMochila() {
         System.out.print("Dentro da mochila há: ");
-	for (Item i : getMochila()) {
-	    System.out.print(i.getNome() + "[" + i.getQuantidade() + "], ");
-	}
+    for (Item i : getMochila()) {
+        System.out.print(i.getNome() + "[" + i.getQuantidade() + "], ");
+    }
     }
 
 }
