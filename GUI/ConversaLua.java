@@ -1,12 +1,15 @@
 package GUI;
 
 import javax.swing.*;
+
+import GUI.TelaInicial;
+
 import java.awt.*;
 import java.awt.event.*;
 
 public class ConversaLua {
     private int count = 0;
-    public void rodaConvers () {
+    public void rodaConversa (MyFrame frame) {
 	String[] out = {"<html>&emsp;&ensp;Giu ouve o som das ondas e<html>"+
 			"<html> olha para a lua suplicando que a<html>"+
 			"<hmtl> devolva Luna, sua<br>&ensp;peixe que<html>"+
@@ -18,13 +21,19 @@ public class ConversaLua {
 			"<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html>"+
 			"<html> ouça as ondas do mar... Deixe o som te<html>"+
 			"<html> guiar... A <br>&ensp;luz da lua te leva<html>"+
-			"<html> ...de volta ao mar.<html>"};
+			"<html> ...De volta ao mar.<html>"};
 	ImageIcon fundo = new ImageIcon("Assets/quadro lua.png");
+
         JLabel label = new JLabel();
         label.setIcon(fundo);
         label.setVerticalAlignment(JLabel.CENTER);
         label.setHorizontalAlignment(JLabel.CENTER);
         label.setBounds(0, 0, 1350, 1010);
+
+	JPanel contentPane = new JPanel(null);
+        contentPane.setPreferredSize(new Dimension(1350, 1010));
+        contentPane.add(label);
+
 	JLabel conversa = new JLabel();
         conversa.setBackground(new Color(235, 217, 188));
         conversa.setBounds(40, 800, 1250, 180);
@@ -36,16 +45,19 @@ public class ConversaLua {
         conversa.setVerticalAlignment(JLabel.TOP);
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
-        MyFrame frame = new MyFrame();
-        frame.setLayout(null);
-        frame.add(label);
+
+	contentPane.add(conversa); // Adiciona o JLabel com o texto sobre a imagem de fundo
+        frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
+
+	TelaInicial tela = new TelaInicial();
 	frame.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
-		    count = (count + 1)%out.length;
+		    count++;
 		    conversa.setText(out[count]);
 		}
 	    });
 	label.add(conversa);
+	frame.pack();
     }
 }

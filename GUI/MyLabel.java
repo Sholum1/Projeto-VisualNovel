@@ -12,16 +12,18 @@ import javax.swing.JLabel;
 
 public class MyLabel extends JLabel implements ActionListener {
     JButton botaoIniciar;
-    JLabel cenaLua;
+    ConversaLua cenaLua;
+    MyFrame frame;
 
-    MyLabel() {
-        ImageIcon lua = new ImageIcon("Assets/quadro lua.png");
+    public MyLabel(MyFrame frame) {
+	this.frame = frame;
+        // ImageIcon lua = new ImageIcon("../Assets/quadro lua.png");
 
-        cenaLua = new JLabel();
-        cenaLua.setIcon(lua);
-        cenaLua.setBounds(0, 0, 1350, 1010);
-        cenaLua.setVisible(false);
-        this.add(cenaLua);
+        cenaLua = new ConversaLua();
+        // cenaLua.setIcon(lua);
+        // cenaLua.setBounds(0, 0, 1350, 1010);
+        // cenaLua.setVisible(false);
+        // this.add(cenaLua);
 
         botaoIniciar = new JButton();
         botaoIniciar.setBounds(600, 600, 150, 50);
@@ -36,11 +38,10 @@ public class MyLabel extends JLabel implements ActionListener {
         botaoIniciar.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
         this.add(botaoIniciar);
     }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == botaoIniciar) {
-            cenaLua.setVisible(true);
+            cenaLua.rodaConversa(frame);
         }
     }
 }

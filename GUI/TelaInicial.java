@@ -1,13 +1,8 @@
 package GUI;
 
-import javax.swing.JLabel;
-//import javax.swing.JPanel;
-import javax.swing.border.Border;
-import java.awt.Color;
-import java.awt.Font;
-import javax.swing.BorderFactory;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
+import javax.swing.*;
+import javax.swing.border.*;
+import java.awt.*;
 
 /*
  * JFrame: janela de GUI para adicionar componentes
@@ -19,7 +14,7 @@ import javax.swing.JButton;
 
 
 public class TelaInicial {
-    public static void main(String[]args) {
+    public void rodaTelaInicial(MyFrame frame) {
 
         ImageIcon mapaGeral = new ImageIcon("Assets/mapa geral.png");
 
@@ -29,6 +24,8 @@ public class TelaInicial {
         //textBox.setBackground(new Color(234, 235, 188));
         //textBox.setBounds(0, 400, 1350, 200);
 
+	JPanel contentPane = new JPanel(null);
+        contentPane.setPreferredSize(new Dimension(1350, 1010));
 
         JLabel label = new JLabel(); //criando um label
         label.setIcon(mapaGeral);
@@ -59,17 +56,22 @@ public class TelaInicial {
         sombra.setHorizontalAlignment(JLabel.CENTER);
         sombra.setOpaque(true);
 
-        MyLabel cenaLua = new MyLabel();
+        MyLabel cenaLua = new MyLabel(frame);
         cenaLua.setBounds(0, 0, 1350, 1010);
 
-
-        MyFrame frame = new MyFrame(); //criando uma janela a partir de uma classe filha de JFrame
+	contentPane.add(cenaLua);
+	contentPane.add(label);
+	contentPane.add(titulo);
+	contentPane.add(sombra);
+	frame.setContentPane(contentPane);
         frame.setLayout(null);
-        frame.add(label);
+        // frame.add(label);
         label.add(titulo);
         label.add(sombra);
-        frame.add(cenaLua);
+        // frame.add(cenaLua);
         //label.setVisible(false);
+	frame.pack();
+	frame.setVisible(true);
 
         //frame.pack(); faz com que o tamanho da janela se ajuste ao espaço ocupado pelos componentes do label
     }
