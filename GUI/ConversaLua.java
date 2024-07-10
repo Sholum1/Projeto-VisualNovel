@@ -24,7 +24,7 @@ public class ConversaLua {
 		"<html> ouça as ondas do mar... Deixe o som te<html>"+
 		"<html> guiar... A <br>&ensp;luz da lua te leva<html>"+
 		"<html>... De volta ao mar.<html>"};
-		 
+
 
 	ImageIcon fundo = new ImageIcon("Assets/quadro lua.png");
 

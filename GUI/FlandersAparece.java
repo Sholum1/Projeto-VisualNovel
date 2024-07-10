@@ -48,5 +48,17 @@ public class FlandersAparece {
 		contentPane.add(flandersPerto);
 		contentPane.add(giuFundo);
 		contentPane.add(label);
+
+        JLabel conversa = new JLabel();
+        conversa.setBackground(new Color(235, 217, 188));
+        conversa.setBounds(40, 800, 1000, 180); // !!!!!!!!!!!
+        conversa.setText(out[0]);
+        conversa.setHorizontalTextPosition(JLabel.LEFT);
+        conversa.setVerticalTextPosition(JLabel.TOP);
+        conversa.setForeground(new Color(29, 60, 144));
+        conversa.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
+        conversa.setVerticalAlignment(JLabel.CENTER);
+        conversa.setHorizontalAlignment(JLabel.LEFT);
+        conversa.setOpaque(true);
     }
 }
