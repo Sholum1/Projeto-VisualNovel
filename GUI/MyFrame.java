@@ -18,5 +18,7 @@ public class MyFrame extends JFrame {
         this.getContentPane().setBackground(new Color(0, 0, 0)); //muda a cor de fundo da janela
         this.setVisible(true); //faz com que a janela fique visível
 
+        this.getContentPane().setBackground(new Color(0, 0, 0));
+        this.setVisible(true);
     }
 }
