@@ -16,7 +16,7 @@ import java.awt.*;
 public class TelaInicial {
     public void rodaTelaInicial(MyFrame frame) {
 
-        ImageIcon mapaGeral = new ImageIcon("Assets/mapa geral.png");
+        ImageIcon mapaGeral = new ImageIcon("mapa_geral_.png");
 
         Border border = BorderFactory.createLineBorder(new Color(255, 176, 120), 12, false);
 
