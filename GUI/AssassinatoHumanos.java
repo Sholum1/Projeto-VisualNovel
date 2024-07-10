@@ -27,5 +27,6 @@ public class AssassinatoHumanos {
 
 		contentPane.add(label);
     }
+	//falta implementar dinamica desse mapa
 }
 
