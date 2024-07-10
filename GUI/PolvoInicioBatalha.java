@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class Polvo {
+public class PolvoInicioBatalha {
     public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;[POLVO]: -SE PREPARE PRA MORRER!,<html>"+
 		"<html>POLVO: o mar te assombrou, e a Lua pode ate tentar te enganar, mas todos nos sabemos como voxê nunca mais achará Luna!\r\n" +
@@ -46,6 +46,9 @@ public class Polvo {
 		contentPane.add(polvoFundo);
 		contentPane.add(label);
     }
+
+	//dps desse frame, tem como só matar ele ou ir pro frame do PolvoRendido.
+	//os dois frames levam pro mapa da cena final das ondas
 }
 
     
