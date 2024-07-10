@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class FlandersAparece {
+public class Polvo {
     public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;[POLVO]: -SE PREPARE PRA MORRER!,<html>"+
 		"<html>POLVO: o mar te assombrou, e a Lua pode ate tentar te enganar, mas todos nos sabemos como voxê nunca mais achará Luna!\r\n" +
