@@ -11,7 +11,7 @@ import java.awt.Font;
 
 public class GUI {
     public static void main(String[]args) {
-        ImageIcon fundo = new ImageIcon("mapa_geral_.png");
+        ImageIcon fundo = new ImageIcon("Assets/mapa geral.png");
         Border border = BorderFactory.createLineBorder(Color.blue);
 
         JLabel label = new JLabel();
