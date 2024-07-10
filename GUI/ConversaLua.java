@@ -53,7 +53,9 @@ public class ConversaLua {
 	frame.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
-		    count++;
+		    if(++count > out.length) {
+			// próxima cena...
+		    };
 		    conversa.setText(out[count]);
 		}
 	    });
