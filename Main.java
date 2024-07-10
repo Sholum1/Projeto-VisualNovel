@@ -14,5 +14,7 @@ import javax.swing.JFrame;
  */
 public class Main {
     public static void main(String[] args) {
+	ConversaLua conv = new ConversaLua();
+	conv.rodaConvers();
     }
 }
