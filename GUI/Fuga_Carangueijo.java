@@ -8,7 +8,7 @@ import java.awt.*;
 public class Fuga_Carangueijo {
     
 
-    public void rodaConversa(MyFrame frame) {
+    public void rodaConversaFugaCaranguejos(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;flanders olha para Giu em acordo e os dois nadam rapidamente na direção oposta, ouvindo os gritos do Carangueijo Marujo e deixando a oportunidade de chegar a costa mais rápido pra tras.<html>"+
 		"<html> pós horas nadando, bolhas se aproximam do peixe e da humana <br>&ensp;e uma flecha de água os atravessa!<html>"};
 		//pensar como colocar um botão aqui

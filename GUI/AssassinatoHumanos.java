@@ -9,7 +9,7 @@ public class AssassinatoHumanos {
  
 
 
-    public void rodaConversa(MyFrame frame) {
+    public void rodaConversaAssassinatoHumanos(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;uma grande luz cega os motores e eles param de funcionar.<html>"};
 		//pensar como colocar um botão aqui
 	

@@ -4,13 +4,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.*;
 public class BarcoHumanos {
-    
 
-
-
-
-    public void rodaConversa(MyFrame frame) {
-		String[] out = {"<html>&emsp;&ensp;\"BARCO AVISTA!\r\n" + //
+    public void rodaConversaBarcoHumanos(MyFrame frame) {
+		String[] out = {"<html>&emsp;&ensp;\"BARCO AVISTA!\r\n" + 
                         "TENTE INVADIR UM BARCO!<html>"+
 		"<html> a grande pressão da massa de água ao redor do barco empurra os três pra bem longe.<html>"+
 		"<html>&emsp;&ensp;[GIU] lua...me ajude...não sei como lidar com o mar que me colocastes....<html>",

@@ -8,7 +8,7 @@ public class Cardume {
 
 
 
-    public void rodaConversa(MyFrame frame) {
+    public void rodaConversaCardume(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;Após horas nadando, bolhas se aproximam do peixe e da humana e uma flecha de água os atravessa!,<html>"+
 		"<html> [GIU]  Um cardume...!<html>"+
 		"<html> [FLANDERS] de sardinhas!<html>",

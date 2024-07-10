@@ -9,7 +9,7 @@ public class PolvoRendido {
 
 
 
-    public void rodaConversa(MyFrame frame) {
+    public void rodaConversaPolvoRendido(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;[POLVO]: polvo: covarde! me dê o mesmo destino dela! pise em meu corpo sem vida assim como pisa no dela, enquanto tenta a trazer de volta!\r\n" + 
                         "                você não engana a mim! você não quer chegar a costa, só quer fugir e afundar cada vez nesse mar.\r\n" + 
                         "                me mate e me deixe afundar como ela!<html>"+
