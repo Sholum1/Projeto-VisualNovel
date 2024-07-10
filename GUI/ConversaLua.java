@@ -9,19 +9,23 @@ import java.awt.event.*;
 
 public class ConversaLua {
     private int count = 0;
-    public void rodaConversa (MyFrame frame) {
-	String[] out = {"<html>&emsp;&ensp;Giu ouve o som das ondas e<html>"+
-			"<html> olha para a lua suplicando que a<html>"+
-			"<hmtl> devolva Luna, sua<br>&ensp;peixe que<html>"+
-			"<html> se foi dias atrás. Giu sabe que<html>"+
-			"<html> peixes vivem pouco, e quando a viu"+
-			"<html><br>&ensp;cansada<html>"+
-			"<html> em seu aquário já previa o pior,<html>"+
-			"<html> mas não tão cedo.<html>",
-			"<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html>"+
-			"<html> ouça as ondas do mar... Deixe o som te<html>"+
-			"<html> guiar... A <br>&ensp;luz da lua te leva<html>"+
-			"<html> ...De volta ao mar.<html>"};
+
+    public void rodaConversa(MyFrame frame) {
+		
+		String[] out = {"<html>&emsp;&ensp;Giu ouve o som das ondas e<html>"+
+		"<html> olha para a lua suplicando que a<html>"+
+		"<hmtl> devolva Luna, sua<br>&ensp;peixe que<html>"+
+		"<html> se foi dias atrás. Giu sabe que<html>"+
+		"<html> peixes vivem pouco, e quando a viu"+
+		"<html><br>&ensp;cansada<html>"+
+		"<html> em seu aquário já previa o pior,<html>"+
+		"<html> mas não tão cedo.<html>",
+		"<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html>"+
+		"<html> ouça as ondas do mar... Deixe o som te<html>"+
+		"<html> guiar... A <br>&ensp;luz da lua te leva<html>"+
+		"<html>... De volta ao mar.<html>"};
+		 
+
 	ImageIcon fundo = new ImageIcon("Assets/quadro lua.png");
 
         JLabel label = new JLabel();
@@ -41,8 +45,8 @@ public class ConversaLua {
         conversa.setHorizontalTextPosition(JLabel.LEFT);
         conversa.setVerticalTextPosition(JLabel.TOP);
         conversa.setForeground(new Color(29, 60, 144));
-        conversa.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 32));
-        conversa.setVerticalAlignment(JLabel.TOP);
+        conversa.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
+        conversa.setVerticalAlignment(JLabel.CENTER);
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
 
