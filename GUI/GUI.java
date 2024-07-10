@@ -11,7 +11,7 @@ import java.awt.Font;
 
 public class GUI {
     public static void main(String[]args) {
-        ImageIcon fundo = new ImageIcon("Assets/mapa_geral.png");
+        ImageIcon fundo = new ImageIcon("Assets/mapa geral.png");
         Border border = BorderFactory.createLineBorder(Color.blue);
 
         JLabel label = new JLabel();
@@ -32,6 +32,5 @@ public class GUI {
         MyFrame frame = new MyFrame();
         frame.setLayout(null);
         frame.add(label);
-
     }
 }
