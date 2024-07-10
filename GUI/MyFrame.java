@@ -6,7 +6,7 @@ import java.awt.Color;
 
 public class MyFrame extends JFrame {
     
-    MyFrame() {
+     MyFrame() {
         this.setTitle("Afundando: a Saga de Giu e Lua"); //settando o nome da janela
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //fecha a janela (termina a operação)
         this.setResizable(false); //não perimite redimensionamento
