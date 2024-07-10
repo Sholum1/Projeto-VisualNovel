@@ -40,22 +40,29 @@ public class TelaInicial {
 
         JLabel titulo = new JLabel();
         titulo.setBackground(new Color(235, 217, 188));
-        titulo.setBounds(50, 350, 1250, 180);
+        titulo.setBounds(40, 350, 1250, 180);
         titulo.setText("Boas-vindas a 'Afundando: a saga de Giu e Lua'"); //adiciona o texto à label
-        titulo.setText("Boas-vindas a 'Afundando: a saga de Giu e Lua'"); 
         titulo.setHorizontalTextPosition(JLabel.CENTER);
         titulo.setVerticalTextPosition(JLabel.CENTER);
         titulo.setForeground(new Color(29, 60, 144));
         titulo.setFont(new Font(Font.MONOSPACED, Font.BOLD, 42));
-        titulo.setVerticalAlignment(JLabel.CENTER); //fixa a posição vertical de icon+text dentro do label
-        titulo.setHorizontalAlignment(JLabel.CENTER); //fixa a posição horizontal de icon+text dentro do label
+        titulo.setVerticalAlignment(JLabel.CENTER);
+        titulo.setHorizontalAlignment(JLabel.CENTER);
         titulo.setBorder(border);
         titulo.setOpaque(true);
+
+        JLabel sombra = new JLabel();
+        sombra.setBackground(new Color(242,112,5));
+        sombra.setBounds(70, 360, 1250, 200);
+        sombra.setVerticalAlignment(JLabel.CENTER);
+        sombra.setHorizontalAlignment(JLabel.CENTER);
+        sombra.setOpaque(true);
 
         MyFrame frame = new MyFrame(); //criando uma janela a partir de uma classe filha de JFrame
         frame.setLayout(null);
         frame.add(label);
         label.add(titulo);
+        label.add(sombra);
         //frame.pack(); faz com que o tamanho da janela se ajuste ao espaço ocupado pelos componentes do label
     }
 }
