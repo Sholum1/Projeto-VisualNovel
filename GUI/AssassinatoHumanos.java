@@ -6,9 +6,6 @@ import javax.swing.JPanel;
 import java.awt.*;
 
 public class AssassinatoHumanos {
- 
-
-
     public void rodaConversaAssassinatoHumanos(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;Uma grande luz cega os motores e eles param de funcionar.<html>"};
 		//pensar como colocar um botão aqui

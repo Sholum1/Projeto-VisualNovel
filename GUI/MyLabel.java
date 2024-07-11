@@ -37,15 +37,12 @@ public class MyLabel extends JLabel implements ActionListener {
         botaoIniciar.setBackground(new Color(242,242,242));
         botaoIniciar.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
         this.add(botaoIniciar);
-
-
-        
     }
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == botaoIniciar) {
+	    frame.getContentPane().removeAll();
             cenaLua.rodaConversa(frame);
-            
         }
     }
 }
