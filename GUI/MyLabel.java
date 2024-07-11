@@ -45,7 +45,6 @@ public class MyLabel extends JLabel implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == botaoIniciar) {
             cenaLua.rodaConversa(frame);
-            
         }
     }
 }

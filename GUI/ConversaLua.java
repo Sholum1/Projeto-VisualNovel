@@ -2,6 +2,7 @@ package GUI;
 
 import javax.swing.*;
 
+import GUI.GiuAcorda;
 import GUI.TelaInicial;
 
 import java.awt.*;
@@ -53,12 +54,13 @@ public class ConversaLua {
 	contentPane.add(conversa); // Adiciona o JLabel com o texto sobre a imagem de fundo
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
+	GiuAcorda giu = new GiuAcorda();
 	TelaInicial tela = new TelaInicial();
 	frame.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
-		    if(++count > out.length) {
-			// próxima cena...
+		    if(++count >= out.length) {
+			giu.rodaConversa(frame);
 		    };
 		    conversa.setText(out[count]);
 		}
