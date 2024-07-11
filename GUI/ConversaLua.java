@@ -1,18 +1,12 @@
 package GUI;
 
 import javax.swing.*;
-
-import GUI.GiuAcorda;
-import GUI.TelaInicial;
-
 import java.awt.*;
 import java.awt.event.*;
 
 public class ConversaLua {
     private int count = 0;
-
     public void rodaConversa(MyFrame frame) {
-		
 		String[] out = {"<html>&emsp;&ensp;Giu ouve o som das ondas e<html>"+
 		"<html> olha para a lua suplicando que a<html>"+
 		"<hmtl> devolva Luna, sua<br>&ensp;peixe que<html>"+
@@ -23,9 +17,7 @@ public class ConversaLua {
 		"<html> mas não tão cedo.<html>",
 		"<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html>"+
 		"<html> ouça as ondas do mar... Deixe o som te<html>"+
-		"<html> guiar... A <br>&ensp;luz da lua te leva<html>"+
-		"<html>... De volta ao mar.<html>"};
-
+		"<html> guiar... A <br>&ensp;luz da lua te leva<html>"+ "<html>... De volta ao mar.<html>"};
 
 	ImageIcon fundo = new ImageIcon("Assets/quadro lua.png");
 
@@ -51,15 +43,15 @@ public class ConversaLua {
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
 
-	contentPane.add(conversa); // Adiciona o JLabel com o texto sobre a imagem de fundo
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
 	GiuAcorda giu = new GiuAcorda();
-	TelaInicial tela = new TelaInicial();
 	frame.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 		    if(++count >= out.length) {
+			frame.removeMouseListener(this);
+			frame.getContentPane().removeAll();
 			giu.rodaConversa(frame);
 		    };
 		    conversa.setText(out[count]);
