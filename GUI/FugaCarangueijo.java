@@ -1,14 +1,13 @@
 package GUI;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
-public class Fuga_Carangueijo {
-    
+public class FugaCarangueijo {
+	private int count = 0;
 
-    public void rodaConversaFugaCaranguejos(MyFrame frame) {
+    public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;Flanders olha para Giu em acordo <htmml>"+
 		"e os dois nadam rapidamente na direção oposta,<br>&ensp;ouvindo os gritos do<html>"+
 		"<html> Carangueijo Marujo e deixando a oportunidade de chegar à<br>&ensp;costa mais rápido pra trás.<html>",
@@ -51,6 +50,37 @@ public class Fuga_Carangueijo {
 		contentPane.add(flandersLonge);
 		contentPane.add(giuFundo);
 		contentPane.add(label);
+
+        JLabel conversa = new JLabel();
+        conversa.setBackground(new Color(235, 217, 188));
+        conversa.setBounds(40, 800, 1250, 180);
+        conversa.setText(out[0]);
+        conversa.setHorizontalTextPosition(JLabel.LEFT);
+        conversa.setVerticalTextPosition(JLabel.TOP);
+        conversa.setForeground(new Color(29, 60, 144));
+        conversa.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
+        conversa.setVerticalAlignment(JLabel.CENTER);
+        conversa.setHorizontalAlignment(JLabel.LEFT);
+        conversa.setOpaque(true);
+
+		Cardume proximo = new Cardume();
+
+		frame.setContentPane(contentPane);
+
+		frame.addMouseListener(new MouseAdapter() {
+	    @Override
+	    public void mouseClicked(MouseEvent e) {
+		if(++count >= out.length) {
+		    frame.removeMouseListener(this);
+		    frame.getContentPane().removeAll();
+		    proximo.rodaConversa(frame);
+		};
+		conversa.setText(out[count]);
+	    }
+		});
+
+		label.add(conversa);
+		frame.pack();
     }
 }
 

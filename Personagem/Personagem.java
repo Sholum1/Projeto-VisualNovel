@@ -6,7 +6,6 @@ import Tabuleiro.*;
 
 
 /**
- 
  * A classe Personagem representa Giu, a protagonista da história, a qual será
  * controlada pelo usuário durante o jogo.
  * 

@@ -1,17 +1,16 @@
 package GUI;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
-import java.awt.*;
-public class BarcoHumanos {
 
-    public void rodaConversaBarcoHumanos(MyFrame frame) {
-		String[] out = {"<html>&emsp;&ensp;BARCO À VISTA!<br><html>"+ 
-        "<html>&emsp;&ensp;TENTE INVADIR UM BARCO!<html>",
-		"<html>&emsp;&ensp;A grande pressão da massa de água ao redor do barco empurra os<br>&ensp;três pra bem longe.<html>",
+import javax.swing.*;
+import java.awt.*;
+import java.awt.event.*;
+
+public class BarcoHumanos {
+	private int count = 0;
+
+    public void rodaConversa(MyFrame frame) {
+		String[] out = {"<html>&emsp;&ensp;A grande pressão da massa de água ao redor do barco empurra os<br>&ensp;três pra bem longe.<html>",
 		"<html>&emsp;&ensp;[GIU] Lua... Me ajude... Não sei como lidar com o mar que me<br>&ensp;colocastes...<html>",
 		"<html>&emsp;&ensp;[TOQUE NA LUA!]<html>"};
-		//pensar como colocar um botão aqui
 	
 		ImageIcon fundo = new ImageIcon("Assets/quadro barco de humanos.png");
 		ImageIcon giu = new ImageIcon("Assets/giu amor doce.png");
@@ -59,9 +58,9 @@ public class BarcoHumanos {
 		contentPane.add(lua);
 		contentPane.add(label);
 
-	JLabel conversa = new JLabel();
+        JLabel conversa = new JLabel();
         conversa.setBackground(new Color(235, 217, 188));
-        conversa.setBounds(40, 800, 1000, 180); //!!!!!!!!!!!!!!!!!
+        conversa.setBounds(40, 800, 1000, 180); //!!!!!!!!!!!!!!!!!!!!!!!
         conversa.setText(out[0]);
         conversa.setHorizontalTextPosition(JLabel.LEFT);
         conversa.setVerticalTextPosition(JLabel.TOP);
@@ -70,6 +69,25 @@ public class BarcoHumanos {
         conversa.setVerticalAlignment(JLabel.CENTER);
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
+
+
+        AssassinatoHumanos proximo = new AssassinatoHumanos();
+
+        frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
+        frame.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+        if(++count >= out.length) {
+            frame.removeMouseListener(this);
+            frame.getContentPane().removeAll();
+            proximo.rodaConversa(frame);
+        };
+        conversa.setText(out[count]);
+        }
+        });
+
+        label.add(conversa);
+        frame.pack();
     }
 }
 

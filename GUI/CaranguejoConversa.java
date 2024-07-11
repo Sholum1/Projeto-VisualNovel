@@ -1,12 +1,14 @@
 package GUI;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class CaranguejoConversa {
+    private int count = 0;
+
     public void rodaConversa(MyFrame frame) {
+
         String[] out = {"<html>&emsp;&ensp;[CARANGUEJO MARUJO] Quem são <html>"+
         "<html>vocês? Não ultrapassem esses<br>&ensp;corais!<html>",
         "<html>&emsp;&ensp;[GIU] Estamos procurando a costa!<html>",
@@ -63,7 +65,7 @@ public class CaranguejoConversa {
         contentPane.add(caranguejoLonge);
         contentPane.add(label);
 
-	JLabel conversa = new JLabel();
+        JLabel conversa = new JLabel();
         conversa.setBackground(new Color(235, 217, 188));
         conversa.setBounds(40, 800, 1000, 180); //!!!!!!!!!!!!!!!!!!!!!!!
         conversa.setText(out[0]);
@@ -74,5 +76,43 @@ public class CaranguejoConversa {
         conversa.setVerticalAlignment(JLabel.CENTER);
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
+
+        JButton fugir = new JButton("FUGIR");
+        fugir.setFocusable(false);
+        fugir.setHorizontalTextPosition(JButton.CENTER);
+        fugir.setVerticalTextPosition(JButton.CENTER);
+        fugir.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+        fugir.setForeground(new Color(29, 60, 144));
+        fugir.setBackground(new Color(242,242,242));
+        fugir.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
+        fugir.setBounds(505, 170, 300, 50);
+
+        FugaCarangueijo proximo = new FugaCarangueijo();
+        ActionListener botao = new ActionListener() {
+        @Override
+        public void actionPerformed(ActionEvent e) {
+            if (e.getSource() == fugir) {
+                frame.getContentPane().removeAll();
+                proximo.rodaConversa(frame);
+            }
+        }
+        };
+        fugir.addActionListener(botao);
+
+        frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
+        frame.addMouseListener(new MouseAdapter() {
+        @Override
+        public void mouseClicked(MouseEvent e) {
+        if(++count >= out.length) {
+            frame.removeMouseListener(this);
+            label.add(fugir);
+            label.repaint();
+        };
+        conversa.setText(out[count]);
+        }
+        });
+
+        label.add(conversa);
+        frame.pack();
     }
 }

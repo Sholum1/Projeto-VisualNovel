@@ -1,16 +1,14 @@
 package GUI;
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class Cardume {
+	private int count = 0;
 
-
-
-    public void rodaConversaCardume(MyFrame frame) {
-		String[] out = {"<html>&emsp;&ensp;Após horas nadando, bolhas se aproximam do peixe e da humana e uma flecha de<br>&ensp;água os atravessa!<html>",
-		"<html>&emsp;&ensp;[GIU] Um cardume...!<html>",
+    public void rodaConversa(MyFrame frame) {
+		String[] out = {"<html>&emsp;&ensp;[GIU] Um cardume...!<html>",
 		"<html>&emsp;&ensp;[FLANDERS] De sardinhas!<html>",
 		"<html>&emsp;&ensp;Essa seria uma das visões mais lindas q ja tinha visto... "+
 		"Peixes em conjunto<br>&ensp;rodopiando contra o azul do mar e as bolhas surgindo como as nuvens da terra firme.<html>",
@@ -63,6 +61,37 @@ public class Cardume {
 		contentPane.add(sardyFundo);
 		contentPane.add(flandersLonge);
 		contentPane.add(label);
+
+		JLabel conversa = new JLabel();
+        conversa.setBackground(new Color(235, 217, 188));
+        conversa.setBounds(40, 800, 1250, 180);
+        conversa.setText(out[0]);
+        conversa.setHorizontalTextPosition(JLabel.LEFT);
+        conversa.setVerticalTextPosition(JLabel.TOP);
+        conversa.setForeground(new Color(29, 60, 144));
+        conversa.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
+        conversa.setVerticalAlignment(JLabel.CENTER);
+        conversa.setHorizontalAlignment(JLabel.LEFT);
+        conversa.setOpaque(true);
+
+		BarcoSurge proximo = new BarcoSurge();
+
+		frame.setContentPane(contentPane);
+
+		frame.addMouseListener(new MouseAdapter() {
+	    @Override
+	    public void mouseClicked(MouseEvent e) {
+		if(++count >= out.length) {
+		    frame.removeMouseListener(this);
+		    frame.getContentPane().removeAll();
+		    proximo.rodaConversa(frame);
+		};
+		conversa.setText(out[count]);
+	    }
+		});
+
+		label.add(conversa);
+		frame.pack();
     }
 }
 
