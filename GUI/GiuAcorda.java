@@ -22,6 +22,7 @@ public class GiuAcorda {
 	     "<html> achá-la novamente.<html>",
 	     "<html>&emsp;&ensp;Suas conversas com a Lua sobre Luna geram frutos!<br><html>"+
 	     "<html>&emsp;&ensp;Você deseja:<html>"};
+
 	String[] nadarOut =
 	    {"<html>&emsp;&ensp;Mesmo que tentemos fugir, mesmo com medo<html>"+
 	     "<html> do novo mundo, aprendemos a respirar<br>&ensp;<html>"+
@@ -30,7 +31,6 @@ public class GiuAcorda {
 	     "<html>&emsp;&ensp;Eu te acompanharei até em seus momentos<html>"+
 	     "<html> de desespero.<html>",
 	     "<html>&emsp;&ensp;Vamos, vamos em frente!"};
-
 
         ImageIcon fundo = new ImageIcon("Assets/mapa geral.png");
         ImageIcon giu = new ImageIcon("Assets/giu in game frente.png");
@@ -60,7 +60,7 @@ public class GiuAcorda {
         conversa.setHorizontalTextPosition(JLabel.LEFT);
         conversa.setVerticalTextPosition(JLabel.TOP);
         conversa.setForeground(new Color(29, 60, 144));
-        conversa.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT,28));
+        conversa.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
         conversa.setVerticalAlignment(JLabel.CENTER);
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
@@ -92,16 +92,17 @@ public class GiuAcorda {
 		    if (e.getSource() == nadar) {
 			if (countNadar + 1 >= nadarOut.length) {
 			    label.remove(nadar);
-			    label.repaint();
 			    seguir.setBounds(505, 335, 300, 50);
+			    label.repaint();
 			}
 			conversa.setText(nadarOut[countNadar++]);
 		    } else if (e.getSource() == seguir) {
-			frame.removeAll();
+			frame.getContentPane().removeAll();
 			proximo.rodaConversa(frame);
 		    }
 		}
 	    };
+
 	nadar.addActionListener(botao);
 	seguir.addActionListener(botao);
 

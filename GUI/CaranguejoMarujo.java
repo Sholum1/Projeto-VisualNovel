@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class CarnguejoMarujo {
+public class CaranguejoMarujo {
         public void rodaConversa(MyFrame frame) {
             String[] out = {"<html>&emsp;&ensp;Flanders e Giu nadam pelas águas<html>"+
             "<html> pouco iluminadas, tentando achar uma saída<br>&ensp;para ela. No <html>"+
