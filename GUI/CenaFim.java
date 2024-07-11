@@ -9,8 +9,10 @@ public class CenaFim {
 
     //ultima cena do jogo
     public void rodaConversaCenaFim(MyFrame frame) {
-		String[] out = {"<html>&emsp;&ensp;Após dormir sob os destroços do barco, a lua ao lado de Giu sobe aos céus da noite, que antigamente era apenas escuridão e um grande brilho preenche o céu.\r\n" + //
-                        "                enfim Giu acorda na areia da praia, com os olhos marejados...<html>"};
+		String[] out = {"<html>&emsp;&ensp;Após dormir sob os destroços do barco, <html>"+
+		"a lua ao lado de Giu sobe aos céus da noite, <br>&ensp;que antigamente eram <html>"+
+		"apenas escuridão, e um grande brilho preenche o céu.",
+		"<html>&emsp;&ensp;Enfim Giu acorda na areia da praia, com os olhos marejados...<html>"};
 		//pensar como colocar um botão aqui
 	
 		ImageIcon fundo = new ImageIcon("Assets/quadro lua.png");

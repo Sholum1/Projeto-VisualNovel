@@ -10,7 +10,7 @@ public class AssassinatoHumanos {
 
 
     public void rodaConversaAssassinatoHumanos(MyFrame frame) {
-		String[] out = {"<html>&emsp;&ensp;uma grande luz cega os motores e eles param de funcionar.<html>"};
+		String[] out = {"<html>&emsp;&ensp;Uma grande luz cega os motores e eles param de funcionar.<html>"};
 		//pensar como colocar um botão aqui
 	
 		ImageIcon fundo = new ImageIcon("Assets/barco assassinato humanos.png");

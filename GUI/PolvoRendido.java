@@ -10,31 +10,41 @@ public class PolvoRendido {
 
 
     public void rodaConversaPolvoRendido(MyFrame frame) {
-		String[] out = {"<html>&emsp;&ensp;[POLVO]: polvo: covarde! me dê o mesmo destino dela! pise em meu corpo sem vida assim como pisa no dela, enquanto tenta a trazer de volta!\r\n" + 
-                        "                você não engana a mim! você não quer chegar a costa, só quer fugir e afundar cada vez nesse mar.\r\n" + 
-                        "                me mate e me deixe afundar como ela!<html>"+
-		"<html>tomada de raiva por invadir suas memorias de Luna com cenas horriveis e por desrespeitá-la mesmo não estando em vida, Giu ergue a espada e perfura o coração do polvo... que aos poucos afunda no mar, até se perder de vista.<html>"+
-        "<html>após matar alguem com as próprias mãos, Giu cai em lágrimas. afinal, esta ali nadando em meio a saudade da perda de Luna, enquanto acaba de tirar a vida de um polvo.\r\n<html>" + 
-                        "<html>por que decidiu matar alguem?\r\n<html>" + 
-                        "<html>por que eta tão injusto a vida tirar Luna de si, mas agora, em meio a impulsividade, fez o mesmo?\r\n<html>" +
-                        "<html>Vendo os grandes olhos cheios de medo e tristeza, Flanders, Marujo e a Lua constroem uma pequena balsa e carregam Giu ao encontro do céu e do mar.<html>"};
+		String[] out = {"<html>&emsp;&ensp;[POLVO] Covarde! Me dê o mesmo destino dela!<html>"+
+		"<html> Pise em meu corpo sem vida assim<br>&ensp;como pisa no dela, enquanto tenta trazê-la de volta!<html>", 
+		"<html>&emsp;&ensp;[POLVO] Você não ne engana! você não quer chegar a costa,<html>"+
+		" só quer fugir e afundar<br>&ensp;cada vez mais nesse mar.",
+		"<html>&emsp;&ensp;[POLVO] Me mate e me deixe afundar como ela!<html>",
+		"<html>&emsp;&ensp;Tomada de raiva por invadir suas memórias de<html>"+
+		" Luna com cenas horríveis e por<br>&ensp;desrespeitá-la mesmo não estando em vida,"+
+		" Giu ergue a espada e perfura o coração<br>&ensp;do polvo...",
+		"<html>&emsp;&ensp;Ele aos poucos afunda no mar, até se perder de vista.<html>",
+		"<html>&emsp;&ensp;Após matar alguém com as próprias mãos, Giu cai em lágrimas."+
+		" Afinal, está ali<br>&ensp;nadando em meio à saudade da perda de Luna, enquanto"+
+		" acaba de tirar a vida de<br>&ensp;um polvo.<html>", 
+		"<html>&emsp;&ensp;Por que decidiu matar alguém?<html>", 
+		"<html>&emsp;&ensp;Por que é tão injusto a vida tirar Luna de si,"+
+		" embora agora, em meio à<br>&ensp;impulsividade, tenha feito o mesmo?<html>",
+		"<html>&emsp;&ensp;Vendo os grandes olhos cheios de medo e tristeza, "+
+		"Flanders, Marujo e a Lua<br>&ensp;constroem uma pequena balsa e carregam "+
+		"Giu ao encontro do céu e do mar.<html>"};
 		//pensar como colocar um botão aqui
 	
 		ImageIcon fundo = new ImageIcon("Assets/mapa polvo boss barcos quebrados.png");
-		ImageIcon polvo = new ImageIcon("polvo+grande (38).png");
-		ImageIcon giu = new ImageIcon("Assets/giu in game fight.png");
+		ImageIcon polvo = new ImageIcon("Assets/polvo maior.png");
+		ImageIcon giu = new ImageIcon("Assets/giu fight rotacionada.png");
 	
 		JLabel giuPerto= new JLabel();
 		giuPerto.setIcon(giu);
 		giuPerto.setVerticalAlignment(JLabel.CENTER);
 		giuPerto.setHorizontalAlignment(JLabel.CENTER);
-		giuPerto.setBounds(40, -210, 1350, 1010);
+		giuPerto.setBounds(430, -40, 1350, 1010);
 	
 		JLabel polvoFundo = new JLabel();
 		polvoFundo.setIcon(polvo);
 		polvoFundo.setVerticalAlignment(JLabel.CENTER);
 		polvoFundo.setHorizontalAlignment(JLabel.CENTER);
-		polvoFundo.setBounds(870, 0, 1350, 1010);
+		polvoFundo.setBounds(730, -100, 1350, 1010);
 	
 		JLabel label = new JLabel();
 		label.setIcon(fundo);
