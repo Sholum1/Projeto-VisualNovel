@@ -10,7 +10,12 @@ import Personagem.Personagem;
 public class Mochila{
 
     public void rodaConversa(MyFrame frame) {
-    
+        
+        ImageIcon algaIcon= new ImageIcon("Assets/alga.png"); 
+        
+        ImageIcon pocaoIcon= new ImageIcon("Assets/pocao.png"); 
+        ImageIcon raizIcon= new ImageIcon("Assets/raiz.png"); 
+
         Alga alga = new Alga();
         Pocao pocao= new Pocao();
         Raiz raiz= new Raiz();
@@ -20,10 +25,11 @@ public class Mochila{
         
         
         
-        JButton algaButton = new JButton("Comer alga");
+        JButton algaButton = new JButton();
 		algaButton.setFocusable(false);
 		algaButton.setHorizontalTextPosition(JButton.CENTER);
 		algaButton.setVerticalTextPosition(JButton.CENTER);
+        algaButton.setIcon(algaIcon);
 		algaButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
 		algaButton.setForeground(new Color(29, 60, 144));
 		algaButton.setBackground(new Color(242,242,242));
@@ -41,11 +47,12 @@ public class Mochila{
         };
         algaButton.addActionListener(botao);
         
-        JButton raizButton = new JButton("Comer raiz");
+        JButton raizButton = new JButton();
 		raizButton.setFocusable(false);
 		raizButton.setHorizontalTextPosition(JButton.CENTER);
 		raizButton.setVerticalTextPosition(JButton.CENTER);
 		raizButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+        raizButton.setIcon(raizIcon);
 		raizButton.setForeground(new Color(29, 60, 144));
 		raizButton.setBackground(new Color(242,242,242));
 		raizButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
@@ -67,6 +74,7 @@ public class Mochila{
 		pocaoButton.setHorizontalTextPosition(JButton.CENTER);
 		pocaoButton.setVerticalTextPosition(JButton.CENTER);
 		pocaoButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+        pocaoButton.setIcon(pocaoIcon);
 		pocaoButton.setForeground(new Color(29, 60, 144));
 		pocaoButton.setBackground(new Color(242,242,242));
 		pocaoButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
