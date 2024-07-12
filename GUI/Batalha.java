@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 import Personagem.*;
-import Criatura.*;
+import Boss.*;
 
 public class Batalha {
 

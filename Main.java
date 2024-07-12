@@ -12,9 +12,12 @@ import GUI.*;
 public class Main {
     public static void main(String[] args) {
 	MyFrame frame =  new MyFrame();
-	// TelaInicial tela = new TelaInicial();
-	// tela.rodaTelaInicial(frame);
+	TelaInicial tela = new TelaInicial();
+	tela.rodaTelaInicial(frame);
 	Mochila mochila = new Mochila();
 	mochila.rodaConversa(frame);
+
+	//PolvoInicioBatalha polvo = new PolvoInicioBatalha();
+	//polvo.rodaConversa(frame);
     }
 }
