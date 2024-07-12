@@ -417,3 +417,23 @@ Deixar Polvo rendido
 <html>&emsp;&ensp;No entanto, dessa vez Giu já sabia: <html>a onda passaria, iria<br>&ensp;encharcá-la, destruiria o navio todo de novo... <html>E iria passar...
 <html>&emsp;&ensp;As roupas iram secar eventualmente, e ela juntará <html>novamente as<br>&ensp;memórias, mesmo que os pedaços não de encaixem mais, e viverá<br>&ensp;confortavelmente sabendo que em um ponto do passado, pôde<br>&ensp;dividir este lindo navio com Luna.
 <html>&emsp;&ensp;Enfim Giu acorda na areia da praia, com os olhos marejados...<html>
+<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html><html> ouça as ondas do mar... Deixe o som te<html><html> guiar... A <br>&ensp;luz da lua te leva<html><html>... De volta ao mar.<html>
+<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html><html> ouça as ondas do mar... Deixe o som te<html><html> guiar... A <br>&ensp;luz da lua te leva<html><html>... De volta ao mar.<html>
+<html>&emsp;&ensp;[LUA]&ensp;Giu, do que adianta fugir da realidade tonteante?<html><html> Se estamos no mar, temos <br><html><html>&ensp;que nadar em frente ao futuro.<html><html> Eu te trouxe ao fundo do oceano, no mais remoto<br>&ensp;bloco<html><html> de água.<br><html>
+<html>&emsp;&ensp;[LUA]&ensp;Sou a Lua, e te trouxe para<html><html> achá-la novamente.<html>
+<html>&emsp;&ensp;Suas conversas com a Lua sobre Luna geram frutos!<br><html><html>&emsp;&ensp;Você deseja:<html>
+<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html><html> ouça as ondas do mar... Deixe o som te<html><html> guiar... A <br>&ensp;luz da lua te leva<html><html>... De volta ao mar.<html>
+<html>&emsp;&ensp;[LUA]&ensp;Giu, do que adianta fugir da realidade tonteante?<html><html> Se estamos no mar, temos <br><html><html>&ensp;que nadar em frente ao futuro.<html><html> Eu te trouxe ao fundo do oceano, no mais remoto<br>&ensp;bloco<html><html> de água.<br><html>
+<html>&emsp;&ensp;[LUA]&ensp;Sou a Lua, e te trouxe para<html><html> achá-la novamente.<html>
+<html>&emsp;&ensp;Suas conversas com a Lua sobre Luna geram frutos!<br><html><html>&emsp;&ensp;Você deseja:<html>
+Nadar para a superfície
+<html>&emsp;&ensp;Vamos, vamos em frente!<html>
+Nadar para a superfície
+<html>&emsp;&ensp;Vamos, vamos em frente!
+Seguir em frente
+<html>&emsp;&ensp;Seria ela? Nadando livremente no mar?<html>
+<html>&emsp;&ensp;[GIU] Ei! Volte aqui!<html>
+<html>&emsp;&ensp;[FLANDERS] O que quer?<html>
+<html>&emsp;&ensp;[GIU] Estou perdida nesse grande mar!<html>
+<html>&emsp;&ensp;[FLANDERS] E o que eu tenho a ver com isso?<html>
+<html>&emsp;&ensp;[GIU] Pensei que poderia me ajudar...<html>
