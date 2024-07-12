@@ -21,16 +21,22 @@ public class Mochila{
         if(input.equals("1") ){
             //alga
             alga.consumir(giu );
+            giu.consumirItem(alga);
 
         }
         if(input.equals("2")){
             //pocao
             pocao.consumir(giu);
+            giu.consumirItem(pocao);
+
         }
         if(input.equals("3")){
             //raiz
             raiz.consumir( giu);
+            giu.consumirItem(raiz);
         }
+
+
         
         
         scanner.close();
