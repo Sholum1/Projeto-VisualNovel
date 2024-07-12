@@ -5,7 +5,6 @@ import java.awt.*;
 import java.awt.event.*;
 import Personagem.*;
 import Boss.*;
-import GUI.Conversa;
 import Item.*;
 
 public class Batalha {
@@ -157,14 +156,10 @@ public class Batalha {
 	giu.getLua().mudaFase();
 	giu.getLua().mudaTempo();
 	if (boss.desistiu()) {
+	    // Antes disso tem um diálogo dele desistindo salvo engano
 	    frame.getContentPane().removeAll();
 	    proximo.rodaConversa(frame);
 	}
 	boss.ataca(giu);
     }
 }
-
-
-//ataque
-//ataque lua
-//mochila
