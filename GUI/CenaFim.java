@@ -5,10 +5,9 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class CenaFim {
-
+public class CenaFim implements Conversa {
     //ultima cena do jogo
-    public void rodaConversaCenaFim(MyFrame frame) {
+    public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;Após dormir sob os destroços do barco, <html>"+
 		"a lua ao lado de Giu sobe aos céus da noite, <br>&ensp;que antigamente eram <html>"+
 		"apenas escuridão, e um grande brilho preenche o céu.",

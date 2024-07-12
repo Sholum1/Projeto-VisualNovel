@@ -4,12 +4,8 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class CenaFinal {
-    
-
-
-
-    public void rodaConversaCenaFinal(MyFrame frame) {
+public class CenaFinal implements Conversa {
+    public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;Finalmente respirando ar, após um longo tempo,"+
 		" Giu se vê deslocada.<html>"+
 		"<html><br>&emsp;&ensp;E navega pelo mar...<br>&emsp;&ensp;E navega pelo mar...<html>",

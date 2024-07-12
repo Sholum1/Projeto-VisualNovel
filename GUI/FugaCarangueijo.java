@@ -4,9 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class FugaCarangueijo {
-	private int count = 0;
-
+public class FugaCarangueijo implements Conversa {
+    private int count = 0;
     public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;Flanders olha para Giu em acordo <htmml>"+
 		"e os dois nadam rapidamente na direção oposta,<br>&ensp;ouvindo os gritos do<html>"+

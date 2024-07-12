@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class BarcoHumanos {
+public class BarcoHumanos implements Conversa {
 	private int count = 0;
 
     public void rodaConversa(MyFrame frame) {

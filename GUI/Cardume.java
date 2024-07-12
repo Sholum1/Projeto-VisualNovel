@@ -4,9 +4,8 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Cardume {
-	private int count = 0;
-
+public class Cardume implements Conversa {
+    private int count = 0;
     public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;[GIU] Um cardume...!<html>",
 		"<html>&emsp;&ensp;[FLANDERS] De sardinhas!<html>",
