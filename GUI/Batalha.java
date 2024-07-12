@@ -5,10 +5,11 @@ import java.awt.*;
 import java.awt.event.*;
 import Personagem.*;
 import Boss.*;
+import Item.*;
 
 public class Batalha {
-
-    public void Batalhar (MyFrame frame, Personagem giu, Lua lua, Boss Caranguejo) {
+    public void Batalhar (MyFrame frame, Personagem giu, Boss caranguejo,
+			  Alga alga, Pocao pocao, Raiz raiz) {
 
 	ImageIcon fundo = new ImageIcon("Assets/mapa carangueijo boss corais.png");
         ImageIcon marujo = new ImageIcon("Assets/carangueijo marujo amor doce.png");
@@ -20,11 +21,11 @@ public class Batalha {
 	label.setHorizontalAlignment(JLabel.CENTER);
 	label.setBounds(0, 0, 1350, 1010);
 
-        JLabel caranguejo = new JLabel();
-	caranguejo .setIcon(marujo);
-	caranguejo .setVerticalAlignment(JLabel.CENTER);
-	caranguejo .setHorizontalAlignment(JLabel.CENTER);
-	caranguejo.setBounds(140, -115, 1350, 1010);
+        JLabel caranguejoCenario = new JLabel();
+	caranguejoCenario.setIcon(marujo);
+	caranguejoCenario.setVerticalAlignment(JLabel.CENTER);
+	caranguejoCenario.setHorizontalAlignment(JLabel.CENTER);
+	caranguejoCenario.setBounds(140, -115, 1350, 1010);
 
         JLabel giuCenario = new JLabel();
 	giuCenario .setIcon(giuPerfil);
@@ -72,7 +73,7 @@ public class Batalha {
 
         JPanel contentPane = new JPanel(null);
 	contentPane.setPreferredSize(new Dimension(1350, 1010));
-        contentPane.add(caranguejo);
+        contentPane.add(caranguejoCenario);
         contentPane.add(giuCenario);
 	contentPane.add(label);
 
@@ -114,11 +115,19 @@ public class Batalha {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 		    if (e.getSource() == ataque) {
-
+			caranguejo.setVida(caranguejo.getVida() - giu.getDano());
+			rodaTurnos(giu, caranguejo, frame, proximo);
 		    } else if (e.getSource() == ataqueLua) {
-
+			try {
+			    giu.getLua().refletir(caranguejo);
+			}
+			catch (NaoAtacaException m) {
+			    // Botar isso numa caixa de dialogo
+			    m.getMessage();
+			}
+			rodaTurnos(giu, caranguejo, frame, proximo);
 		    } else if (e.getSource() == mochila) {
-
+			abrirMochila.mostraMochila(frame, giu, alga, pocao, raiz);
 		    }
 		}
 	    };
@@ -127,31 +136,33 @@ public class Batalha {
 	ataqueLua.addActionListener(botao);
         mochila.addActionListener(botao);
 
+	label.add(ataque);
+	label.add(ataqueLua);
+	label.add(mochila);
 	frame.setContentPane(contentPane);
-	<<<<<<< HEAD
-		    label.add(opcoes);
+	label.add(opcoes);
         opcoes.add(giuStats);
         opcoes.add(marujoStats);
-	=======
-	    frame.addMouseListener(new MouseAdapter() {
-		    @Override
-		    public void mouseClicked(MouseEvent e) {
-			if (++count >= out.length) {
-			    frame.removeMouseListener(this);
-			    label.add(ataque);
-			    label.add(ataqueLua);
-			    label.add(mochila);
-			    label.repaint();
-			} else conversa.setText(out[count]);
-		    }
-		});
-	    label.add(conversa);
-	    label.add(giuStats);
-	    label.add(marujoStats);
-	    frame.pack();
+	frame.addMouseListener(new MouseAdapter() {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+		}
+	    });
+	label.add(giuStats);
+	label.add(marujoStats);
+	frame.pack();
+    }
+    private static void rodaTurnos(Personagem giu, Boss boss, MyFrame frame, Conversa proximo) {
+	giu.getLua().mudaFase();
+	giu.getLua().mudaTempo();
+	if (boss.desistiu()) {
+	    // Antes disso tem um diálogo dele desistindo salvo engano
+	    frame.getContentPane().removeAll();
+	    proximo.rodaConversa(frame);
+	}
+	boss.ataca(giu);
+	if (giu.perdeu()) {
+	    // q q acontece????
+	}
     }
 }
-
-//ataque
-//ataque lua
-//mochila
