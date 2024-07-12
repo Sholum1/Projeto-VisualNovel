@@ -22,15 +22,13 @@ import Tabuleiro.*;
  */
 public class Personagem {
     private final Lua lua;
-    private int vida, medo, felicidade;
+    private int vida;
     private final int dano;
     private ArrayList<Item> mochila;
 
     // Construtor
     public Personagem() {
         this.vida = 100;
-        this.medo = 5;
-        this.felicidade = 5;
         this.dano = 50;
         this.mochila = new ArrayList<Item>();
 	this.lua = new Lua();
@@ -45,19 +43,7 @@ public class Personagem {
 	return dano;
     }
 
-    public int getFelicidade() {
-	return felicidade;
-    }
-    public void setFelicidade(int felicidade) {
-	this.felicidade = felicidade;
-    }
-
-    public int getMedo() {
-	return medo;
-    }
-    public void setMedo(int medo) {
-	this.medo = medo;
-    }
+   
     public int getVida() {
 	return vida;
     }
@@ -75,7 +61,7 @@ public class Personagem {
 
     // Confere se Giu morreu
     public boolean perdeu() {
-	return (getVida() <= 0 || getFelicidade() <= 0 || getMedo() >= 20);
+	return (getVida() <= 0 );
     }
 
     // Parte da Mochila

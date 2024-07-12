@@ -21,10 +21,7 @@ public class Pocao extends Item {
     // Dá ao Personagem os efeitos do item
     @Override
     public void consumir(Personagem personagem) {
-        personagem.setEnergia(personagem.getEnergia() + 2);
-        personagem.setMedo(personagem.getMedo() + 5);
-	System.out.println("Giu está com " + personagem.getEnergia() +
-			   " de energia e " + personagem.getMedo() +
-			   " de medo.");
+        personagem.setVida(personagem.getVida() + 2);
+      
     }
 }
