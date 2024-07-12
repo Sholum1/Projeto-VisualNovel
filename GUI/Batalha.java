@@ -5,14 +5,32 @@ import java.awt.*;
 import java.awt.event.*;
 import Personagem.*;
 import Boss.*;
+import GUI.TelaInicial;
+import Item.*;
 
 public class Batalha {
-
-    public void Batalhar (MyFrame frame, Personagem giu, Lua lua, Boss Caranguejo) {
+    public void Batalhar (MyFrame frame, Personagem giu, Boss boss, Alga alga,
+			  Pocao pocao, Raiz raiz) {
 
 	ImageIcon fundo = new ImageIcon("Assets/mapa carangueijo boss corais.png");
-        ImageIcon marujo = new ImageIcon("Assets/carangueijo marujo amor doce.png");
+        ImageIcon bossIcon = new ImageIcon("Assets/carangueijo marujo amor doce.png");
         ImageIcon giuPerfil = new ImageIcon("Assets/giu and luna in game.png");
+
+	// ImageIcon fundo = new ImageIcon();
+        // ImageIcon bossIcon = new ImageIcon();
+	// if (boss.getNome().equals("Polvo")) {
+	// fundo.setImage("Assets/..."); //Não sei qual é o fundo do polvo
+	// bossIcon.setImage("Assets/..."); // Não sei qual é a imagem do polvo
+	// } else {
+	// fundo.setImage("Assets/mapa carangueijo boss corais.png");
+        // bossIcon.setImage("Assets/carangueijo marujo amor doce.png");
+	// }
+
+	// O resto mantem engual
+
+	// Adicionar a barra de vida tbm, botei nela como que pensei
+	// em fazer o calculo
+
 
 	JLabel label = new JLabel();
 	label.setIcon(fundo);
@@ -20,11 +38,11 @@ public class Batalha {
 	label.setHorizontalAlignment(JLabel.CENTER);
 	label.setBounds(0, 0, 1350, 1010);
 
-        JLabel caranguejo = new JLabel();
-	caranguejo .setIcon(marujo);
-	caranguejo .setVerticalAlignment(JLabel.CENTER);
-	caranguejo .setHorizontalAlignment(JLabel.CENTER);
-	caranguejo.setBounds(140, -115, 1350, 1010);
+        JLabel bossCenario = new JLabel();
+	bossCenario.setIcon(bossIcon);
+	bossCenario.setVerticalAlignment(JLabel.CENTER);
+	bossCenario.setHorizontalAlignment(JLabel.CENTER);
+	bossCenario.setBounds(140, -115, 1350, 1010);
 
         JLabel giuCenario = new JLabel();
 	giuCenario .setIcon(giuPerfil);
@@ -57,22 +75,22 @@ public class Batalha {
 	giuStats.setHorizontalAlignment(JLabel.CENTER);
 	giuStats.setOpaque(true);
 
-        JLabel marujoStats = new JLabel();
-	marujoStats.setBackground(new Color(235, 217, 188));
-	marujoStats.setBounds(350, 300, 310, 120);
-        marujoStats.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 10, false));
-	marujoStats.setText("Caranguejo Marujo");
-	marujoStats.setHorizontalTextPosition(JLabel.LEFT);
-	marujoStats.setVerticalTextPosition(JLabel.TOP);
-	marujoStats.setForeground(new Color(29, 60, 144));
-	marujoStats.setFont(new Font("Times New Roman", Font.BOLD, 24));
-	marujoStats.setVerticalAlignment(JLabel.TOP);
-	marujoStats.setHorizontalAlignment(JLabel.CENTER);
-	marujoStats.setOpaque(true);
+        JLabel bossStats = new JLabel();
+	bossStats.setBackground(new Color(235, 217, 188));
+	bossStats.setBounds(350, 300, 310, 120);
+        bossStats.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 10, false));
+	bossStats.setText("Caranguejo Marujo");
+	bossStats.setHorizontalTextPosition(JLabel.LEFT);
+	bossStats.setVerticalTextPosition(JLabel.TOP);
+	bossStats.setForeground(new Color(29, 60, 144));
+	bossStats.setFont(new Font("Times New Roman", Font.BOLD, 24));
+	bossStats.setVerticalAlignment(JLabel.TOP);
+	bossStats.setHorizontalAlignment(JLabel.CENTER);
+	bossStats.setOpaque(true);
 
         JPanel contentPane = new JPanel(null);
 	contentPane.setPreferredSize(new Dimension(1350, 1010));
-        contentPane.add(caranguejo);
+        contentPane.add(bossCenario);
         contentPane.add(giuCenario);
 	contentPane.add(label);
 
@@ -109,16 +127,25 @@ public class Batalha {
 	frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
 	CenaFinal proximo = new CenaFinal();
+	TelaInicial inicio = new TelaInicial();
         Mochila abrirMochila = new Mochila();
 	ActionListener botao = new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 		    if (e.getSource() == ataque) {
-
+			boss.setVida(boss.getVida() - giu.getDano());
+			rodaTurnos(giu, boss, frame, proximo, inicio);
 		    } else if (e.getSource() == ataqueLua) {
-
+			try {
+			    giu.getLua().refletir(boss);
+			}
+			catch (NaoAtacaException m) {
+			    // Botar isso numa caixa de dialogo
+			    m.getMessage();
+			}
+			rodaTurnos(giu, boss, frame, proximo, inicio);
 		    } else if (e.getSource() == mochila) {
-
+			abrirMochila.mostraMochila(frame, giu, alga, pocao, raiz);
 		    }
 		}
 	    };
@@ -127,31 +154,37 @@ public class Batalha {
 	ataqueLua.addActionListener(botao);
         mochila.addActionListener(botao);
 
+	label.add(ataque);
+	label.add(ataqueLua);
+	label.add(mochila);
 	frame.setContentPane(contentPane);
-	<<<<<<< HEAD
-		    label.add(opcoes);
+	label.add(opcoes);
         opcoes.add(giuStats);
-        opcoes.add(marujoStats);
-	=======
-	    frame.addMouseListener(new MouseAdapter() {
-		    @Override
-		    public void mouseClicked(MouseEvent e) {
-			if (++count >= out.length) {
-			    frame.removeMouseListener(this);
-			    label.add(ataque);
-			    label.add(ataqueLua);
-			    label.add(mochila);
-			    label.repaint();
-			} else conversa.setText(out[count]);
-		    }
-		});
-	    label.add(conversa);
-	    label.add(giuStats);
-	    label.add(marujoStats);
-	    frame.pack();
+        opcoes.add(bossStats);
+	frame.addMouseListener(new MouseAdapter() {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+		}
+	    });
+	label.add(giuStats);
+	label.add(bossStats);
+	frame.pack();
+    }
+    private static void rodaTurnos(Personagem giu, Boss boss, MyFrame frame,
+				   Conversa proximo, TelaInicial inicio) {
+	giu.getLua().mudaFase();
+	giu.getLua().mudaTempo();
+	if (boss.desistiu()) {
+	    // Antes disso tem um diálogo dele desistindo salvo engano
+	    frame.getContentPane().removeAll();
+	    proximo.rodaConversa(frame);
+	}
+	boss.ataca(giu);
+	if (giu.perdeu()) {
+	    // Talvez antes disso adicionar um texto tipo
+	    // "Você morreu deseja reiniciar o jogo?"
+	    frame.getContentPane().removeAll();
+	    inicio.rodaTelaInicial(frame);
+	}
     }
 }
-
-//ataque
-//ataque lua
-//mochila
