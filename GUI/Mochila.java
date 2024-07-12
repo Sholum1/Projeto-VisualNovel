@@ -32,7 +32,7 @@ public class Mochila{
 		algaButton.setForeground(new Color(29, 60, 144));
 		algaButton.setBackground(new Color(242,242,242));
 		algaButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		algaButton.setBounds(505, 335, 300, 50);
+		algaButton.setBounds(505, 435, 300, 50);
         ActionListener botao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -53,7 +53,7 @@ public class Mochila{
 		raizButton.setForeground(new Color(29, 60, 144));
 		raizButton.setBackground(new Color(242,242,242));
 		raizButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		raizButton.setBounds(905, 335, 300, 50);
+		raizButton.setBounds(905, 435, 300, 50);
         ActionListener raizBotao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -74,7 +74,7 @@ public class Mochila{
 		pocaoButton.setForeground(new Color(29, 60, 144));
 		pocaoButton.setBackground(new Color(242,242,242));
 		pocaoButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		pocaoButton.setBounds(205, 335, 300, 50);
+		pocaoButton.setBounds(15, 435, 300, 50);
         ActionListener pocaoBotao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
