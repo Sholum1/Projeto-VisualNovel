@@ -94,10 +94,15 @@ public class Lua {
 	return null;
     }
 
+    public void mudaTempo() {
+	if (this.tempoAtaqueCount < getTempoLua()) this.tempoAtaqueCount++;
+	else this.tempoAtaqueCount = getTempoLua();
+    }
+
     // Ação de ataque da Lua. Seu dano depende da Fase
     public void refletir(Boss boss)
 	throws NaoAtacaException {
-	if (this.tempoAtaqueCount++ == getTempoLua()) {
+	if (this.tempoAtaqueCount == getTempoLua()) {
 	    int novaVida = (boss.getVida() - getDanoLua());
 	    boss.setVida((novaVida < 0) ? 0 : novaVida);
 	    this.tempoAtaqueCount = 0;

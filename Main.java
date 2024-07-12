@@ -18,10 +18,12 @@ public class Main {
 	Alga alga = new Alga();
 	Raiz raiz = new Raiz();
 	Pocao pocao = new Pocao();
+	Boss caranguejo = new Boss(2, 2, 2, 2, "Caranguejo");
 	giu.adicionarItem(pocao);
 	giu.adicionarItem(raiz);
 	// giu.adicionarItem(alga);
-	Mochila mochila = new Mochila();
-	mochila.mostraMochila(frame, giu, alga, pocao, raiz);
+	// Mochila mochila = new Mochila();
+	Batalha bat = new Batalha();
+	bat.Batalhar(frame, giu, caranguejo, alga, pocao, raiz);
     }
 }

@@ -20,6 +20,7 @@ public class Mochila{
         // Pocao pocao= new Pocao();
         // Raiz raiz= new Raiz();
         // Personagem giu= new Personagem();
+	Container contentPaneAtual = frame.getContentPane();
         JPanel contentPane = new JPanel(null);
 	contentPane.setPreferredSize(new Dimension(1350, 1010));
 
@@ -86,7 +87,7 @@ public class Mochila{
 			    frame.repaint();
 			}
 		    } else if (e.getSource() == fechar) {
-			contentPane.removeAll();
+			frame.setContentPane(contentPaneAtual);
 			frame.repaint();
 		    }
 		}};
