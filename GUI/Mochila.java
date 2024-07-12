@@ -16,18 +16,18 @@ public class Mochila{
         Pocao pocao= new Pocao();
         Raiz raiz= new Raiz();
         Personagem giu= new Personagem();
+        String input=scanner.nextLine();
 
-        if(scanner.equals("1") ){
+        if(input.equals("1") ){
             //alga
             alga.consumir(giu );
 
-            
-
         }
-        if(scanner.equals("2")){
+        if(input.equals("2")){
+            //pocao
             pocao.consumir(giu);
         }
-        if(scanner.equals("3")){
+        if(input.equals("3")){
             //raiz
             raiz.consumir( giu);
         }
