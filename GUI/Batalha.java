@@ -3,13 +3,12 @@ package GUI;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
+import Personagem.*;
+import Criatura.*;
 
-public class Batalha implements Conversa {
-	private int count = 0;
+public class Batalha {
 
-    public void rodaConversa(MyFrame frame) {
-		String[] out = {"<html>&emsp;&ensp;"};
-		//pensar como colocar um botão aqui
+    public void Batalhar (MyFrame frame, Personagem giu, Lua lua, Boss Caranguejo) {
 	
 		ImageIcon fundo = new ImageIcon("Assets/mapa carangueijo boss corais.png");
         ImageIcon marujo = new ImageIcon("Assets/carangueijo marujo amor doce.png");
@@ -27,24 +26,23 @@ public class Batalha implements Conversa {
 		caranguejo .setHorizontalAlignment(JLabel.CENTER);
 		caranguejo.setBounds(140, -115, 1350, 1010);
 
-        JLabel giu = new JLabel();
-		giu .setIcon(giuPerfil);
-		giu .setVerticalAlignment(JLabel.CENTER);
-		giu .setHorizontalAlignment(JLabel.CENTER);
-		giu.setBounds(470, -120, 1350, 1010);
+        JLabel giuCenario = new JLabel();
+		giuCenario .setIcon(giuPerfil);
+		giuCenario .setVerticalAlignment(JLabel.CENTER);
+		giuCenario .setHorizontalAlignment(JLabel.CENTER);
+		giuCenario.setBounds(470, -120, 1350, 1010);
 
-
-		JLabel conversa = new JLabel();
-		conversa.setBackground(new Color(235, 217, 188));
-		conversa.setBounds(40, 800, 1000, 180);
-        conversa.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 14, false));
-		conversa.setHorizontalTextPosition(JLabel.LEFT);
-		conversa.setVerticalTextPosition(JLabel.TOP);
-		conversa.setForeground(new Color(29, 60, 144));
-		conversa.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
-		conversa.setVerticalAlignment(JLabel.CENTER);
-		conversa.setHorizontalAlignment(JLabel.LEFT);
-		conversa.setOpaque(true);
+		JLabel opcoes = new JLabel();
+		opcoes.setBackground(new Color(235, 217, 188));
+		opcoes.setBounds(40, 800, 1000, 180);
+        opcoes.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 14, false));
+		opcoes.setHorizontalTextPosition(JLabel.LEFT);
+		opcoes.setVerticalTextPosition(JLabel.TOP);
+		opcoes.setForeground(new Color(29, 60, 144));
+		opcoes.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
+		opcoes.setVerticalAlignment(JLabel.CENTER);
+		opcoes.setHorizontalAlignment(JLabel.LEFT);
+		opcoes.setOpaque(true);
 
         JLabel giuStats = new JLabel();
 		giuStats.setBackground(new Color(235, 217, 188));
@@ -75,9 +73,8 @@ public class Batalha implements Conversa {
         JPanel contentPane = new JPanel(null);
 		contentPane.setPreferredSize(new Dimension(1350, 1010));
         contentPane.add(caranguejo);
-        contentPane.add(giu);
+        contentPane.add(giuCenario);
 		contentPane.add(label);
-
 
         JButton ataque = new JButton("Ataque");
 		ataque.setFocusable(false);
@@ -112,6 +109,7 @@ public class Batalha implements Conversa {
 		frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
 		CenaFinal proximo = new CenaFinal();
+        Mochila abrirMochila = new Mochila();
 		ActionListener botao = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -130,22 +128,9 @@ public class Batalha implements Conversa {
         mochila.addActionListener(botao);
 
 		frame.setContentPane(contentPane);
-		frame.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent e) {
-				if (++count >= out.length) {
-					frame.removeMouseListener(this);
-					label.add(ataque);
-					label.add(ataqueLua);
-                    label.add(mochila);
-					label.repaint();
-				};
-				conversa.setText(out[count]);
-			}
-		});
-		label.add(conversa);
-        label.add(giuStats);
-        label.add(marujoStats);
+		label.add(opcoes);
+        opcoes.add(giuStats);
+        opcoes.add(marujoStats);
 		frame.pack();
     }
 }

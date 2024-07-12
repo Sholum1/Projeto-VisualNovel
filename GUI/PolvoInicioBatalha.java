@@ -5,6 +5,8 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class PolvoInicioBatalha implements Conversa {
+	private int count = 0;
+	
     public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;[POLVO] PREPARE-SE PRA MORRER!<html>",
 		"<html>&emsp;&ensp;[POLVO] O mar te assombrou, e a Lua pode até tentar<br>&ensp;te enganar, <html>"+
