@@ -4,6 +4,7 @@ import java.util.*;
 import Item.Alga;
 import Item.Pocao;
 import Item.Raiz;
+import Personagem.Personagem;
 
 
 public class Mochila{
@@ -14,20 +15,21 @@ public class Mochila{
         Alga alga = new Alga();
         Pocao pocao= new Pocao();
         Raiz raiz= new Raiz();
+        Personagem giu= new Personagem();
 
         if(scanner.equals("1") ){
             //alga
-            alga.consumir(ProgressBar progessbar);
+            alga.consumir(giu );
 
             
 
         }
         if(scanner.equals("2")){
-            pocao.consumir(ProgressBar progressbar);
+            pocao.consumir(giu);
         }
         if(scanner.equals("3")){
             //raiz
-            raiz.consumir(ProgressBar progressbar);
+            raiz.consumir( giu);
         }
         
         
