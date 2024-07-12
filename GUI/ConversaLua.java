@@ -6,6 +6,7 @@ import java.awt.event.*;
 
 public class ConversaLua implements Conversa {
     private int count = 0;
+	
     public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;Giu ouve o som das ondas e<html>"+
 		"<html> olha para a lua suplicando que a<html>"+

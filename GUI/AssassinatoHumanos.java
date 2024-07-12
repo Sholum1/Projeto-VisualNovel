@@ -61,7 +61,7 @@ public class AssassinatoHumanos implements Conversa {
 		desmaio.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
 		desmaio.setBounds(505, 370, 300, 50);
 
-		Rendicao proximo = new Rendicao();
+		CenaFinal proximo = new CenaFinal();
 		ActionListener botao = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {

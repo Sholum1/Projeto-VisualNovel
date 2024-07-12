@@ -77,7 +77,7 @@ public class CaranguejoConversa implements Conversa {
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
 
-        JButton fugir = new JButton("FUGIR");
+        JButton fugir = new JButton("Fugir");
         fugir.setFocusable(false);
         fugir.setHorizontalTextPosition(JButton.CENTER);
         fugir.setVerticalTextPosition(JButton.CENTER);
@@ -85,7 +85,17 @@ public class CaranguejoConversa implements Conversa {
         fugir.setForeground(new Color(29, 60, 144));
         fugir.setBackground(new Color(242,242,242));
         fugir.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-        fugir.setBounds(505, 170, 300, 50);
+        fugir.setBounds(505, 180, 300, 50);
+
+        JButton batalhar = new JButton("Batalhar");
+        batalhar.setFocusable(false);
+        batalhar.setHorizontalTextPosition(JButton.CENTER);
+        batalhar.setVerticalTextPosition(JButton.CENTER);
+        batalhar.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+        batalhar.setForeground(new Color(29, 60, 144));
+        batalhar.setBackground(new Color(242,242,242));
+        batalhar.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
+        batalhar.setBounds(505, 110, 300, 50);
 
         FugaCarangueijo proximo = new FugaCarangueijo();
         ActionListener botao = new ActionListener() {
@@ -94,10 +104,14 @@ public class CaranguejoConversa implements Conversa {
             if (e.getSource() == fugir) {
                 frame.getContentPane().removeAll();
                 proximo.rodaConversa(frame);
+            } else if (e.getSource() == batalhar) {
+                frame.getContentPane().removeAll();
+                //batalha
             }
         }
         };
         fugir.addActionListener(botao);
+        batalhar.addActionListener(botao);
 
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
         frame.addMouseListener(new MouseAdapter() {
@@ -106,6 +120,7 @@ public class CaranguejoConversa implements Conversa {
         if(++count >= out.length) {
             frame.removeMouseListener(this);
             label.add(fugir);
+            label.add(batalhar);
             label.repaint();
         };
         conversa.setText(out[count]);
