@@ -161,5 +161,8 @@ public class Batalha {
 	    proximo.rodaConversa(frame);
 	}
 	boss.ataca(giu);
+	if (giu.perdeu()) {
+	    // q q acontece????
+	}
     }
 }
