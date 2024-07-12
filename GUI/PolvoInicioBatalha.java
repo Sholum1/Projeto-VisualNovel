@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class PolvoInicioBatalha {
+public class PolvoInicioBatalha implements Conversa {
     public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;[POLVO] PREPARE-SE PRA MORRER!<html>",
 		"<html>&emsp;&ensp;[POLVO] O mar te assombrou, e a Lua pode até tentar<br>&ensp;te enganar, <html>"+
@@ -56,5 +56,3 @@ public class PolvoInicioBatalha {
 	//dps desse frame, tem como só matar ele ou ir pro frame do PolvoRendido.
 	//os dois frames levam pro mapa da cena final das ondas
 }
-
-    

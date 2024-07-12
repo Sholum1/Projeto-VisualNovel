@@ -4,12 +4,8 @@ import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.*;
-public class PolvoRendido {
-    
-
-
-
-    public void rodaConversaPolvoRendido(MyFrame frame) {
+public class PolvoRendido implements Conversa {
+    public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;[POLVO] Covarde! Me dê o mesmo destino dela!<html>"+
 		"<html> Pise em meu corpo sem vida assim<br>&ensp;como pisa no dela, enquanto tenta trazê-la de volta!<html>", 
 		"<html>&emsp;&ensp;[POLVO] Você não ne engana! você não quer chegar a costa,<html>"+

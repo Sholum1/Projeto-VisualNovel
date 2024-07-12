@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GiuSegue {
+public class GiuSegue implements Conversa {
     int count = 0;
     public void rodaConversa(MyFrame frame) {
         String[] out = {"<html>&emsp;&ensp;Nadando pelo mar, Giu vê um peixe<html>"+

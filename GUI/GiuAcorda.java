@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class GiuAcorda {
+public class GiuAcorda implements Conversa {
     private int countListener = 0, countNadar = 0;
     public void rodaConversa(MyFrame frame) {
 	String[] out =

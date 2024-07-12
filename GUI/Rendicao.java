@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-public class Rendicao {
+public class Rendicao implements Conversa {
 	private int countListener = 0;
 
     public void rodaConversa(MyFrame frame) {

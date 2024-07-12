@@ -5,7 +5,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.awt.*;
 
-public class Inicio {
+public class Inicio implements Conversa {
     public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;lua acorda assustada dentro da densa água, e tenta ir pra superficie, mas nunca acaba. uma pequena pérola iluminada a segue.<html>"+
 		"<html> mas quanto mais se aproxima, mais<br>&ensp;vê que não é nada<html>"+
