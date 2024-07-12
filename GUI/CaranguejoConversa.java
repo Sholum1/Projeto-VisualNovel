@@ -1,6 +1,13 @@
 package GUI;
 
 import javax.swing.*;
+
+import Boss.Boss;
+import Item.Alga;
+import Item.Pocao;
+import Item.Raiz;
+import Personagem.Personagem;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -110,6 +117,17 @@ public class CaranguejoConversa implements Conversa {
             } else if (e.getSource() == batalhar) {
                 frame.getContentPane().removeAll();
                 escreva.escreverLog(batalhar.getText());
+
+                Personagem giu = new Personagem();
+                Alga alga = new Alga();
+                Raiz raiz = new Raiz();
+                Pocao pocao = new Pocao();
+                giu.adicionarItem(pocao);
+                giu.adicionarItem(raiz);
+                giu.adicionarItem(alga);
+                Batalha bat = new Batalha();
+                Boss caranguejo = new Boss(1000, 1000, 2, 40000, "Caranguejo");
+                bat.Batalhar(frame, giu, caranguejo, alga, pocao, raiz);
             }
         }
         };

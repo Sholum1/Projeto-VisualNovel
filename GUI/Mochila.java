@@ -23,6 +23,7 @@ public class Mochila{
 	Container contentPaneAtual = frame.getContentPane();
         JPanel contentPane = new JPanel(null);
 	contentPane.setPreferredSize(new Dimension(1350, 1010));
+	contentPane.setBackground(new Color(150, 101, 60));
 
         JButton algaBotao = new JButton();
 	algaBotao.setFocusable(false);

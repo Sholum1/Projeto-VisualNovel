@@ -27,8 +27,8 @@ public class Personagem {
 
     // Construtor
     public Personagem() {
-        this.vida = 100;
-        this.dano = 50;
+        this.vida = 100000;
+        this.dano = 5000;
         this.mochila = new ArrayList<Item>();
 	this.lua = new Lua();
     }
