@@ -6,12 +6,15 @@ public class ProgressBar {
 
 
     JFrame frame = new JFrame();
-    JProgressBar bar= new JProgressBar();
+    JProgressBar bar= new JProgressBar(5,100);
     ProgressBar(){
 
         bar.setValue(100);
         bar.setBounds(0, 0, 420, 50);
         bar.setStringPainted(true);
+        bar.setFont(new Font("Poppins", Font.BOLD,25));
+        bar.setForeground(Color.green);
+        bar.setBackground(Color.white);
         
 
 
@@ -34,9 +37,10 @@ public class ProgressBar {
             catch(InterruptedException e){
                 e.printStackTrace();
             }
-            counter-=10;
+            counter-=1;
 
             }
+        bar.setString("Eu me rendo!");
     }
     
 }
