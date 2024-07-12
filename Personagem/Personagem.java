@@ -1,5 +1,8 @@
 package Personagem;
 import java.util.ArrayList;
+
+import javax.management.monitor.MonitorSettingException;
+
 import Item.*;
 
 /**
@@ -80,16 +83,18 @@ public class Personagem {
     }
 
     // Usa o item, reduzindo a quantidade da mochila e aplicando seus efeitos
-    public void consumirItem(Item item) {
+    // Retorna true caso o item acabe e false caso continue na mochila
+    public boolean consumirItem(Item item) {
 	for (Item i : getMochila()) {
 	    int quant = i.getQuantidade() - 1;
 	    if(item == i) {
 		i.consumir(this);
 		if (quant <= 0) {
 		    removerItem(item);
+		    return true;
 		} else i.setQuantidade(quant);;
-		break;
 	    }
-	}
+	} return false;
+	// Caso saia do loop e não ache o item
     }
 }
