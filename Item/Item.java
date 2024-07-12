@@ -12,7 +12,7 @@ import Personagem.Personagem;
  * carrega consigo, além de um para consumi-los, o qual será sobrescrito nas
  * classes que reimplementarem Item.
  */
-public abstract class Item implements Elemento {
+public abstract class Item {
     private final String nome;
     private int quantidade;
 
@@ -32,15 +32,6 @@ public abstract class Item implements Elemento {
     }
     public void setQuantidade(int quantidade) {
 	this.quantidade = quantidade;
-    }
-
-    // Faz a quantidade aumentar ou diminuir
-    public void operaQuantidade(char sinal) {
-	if (sinal == '+') {
-	    this.quantidade++;
-	} else if (sinal == '-') {
-	    this.quantidade--;
-	}
     }
 
     // Dá os efeitos do item
