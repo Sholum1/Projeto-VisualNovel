@@ -1,7 +1,5 @@
 package Personagem;
-
 import java.util.ArrayList;
-
 import Item.*;
 
 /**
@@ -41,7 +39,6 @@ public class Personagem {
 	return dano;
     }
 
-   
     public int getVida() {
 	return vida;
     }
@@ -72,8 +69,6 @@ public class Personagem {
 	    int quant = i.getQuantidade() + 1;
             if (item == i) {
 		i.setQuantidade(quant);
-		// System.out.println("Giu possui: " + item.getQuantidade()
-		// 		   + " " + item.getNome() + "s");
 		break;
 	    }
 	}
@@ -97,17 +92,4 @@ public class Personagem {
 	    }
 	}
     }
-
-    // Mostra os elementos da mochila e suas quantidades
-    public void verMochila() {
-        System.out.print("Dentro da mochila há: ");
-	for (Item i : getMochila()) {
-	    System.out.print(i.getNome() + " [" + i.getQuantidade() + "]");
-	    if (i != getMochila().getLast()) {
-		System.out.print(", ");
-	    }
-	}
-	System.out.println();
-    }
-
 }

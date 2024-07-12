@@ -87,16 +87,15 @@ public class FlandersAparece implements Conversa {
 
 		frame.setContentPane(contentPane);
 		frame.addMouseListener(new MouseAdapter() {
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			if(++count >= out.length) {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			    if(++count >= out.length) {
 				frame.removeMouseListener(this);
 				label.add(amizade);
 				label.repaint();
-			};
-			conversa.setText(out[count]);
-		}
-		});
+			    } else conversa.setText(out[count]);
+			}
+		    });
 		label.add(conversa);
 		frame.pack();
     }

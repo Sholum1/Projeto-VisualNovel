@@ -74,19 +74,16 @@ public class CenaFinal implements Conversa {
 
 		CenaFim proximo = new CenaFim();
 		frame.addMouseListener(new MouseAdapter() {
-		@Override
-		public void mouseClicked(MouseEvent e) {
-			if(++count >= out.length) {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			    if(++count >= out.length) {
 				frame.removeMouseListener(this);
 				frame.getContentPane().removeAll();
 				proximo.rodaConversa(frame);
-			};
-			conversa.setText(out[count]);
-		}
-		});
+			    } else conversa.setText(out[count]);
+			}
+		    });
 		label.add(conversa);
 		frame.pack();
     }
 }
-
-

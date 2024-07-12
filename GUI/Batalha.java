@@ -9,129 +9,146 @@ import Boss.*;
 public class Batalha {
 
     public void Batalhar (MyFrame frame, Personagem giu, Lua lua, Boss Caranguejo) {
-	
-		ImageIcon fundo = new ImageIcon("Assets/mapa carangueijo boss corais.png");
+
+	ImageIcon fundo = new ImageIcon("Assets/mapa carangueijo boss corais.png");
         ImageIcon marujo = new ImageIcon("Assets/carangueijo marujo amor doce.png");
         ImageIcon giuPerfil = new ImageIcon("Assets/giu and luna in game.png");
-	
-		JLabel label = new JLabel();
-		label.setIcon(fundo);
-		label.setVerticalAlignment(JLabel.CENTER);
-		label.setHorizontalAlignment(JLabel.CENTER);
-		label.setBounds(0, 0, 1350, 1010);
+
+	JLabel label = new JLabel();
+	label.setIcon(fundo);
+	label.setVerticalAlignment(JLabel.CENTER);
+	label.setHorizontalAlignment(JLabel.CENTER);
+	label.setBounds(0, 0, 1350, 1010);
 
         JLabel caranguejo = new JLabel();
-		caranguejo .setIcon(marujo);
-		caranguejo .setVerticalAlignment(JLabel.CENTER);
-		caranguejo .setHorizontalAlignment(JLabel.CENTER);
-		caranguejo.setBounds(140, -115, 1350, 1010);
+	caranguejo .setIcon(marujo);
+	caranguejo .setVerticalAlignment(JLabel.CENTER);
+	caranguejo .setHorizontalAlignment(JLabel.CENTER);
+	caranguejo.setBounds(140, -115, 1350, 1010);
 
         JLabel giuCenario = new JLabel();
-		giuCenario .setIcon(giuPerfil);
-		giuCenario .setVerticalAlignment(JLabel.CENTER);
-		giuCenario .setHorizontalAlignment(JLabel.CENTER);
-		giuCenario.setBounds(470, -120, 1350, 1010);
+	giuCenario .setIcon(giuPerfil);
+	giuCenario .setVerticalAlignment(JLabel.CENTER);
+	giuCenario .setHorizontalAlignment(JLabel.CENTER);
+	giuCenario.setBounds(470, -120, 1350, 1010);
 
-		JLabel opcoes = new JLabel();
-		opcoes.setBackground(new Color(235, 217, 188));
-		opcoes.setBounds(40, 800, 1000, 180);
+	JLabel opcoes = new JLabel();
+	opcoes.setBackground(new Color(235, 217, 188));
+	opcoes.setBounds(40, 800, 1000, 180);
         opcoes.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 14, false));
-		opcoes.setHorizontalTextPosition(JLabel.LEFT);
-		opcoes.setVerticalTextPosition(JLabel.TOP);
-		opcoes.setForeground(new Color(29, 60, 144));
-		opcoes.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
-		opcoes.setVerticalAlignment(JLabel.CENTER);
-		opcoes.setHorizontalAlignment(JLabel.LEFT);
-		opcoes.setOpaque(true);
+	opcoes.setHorizontalTextPosition(JLabel.LEFT);
+	opcoes.setVerticalTextPosition(JLabel.TOP);
+	opcoes.setForeground(new Color(29, 60, 144));
+	opcoes.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 28));
+	opcoes.setVerticalAlignment(JLabel.CENTER);
+	opcoes.setHorizontalAlignment(JLabel.LEFT);
+	opcoes.setOpaque(true);
 
         JLabel giuStats = new JLabel();
-		giuStats.setBackground(new Color(235, 217, 188));
-		giuStats.setBounds(1010, 470, 310, 120);
+	giuStats.setBackground(new Color(235, 217, 188));
+	giuStats.setBounds(1010, 470, 310, 120);
         giuStats.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 10, false));
-		giuStats.setText("Giu & Lua");
-		giuStats.setHorizontalTextPosition(JLabel.LEFT);
-		giuStats.setVerticalTextPosition(JLabel.TOP);
-		giuStats.setForeground(new Color(29, 60, 144));
-		giuStats.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		giuStats.setVerticalAlignment(JLabel.TOP);
-		giuStats.setHorizontalAlignment(JLabel.CENTER);
-		giuStats.setOpaque(true);
+	giuStats.setText("Giu & Lua");
+	giuStats.setHorizontalTextPosition(JLabel.LEFT);
+	giuStats.setVerticalTextPosition(JLabel.TOP);
+	giuStats.setForeground(new Color(29, 60, 144));
+	giuStats.setFont(new Font("Times New Roman", Font.BOLD, 24));
+	giuStats.setVerticalAlignment(JLabel.TOP);
+	giuStats.setHorizontalAlignment(JLabel.CENTER);
+	giuStats.setOpaque(true);
 
         JLabel marujoStats = new JLabel();
-		marujoStats.setBackground(new Color(235, 217, 188));
-		marujoStats.setBounds(350, 300, 310, 120);
+	marujoStats.setBackground(new Color(235, 217, 188));
+	marujoStats.setBounds(350, 300, 310, 120);
         marujoStats.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 10, false));
-		marujoStats.setText("Caranguejo Marujo");
-		marujoStats.setHorizontalTextPosition(JLabel.LEFT);
-		marujoStats.setVerticalTextPosition(JLabel.TOP);
-		marujoStats.setForeground(new Color(29, 60, 144));
-		marujoStats.setFont(new Font("Times New Roman", Font.BOLD, 24));
-		marujoStats.setVerticalAlignment(JLabel.TOP);
-		marujoStats.setHorizontalAlignment(JLabel.CENTER);
-		marujoStats.setOpaque(true);
+	marujoStats.setText("Caranguejo Marujo");
+	marujoStats.setHorizontalTextPosition(JLabel.LEFT);
+	marujoStats.setVerticalTextPosition(JLabel.TOP);
+	marujoStats.setForeground(new Color(29, 60, 144));
+	marujoStats.setFont(new Font("Times New Roman", Font.BOLD, 24));
+	marujoStats.setVerticalAlignment(JLabel.TOP);
+	marujoStats.setHorizontalAlignment(JLabel.CENTER);
+	marujoStats.setOpaque(true);
 
         JPanel contentPane = new JPanel(null);
-		contentPane.setPreferredSize(new Dimension(1350, 1010));
+	contentPane.setPreferredSize(new Dimension(1350, 1010));
         contentPane.add(caranguejo);
         contentPane.add(giuCenario);
-		contentPane.add(label);
+	contentPane.add(label);
 
         JButton ataque = new JButton("Ataque");
-		ataque.setFocusable(false);
-		ataque.setHorizontalTextPosition(JButton.CENTER);
-		ataque.setVerticalTextPosition(JButton.CENTER);
-		ataque.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
-		ataque.setForeground(new Color(29, 60, 144));
-		ataque.setBackground(new Color(242,242,242));
-		ataque.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		ataque.setBounds(40, 800, 300, 50);
+	ataque.setFocusable(false);
+	ataque.setHorizontalTextPosition(JButton.CENTER);
+	ataque.setVerticalTextPosition(JButton.CENTER);
+	ataque.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+	ataque.setForeground(new Color(29, 60, 144));
+	ataque.setBackground(new Color(242,242,242));
+	ataque.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
+	ataque.setBounds(40, 800, 300, 50);
 
         JButton ataqueLua = new JButton("Ataque com a Lua");
-		ataqueLua.setFocusable(false);
-		ataqueLua.setHorizontalTextPosition(JButton.CENTER);
-		ataqueLua.setVerticalTextPosition(JButton.CENTER);
-		ataqueLua.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
-		ataqueLua.setForeground(new Color(29, 60, 144));
-		ataqueLua.setBackground(new Color(242,242,242));
-		ataqueLua.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		ataqueLua.setBounds(40, 860, 300, 50);
+	ataqueLua.setFocusable(false);
+	ataqueLua.setHorizontalTextPosition(JButton.CENTER);
+	ataqueLua.setVerticalTextPosition(JButton.CENTER);
+	ataqueLua.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+	ataqueLua.setForeground(new Color(29, 60, 144));
+	ataqueLua.setBackground(new Color(242,242,242));
+	ataqueLua.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
+	ataqueLua.setBounds(40, 860, 300, 50);
 
         JButton mochila = new JButton("Ver mochila");
-		mochila.setFocusable(false);
-		mochila.setHorizontalTextPosition(JButton.CENTER);
-		mochila.setVerticalTextPosition(JButton.CENTER);
-		mochila.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
-		mochila.setForeground(new Color(29, 60, 144));
-		mochila.setBackground(new Color(242,242,242));
-		mochila.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		mochila.setBounds(40, 920, 300, 50);
+	mochila.setFocusable(false);
+	mochila.setHorizontalTextPosition(JButton.CENTER);
+	mochila.setVerticalTextPosition(JButton.CENTER);
+	mochila.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+	mochila.setForeground(new Color(29, 60, 144));
+	mochila.setBackground(new Color(242,242,242));
+	mochila.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
+	mochila.setBounds(40, 920, 300, 50);
 
-		frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
+	frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
-		CenaFinal proximo = new CenaFinal();
+	CenaFinal proximo = new CenaFinal();
         Mochila abrirMochila = new Mochila();
-		ActionListener botao = new ActionListener() {
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (e.getSource() == ataque) {
+	ActionListener botao = new ActionListener() {
+		@Override
+		public void actionPerformed(ActionEvent e) {
+		    if (e.getSource() == ataque) {
 
-				} else if (e.getSource() == ataqueLua) {
+		    } else if (e.getSource() == ataqueLua) {
 
-				} else if (e.getSource() == mochila) {
+		    } else if (e.getSource() == mochila) {
 
-                }
-			}
-		};
+		    }
+		}
+	    };
 
-		ataque.addActionListener(botao);
-		ataqueLua.addActionListener(botao);
+	ataque.addActionListener(botao);
+	ataqueLua.addActionListener(botao);
         mochila.addActionListener(botao);
 
-		frame.setContentPane(contentPane);
-		label.add(opcoes);
+	frame.setContentPane(contentPane);
+	<<<<<<< HEAD
+		    label.add(opcoes);
         opcoes.add(giuStats);
         opcoes.add(marujoStats);
-		frame.pack();
+	=======
+	    frame.addMouseListener(new MouseAdapter() {
+		    @Override
+		    public void mouseClicked(MouseEvent e) {
+			if (++count >= out.length) {
+			    frame.removeMouseListener(this);
+			    label.add(ataque);
+			    label.add(ataqueLua);
+			    label.add(mochila);
+			    label.repaint();
+			} else conversa.setText(out[count]);
+		    }
+		});
+	    label.add(conversa);
+	    label.add(giuStats);
+	    label.add(marujoStats);
+	    frame.pack();
     }
 }
 

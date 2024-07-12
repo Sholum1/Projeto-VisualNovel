@@ -114,8 +114,7 @@ public class GiuAcorda implements Conversa {
 			label.add(nadar);
 			label.add(seguir);
 			label.repaint();
-		    };
-		    conversa.setText(out[countListener]);
+		    } else conversa.setText(out[countListener]);
 		}
 	    });
 	label.add(conversa);

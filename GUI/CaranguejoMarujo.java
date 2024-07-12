@@ -69,16 +69,15 @@ public class CaranguejoMarujo implements Conversa {
         CaranguejoConversa proximo = new CaranguejoConversa();
 
         frame.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-            if(++count >= out.length) {
-            frame.removeMouseListener(this);
-            frame.getContentPane().removeAll();
-            proximo.rodaConversa(frame);
-            };
-            conversa.setText(out[count]);
-        }
-        });
+		@Override
+		public void mouseClicked(MouseEvent e) {
+		    if(++count >= out.length) {
+			frame.removeMouseListener(this);
+			frame.getContentPane().removeAll();
+			proximo.rodaConversa(frame);
+		    } else conversa.setText(out[count]);
+		}
+	    });
         label.add(conversa);
         frame.pack();
     }
