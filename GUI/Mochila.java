@@ -11,10 +11,9 @@ public class Mochila{
 
     public void rodaConversa(MyFrame frame) {
         
-        ImageIcon algaIcon= new ImageIcon("Assets/alga.png"); 
-        
-        ImageIcon pocaoIcon= new ImageIcon("Assets/pocao.png"); 
-        ImageIcon raizIcon= new ImageIcon("Assets/raiz.png"); 
+        ImageIcon algaIcon= new ImageIcon("Assets/alga maior.png"); 
+        ImageIcon pocaoIcon= new ImageIcon("Assets/pocao maior.png"); 
+        ImageIcon raizIcon= new ImageIcon("Assets/raiz maior.png"); 
 
         Alga alga = new Alga();
         Pocao pocao= new Pocao();
@@ -32,9 +31,9 @@ public class Mochila{
         algaButton.setIcon(algaIcon);
 		algaButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
 		algaButton.setForeground(new Color(29, 60, 144));
-		algaButton.setBackground(new Color(242,242,242));
-		algaButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		algaButton.setBounds(505, 435, 300, 50);
+		algaButton.setBackground(new Color(255, 176, 120));
+		algaButton.setBorder(BorderFactory.createLineBorder(new Color(242, 112, 5), 5));
+		algaButton.setBounds(550, 400, 120, 120);
         ActionListener botao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -54,9 +53,9 @@ public class Mochila{
 		raizButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
         raizButton.setIcon(raizIcon);
 		raizButton.setForeground(new Color(29, 60, 144));
-		raizButton.setBackground(new Color(242,242,242));
-		raizButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		raizButton.setBounds(905, 435, 300, 50);
+		raizButton.setBackground(new Color(255, 176, 120));
+		raizButton.setBorder(BorderFactory.createLineBorder(new Color(242, 112, 5), 5));
+		raizButton.setBounds(850, 400, 120, 120);
         ActionListener raizBotao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,16 +68,16 @@ public class Mochila{
         };
         raizButton.addActionListener(raizBotao);
         
-        JButton pocaoButton = new JButton("Tomar poção");
+        JButton pocaoButton = new JButton();
 		pocaoButton.setFocusable(false);
 		pocaoButton.setHorizontalTextPosition(JButton.CENTER);
 		pocaoButton.setVerticalTextPosition(JButton.CENTER);
 		pocaoButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
         pocaoButton.setIcon(pocaoIcon);
 		pocaoButton.setForeground(new Color(29, 60, 144));
-		pocaoButton.setBackground(new Color(242,242,242));
-		pocaoButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		pocaoButton.setBounds(15, 435, 300, 50);
+		pocaoButton.setBackground(new Color(255, 176, 120));
+		pocaoButton.setBorder(BorderFactory.createLineBorder(new Color(242, 112, 5), 5));
+		pocaoButton.setBounds(250, 400, 120, 120);
         ActionListener pocaoBotao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -90,19 +89,13 @@ public class Mochila{
             }
         };
         pocaoButton.addActionListener(pocaoBotao);
-        
+
         contentPane.add(pocaoButton);
         contentPane.add(algaButton);
         contentPane.add(raizButton);
+        
         frame.setContentPane(contentPane);
         frame.pack();
-
-        
-        
-        
-        
-        
-        
         
     }
     

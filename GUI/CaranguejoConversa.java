@@ -98,6 +98,7 @@ public class CaranguejoConversa implements Conversa {
         batalhar.setBounds(505, 110, 300, 50);
 
         FugaCarangueijo proximo = new FugaCarangueijo();
+
         ActionListener botao = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
