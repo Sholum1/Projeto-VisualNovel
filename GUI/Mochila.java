@@ -11,16 +11,19 @@ import Personagem.Personagem;
 
 public class Mochila{
 
-    Mochila(){
+    Mochila(){ }
 
+    public void rodaConversa(MyFrame frame) {
     
         Alga alga = new Alga();
         Pocao pocao= new Pocao();
         Raiz raiz= new Raiz();
         Personagem giu= new Personagem();
- 
-
-
+        JPanel contentPane = new JPanel(null);
+		contentPane.setPreferredSize(new Dimension(1350, 1010));
+        
+        
+        
         JButton algaButton = new JButton("Comer alga");
 		algaButton.setFocusable(false);
 		algaButton.setHorizontalTextPosition(JButton.CENTER);
@@ -39,10 +42,10 @@ public class Mochila{
                     
                 }
             }
-            };
-            algaButton.addActionListener(botao);
-
-            JButton raizButton = new JButton("Comer alga");
+        };
+        algaButton.addActionListener(botao);
+        
+        JButton raizButton = new JButton("Comer raiz");
 		raizButton.setFocusable(false);
 		raizButton.setHorizontalTextPosition(JButton.CENTER);
 		raizButton.setVerticalTextPosition(JButton.CENTER);
@@ -60,10 +63,10 @@ public class Mochila{
                     
                 }
             }
-            };
-            raizButton.addActionListener(raizBotao);
-
-            JButton pocaoButton = new JButton("Comer alga");
+        };
+        raizButton.addActionListener(raizBotao);
+        
+        JButton pocaoButton = new JButton("Tomar poção");
 		pocaoButton.setFocusable(false);
 		pocaoButton.setHorizontalTextPosition(JButton.CENTER);
 		pocaoButton.setVerticalTextPosition(JButton.CENTER);
@@ -81,14 +84,23 @@ public class Mochila{
                     
                 }
             }
-            };
-            pocaoButton.addActionListener(pocaoBotao);
-
-       
+        };
+        pocaoButton.addActionListener(pocaoBotao);
         
+        contentPane.add(pocaoButton);
+        contentPane.add(algaButton);
+        contentPane.add(raizButton);
+        frame.setContentPane(contentPane);
+        frame.pack();
 
-
+        
+        
+        
+        
+        
+        
+        
     }
-
-
+    
+    
 }
