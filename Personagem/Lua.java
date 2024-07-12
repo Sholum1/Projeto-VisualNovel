@@ -13,72 +13,72 @@ import Criatura.*;
  */
 public class Lua {
     /*
-
      * A ideia é que conforme a fase a Lua possa refletir mais luz, aumentando
      * seu ataque, mas também o intervalo de tempo entre cada ataque.
      */
     public enum Fase {
-        NOVA(1, 3, 2), // A Lua nova praticamente não reflete luz na terra
-        CRESCENTE(4, 7, 4), // A Lua crescente reflete um pouco mais de luz
-        CHEIA(8, 12, 16), // A Lua cheia é a que mais reflete luz
-        MINGUANTE(6, 10, 8); // A Lua minguante começa a refazer o ciclo
+	// 180 de dano no total (se sempre usa a lua)
+        NOVA(60, 1), // A Lua nova praticamente não reflete luz na terra
+	// 240 de dano no total
+        CRESCENTE(80, 2), // A Lua crescente reflete um pouco mais de luz
+	// 300 de dano no total
+        CHEIA(300, 6), // A Lua cheia é a que mais reflete luz
+	// 140 de dano no total
+        MINGUANTE(140, 3); // A Lua minguante começa a refazer o ciclo
 
-        private final int dano, tempoAtaque, distanciaAtaque;
+        private final int dano, tempoAtaque;
 
 	// Construtor da Fase
-        private Fase(int dano, int tempoAtaque, int distanciaAtaque) {
+        private Fase(int dano, int tempoAtaque) {
             this.dano = dano;
             this.tempoAtaque = tempoAtaque;
-            this.distanciaAtaque = distanciaAtaque;
         }
 
 	// Por serem final só possuem os Getters
 	public int getDano() {
 	    return dano;
 	}
-
-	public int getDistanciaAtaque() {
-	    return distanciaAtaque;
-	}
-
 	public int getTempoAtaque() {
 	    return tempoAtaque;
 	}
     }
 
-    private Fase fase;
+    private Fase fase = Fase.CHEIA;
+    private int tempoFase = 6, tempoAtaqueCount = 0;
 
     // Construtor da Lua
-    public Lua(Fase fase) {
-	this.fase = fase;
-    }
+    public Lua(){}
 
+    // Inicio dos Getters e Setters
     public Fase getFase() {
 	return fase;
     }
     public void setFase(Fase fase) {
 	this.fase = fase;
     }
-
-    // Para evitar ficar escrevendo a mesma coisa várias vezes
     public int getDanoLua() {
 	return fase.getDano();
-    }
-    public int getDistanciaLua() {
-	return fase.getDistanciaAtaque();
     }
     public int getTempoLua() {
 	return fase.getTempoAtaque();
     }
+    public int getTempoAtaqueCount() {
+	return tempoAtaqueCount;
+    }
+    public void setTempoAtaqueCount(int tempoAtaqueCount) {
+	this.tempoAtaqueCount = tempoAtaqueCount;
+    }
+    public int getTempoFase() {
+	return tempoFase;
+    }
+    public void setTempoFase(int tempoFase) {
+	this.tempoFase = tempoFase;
+    }
+    // Fim dos Getters e Setters
 
-
-    /*
-
-     * A cada 29 ciclos do loop a fase troca (baseado nos 29 dias para cada 
-     * troca de fase)
-     */
-    public void mudaFase(int tempo) {
-	if (tempo == 29) {
+    // A cada 5 turnos a fase troca
+    public String mudaFase() {
+	if (this.tempoFase-- <= 0) {
 	    if (getFase() == Fase.NOVA) {
 		setFase(Fase.CRESCENTE);
 	    } else if (getFase() == Fase.CRESCENTE) {
@@ -88,17 +88,20 @@ public class Lua {
 	    } else if (getFase() == Fase.MINGUANTE) {
 		setFase(Fase.NOVA);
 	    }
-	    System.out.println("A lua mudou de fase para: "+getFase());
+	    this.tempoFase = 5;
+	    return "A Lua mudou para a fase "+getFase();
 	}
     }
 
     // Ação de ataque da Lua. Seu dano depende da Fase
-    public void refletir(Criatura criatura, int tempo) {
-	if (tempo == getTempoLua()) {
+    public String refletir(Boss criatura) {
+	if (this.tempoAtaqueCount++ == getTempoLua()) {
 	    int novaVida = (criatura.getVida() - getDanoLua());
 	    criatura.setVida((novaVida < 0) ? 0 : novaVida);
+	    this.tempoAtaqueCount = 9;
+	    return null;
 	} else {
-	    System.out.println("A Lua tenta refletir luz, mas está fraca");
+	    return "A Lua tenta refletir luz, mas está fraca";
 	}
     }
 }

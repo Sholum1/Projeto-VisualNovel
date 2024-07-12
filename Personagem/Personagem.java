@@ -1,7 +1,8 @@
 package Personagem;
 
 import java.util.ArrayList;
-import Item.Item;
+
+import Item.*;
 import Tabuleiro.*;
 
 
@@ -19,21 +20,18 @@ import Tabuleiro.*;
  * Há também o método "perdeu", que verificará os atributos de Giu e retornará
  * se o usuário perdeu o jogo ou não (ou seja, se Giu morreu ou está viva).
  */
-public class Personagem implements TemVida {
+public class Personagem {
     private final Lua lua;
-    private int vida, energia, medo, felicidade;
+    private int vida;
     private final int dano;
     private ArrayList<Item> mochila;
-    
+
     // Construtor
     public Personagem() {
-        this.vida = 20;
-        this.energia = 10;
-        this.medo = 5;
-        this.felicidade = 5;
-        this.dano = 3;
+        this.vida = 100;
+        this.dano = 50;
         this.mochila = new ArrayList<Item>();
-	this.lua = new Lua(Lua.Fase.NOVA);
+	this.lua = new Lua();
     }
 
     // Getters e Setters
@@ -45,25 +43,7 @@ public class Personagem implements TemVida {
 	return dano;
     }
 
-    public int getEnergia() {
-	return energia;
-    }
-    public void setEnergia(int energia) {
-	this.energia = energia;
-    }
-    public int getFelicidade() {
-	return felicidade;
-    }
-    public void setFelicidade(int felicidade) {
-	this.felicidade = felicidade;
-    }
-
-    public int getMedo() {
-	return medo;
-    }
-    public void setMedo(int medo) {
-	this.medo = medo;
-    }
+   
     public int getVida() {
 	return vida;
     }
@@ -81,8 +61,7 @@ public class Personagem implements TemVida {
 
     // Confere se Giu morreu
     public boolean perdeu() {
-	return !(getVida() <= 0 || getEnergia() <= 0 || getFelicidade() <= 0
-		 || getMedo() >= 20);
+	return (getVida() <= 0 );
     }
 
     // Parte da Mochila
@@ -92,10 +71,11 @@ public class Personagem implements TemVida {
 	if (getMochila().isEmpty() || !getMochila().contains(item))
 	    getMochila().add(item);
         for (Item i : getMochila()) {
+	    int quant = i.getQuantidade() + 1;
             if (item == i) {
-		i.operaQuantidade('+');
-		System.out.println("Giu possui: " + item.getQuantidade()
-				   + " " + item.getNome() + "s");
+		i.setQuantidade(quant);
+		// System.out.println("Giu possui: " + item.getQuantidade()
+		// 		   + " " + item.getNome() + "s");
 		break;
 	    }
 	}
@@ -109,12 +89,12 @@ public class Personagem implements TemVida {
     // Usa o item, reduzindo a quantidade da mochila e aplicando seus efeitos
     public void consumirItem(Item item) {
 	for (Item i : getMochila()) {
+	    int quant = i.getQuantidade() - 1;
 	    if(item == i) {
 		i.consumir(this);
-		i.operaQuantidade('-');
-		if (i.getQuantidade() == 0) {
+		if (quant <= 0) {
 		    removerItem(item);
-		}
+		} else i.setQuantidade(quant);;
 		break;
 	    }
 	}
