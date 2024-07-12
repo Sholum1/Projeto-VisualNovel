@@ -70,7 +70,7 @@ public class AssassinatoHumanos {
 						label.remove(desmaio);
 						ira.setBounds(505, 335, 300, 50);
 						label.repaint();
-						//proximo.rodaConversa(frame);
+						proximo.rodaConversa(frame);
 					}
 					conversa.setText(desmaioOut[countDesmaio++]);
 				} else if (e.getSource() == ira) {
