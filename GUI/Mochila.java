@@ -3,33 +3,38 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import Item.Alga;
-import Item.Pocao;
-import Item.Raiz;
+import Item.*;
 import Personagem.Personagem;
 
 
 public class Mochila{
 
-    Mochila(){
+    public void rodaConversa(MyFrame frame) {
+        
+        ImageIcon algaIcon= new ImageIcon("Assets/alga.png"); 
+        
+        ImageIcon pocaoIcon= new ImageIcon("Assets/pocao.png"); 
+        ImageIcon raizIcon= new ImageIcon("Assets/raiz.png"); 
 
-    
         Alga alga = new Alga();
         Pocao pocao= new Pocao();
         Raiz raiz= new Raiz();
         Personagem giu= new Personagem();
- 
-
-
-        JButton algaButton = new JButton("Comer alga");
+        JPanel contentPane = new JPanel(null);
+		contentPane.setPreferredSize(new Dimension(1350, 1010));
+        
+        
+        
+        JButton algaButton = new JButton();
 		algaButton.setFocusable(false);
 		algaButton.setHorizontalTextPosition(JButton.CENTER);
 		algaButton.setVerticalTextPosition(JButton.CENTER);
+        algaButton.setIcon(algaIcon);
 		algaButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
 		algaButton.setForeground(new Color(29, 60, 144));
 		algaButton.setBackground(new Color(242,242,242));
 		algaButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		algaButton.setBounds(505, 335, 300, 50);
+		algaButton.setBounds(505, 435, 300, 50);
         ActionListener botao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -39,18 +44,19 @@ public class Mochila{
                     
                 }
             }
-            };
-            algaButton.addActionListener(botao);
-
-            JButton raizButton = new JButton("Comer alga");
+        };
+        algaButton.addActionListener(botao);
+        
+        JButton raizButton = new JButton();
 		raizButton.setFocusable(false);
 		raizButton.setHorizontalTextPosition(JButton.CENTER);
 		raizButton.setVerticalTextPosition(JButton.CENTER);
 		raizButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+        raizButton.setIcon(raizIcon);
 		raizButton.setForeground(new Color(29, 60, 144));
 		raizButton.setBackground(new Color(242,242,242));
 		raizButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		raizButton.setBounds(905, 335, 300, 50);
+		raizButton.setBounds(905, 435, 300, 50);
         ActionListener raizBotao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -60,18 +66,19 @@ public class Mochila{
                     
                 }
             }
-            };
-            raizButton.addActionListener(raizBotao);
-
-            JButton pocaoButton = new JButton("Comer alga");
+        };
+        raizButton.addActionListener(raizBotao);
+        
+        JButton pocaoButton = new JButton("Tomar poção");
 		pocaoButton.setFocusable(false);
 		pocaoButton.setHorizontalTextPosition(JButton.CENTER);
 		pocaoButton.setVerticalTextPosition(JButton.CENTER);
 		pocaoButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+        pocaoButton.setIcon(pocaoIcon);
 		pocaoButton.setForeground(new Color(29, 60, 144));
 		pocaoButton.setBackground(new Color(242,242,242));
 		pocaoButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
-		pocaoButton.setBounds(205, 335, 300, 50);
+		pocaoButton.setBounds(15, 435, 300, 50);
         ActionListener pocaoBotao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,14 +88,23 @@ public class Mochila{
                     
                 }
             }
-            };
-            pocaoButton.addActionListener(pocaoBotao);
-
-       
+        };
+        pocaoButton.addActionListener(pocaoBotao);
         
+        contentPane.add(pocaoButton);
+        contentPane.add(algaButton);
+        contentPane.add(raizButton);
+        frame.setContentPane(contentPane);
+        frame.pack();
 
-
+        
+        
+        
+        
+        
+        
+        
     }
-
-
+    
+    
 }

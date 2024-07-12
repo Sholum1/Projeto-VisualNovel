@@ -3,8 +3,6 @@ package Personagem;
 import java.util.ArrayList;
 
 import Item.*;
-import Tabuleiro.*;
-
 
 /**
  * A classe Personagem representa Giu, a protagonista da história, a qual será

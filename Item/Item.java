@@ -1,6 +1,4 @@
 package Item;
-
-import Tabuleiro.Elemento;
 import Personagem.Personagem;
 
 
