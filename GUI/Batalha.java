@@ -5,6 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import Personagem.*;
 import Boss.*;
+import GUI.TelaInicial;
 import Item.*;
 
 public class Batalha {
@@ -110,13 +111,14 @@ public class Batalha {
 	frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
 	CenaFinal proximo = new CenaFinal();
+	TelaInicial inicio = new TelaInicial();
         Mochila abrirMochila = new Mochila();
 	ActionListener botao = new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 		    if (e.getSource() == ataque) {
 			caranguejo.setVida(caranguejo.getVida() - giu.getDano());
-			rodaTurnos(giu, caranguejo, frame, proximo);
+			rodaTurnos(giu, caranguejo, frame, proximo, inicio);
 		    } else if (e.getSource() == ataqueLua) {
 			try {
 			    giu.getLua().refletir(caranguejo);
@@ -125,7 +127,7 @@ public class Batalha {
 			    // Botar isso numa caixa de dialogo
 			    m.getMessage();
 			}
-			rodaTurnos(giu, caranguejo, frame, proximo);
+			rodaTurnos(giu, caranguejo, frame, proximo, inicio);
 		    } else if (e.getSource() == mochila) {
 			abrirMochila.mostraMochila(frame, giu, alga, pocao, raiz);
 		    }
@@ -152,7 +154,8 @@ public class Batalha {
 	label.add(marujoStats);
 	frame.pack();
     }
-    private static void rodaTurnos(Personagem giu, Boss boss, MyFrame frame, Conversa proximo) {
+    private static void rodaTurnos(Personagem giu, Boss boss, MyFrame frame,
+				   Conversa proximo, TelaInicial inicio) {
 	giu.getLua().mudaFase();
 	giu.getLua().mudaTempo();
 	if (boss.desistiu()) {
@@ -162,7 +165,10 @@ public class Batalha {
 	}
 	boss.ataca(giu);
 	if (giu.perdeu()) {
-	    // q q acontece????
+	    // Talvez antes disso adicionar um texto tipo
+	    // "Você morreu deseja reiniciar o jogo?"
+	    frame.getContentPane().removeAll();
+	    inicio.rodaTelaInicial(frame);
 	}
     }
 }

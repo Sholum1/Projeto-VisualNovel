@@ -18,7 +18,7 @@ public class Main {
 	Alga alga = new Alga();
 	Raiz raiz = new Raiz();
 	Pocao pocao = new Pocao();
-	Boss caranguejo = new Boss(2, 2, 2, 2, "Caranguejo");
+	Boss caranguejo = new Boss(1000, 1000, 2, 40000, "Caranguejo");
 	giu.adicionarItem(pocao);
 	giu.adicionarItem(raiz);
 	// giu.adicionarItem(alga);
