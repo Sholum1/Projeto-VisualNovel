@@ -24,7 +24,7 @@ public class GiuAcorda {
 
 	String[] nadarOut =
 	    {"<html>&emsp;&ensp;Mesmo que tentemos fugir, mesmo com medo<html>"+
-	     "<html> do novo mundo, aprendemos a respirar<br>&ensp;<html>"+
+	     "<html> do novo mundo, aprendemos<br>&ensp;a respirar<html>"+
 	     "<html> melhor embaixo d'agua enquanto tentamos.<html>",
 	     "<html>&emsp;&ensp;Vamos, vamos em frente!<html>",
 	     "<html>&emsp;&ensp;Eu te acompanharei até em seus momentos<html>"+

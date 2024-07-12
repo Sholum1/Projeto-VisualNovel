@@ -1,12 +1,11 @@
 package GUI;
 
-import javax.swing.ImageIcon;
-import javax.swing.JLabel;
-import javax.swing.JPanel;
+import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 
 public class PolvoInicioBatalha {
-    public void rodaConversaPolvoInicio(MyFrame frame) {
+    public void rodaConversa(MyFrame frame) {
 		String[] out = {"<html>&emsp;&ensp;[POLVO] PREPARE-SE PRA MORRER!<html>",
 		"<html>&emsp;&ensp;[POLVO] O mar te assombrou, e a Lua pode até tentar<br>&ensp;te enganar, <html>"+
 		"mas todos nós sabemos como você nunca mais achará Luna!" +
