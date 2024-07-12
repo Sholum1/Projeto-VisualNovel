@@ -73,25 +73,22 @@ public class Cardume implements Conversa {
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
 
-		BarcoSurge proximo = new BarcoSurge();
+	BarcoSurge proximo = new BarcoSurge();
 
-		frame.setContentPane(contentPane);
+	frame.setContentPane(contentPane);
 
-		frame.addMouseListener(new MouseAdapter() {
-	    @Override
-	    public void mouseClicked(MouseEvent e) {
-		if(++count >= out.length) {
-		    frame.removeMouseListener(this);
-		    frame.getContentPane().removeAll();
-		    proximo.rodaConversa(frame);
-		};
-		conversa.setText(out[count]);
-	    }
-		});
+	frame.addMouseListener(new MouseAdapter() {
+		@Override
+		public void mouseClicked(MouseEvent e) {
+		    if(++count >= out.length) {
+			frame.removeMouseListener(this);
+			frame.getContentPane().removeAll();
+			proximo.rodaConversa(frame);
+		    } else conversa.setText(out[count]);
+		}
+	    });
 
-		label.add(conversa);
-		frame.pack();
+	label.add(conversa);
+	frame.pack();
     }
 }
-
-

@@ -54,8 +54,7 @@ public class ConversaLua implements Conversa {
 			frame.removeMouseListener(this);
 			frame.getContentPane().removeAll();
 			giu.rodaConversa(frame);
-		    };
-		    conversa.setText(out[count]);
+		    } else conversa.setText(out[count]);
 		}
 	    });
 	label.add(conversa);

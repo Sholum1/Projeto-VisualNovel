@@ -128,9 +128,27 @@ public class Batalha {
         mochila.addActionListener(botao);
 
 		frame.setContentPane(contentPane);
+<<<<<<< HEAD
 		label.add(opcoes);
         opcoes.add(giuStats);
         opcoes.add(marujoStats);
+=======
+		frame.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+			    if (++count >= out.length) {
+				frame.removeMouseListener(this);
+				label.add(ataque);
+				label.add(ataqueLua);
+				label.add(mochila);
+				label.repaint();
+			    } else conversa.setText(out[count]);
+			}
+		    });
+		label.add(conversa);
+		label.add(giuStats);
+		label.add(marujoStats);
+>>>>>>> 717375b (Uma única unidade de Exception)
 		frame.pack();
     }
 }

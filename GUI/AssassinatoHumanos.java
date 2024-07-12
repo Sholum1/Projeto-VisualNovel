@@ -87,17 +87,15 @@ public class AssassinatoHumanos implements Conversa {
 		frame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (++countListener >= out.length) {
-					frame.removeMouseListener(this);
-					label.add(desmaio);
-					label.add(ira);
-					label.repaint();
-				};
-				conversa.setText(out[countListener]);
+			    if (++countListener >= out.length) {
+				frame.removeMouseListener(this);
+				label.add(desmaio);
+				label.add(ira);
+				label.repaint();
+			    } else conversa.setText(out[countListener]);
 			}
-		});
+		    });
 		label.add(conversa);
 		frame.pack();
     }
 }
-

@@ -1,5 +1,7 @@
 package Boss;
-import Personagem.Personagem;
+
+import Personagem.*;
+
 /**
  * Boss
  */
@@ -43,14 +45,14 @@ public class Boss {
     }
     // Fim dos Getters e Setters
 
-    public void ataca(Personagem giu, int count) {
+    public void ataca(Personagem giu) {
 	int vidaGiu = giu.getVida();
-	if (count >= getTurno()) {
+	if (this.count >= getTurno()) {
 	    giu.setVida(vidaGiu - getAtaqueEspecial());
-	    count = 0;
+	    this.count = 0;
 	} else {
 	    giu.setVida(vidaGiu - getAtaque());
-	    count++;
+	    this.count++;
 	}
     }
 

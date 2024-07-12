@@ -14,10 +14,5 @@ public class Main {
 	MyFrame frame =  new MyFrame();
 	TelaInicial tela = new TelaInicial();
 	tela.rodaTelaInicial(frame);
-	Mochila mochila = new Mochila();
-	mochila.rodaConversa(frame);
-
-	//PolvoInicioBatalha polvo = new PolvoInicioBatalha();
-	//polvo.rodaConversa(frame);
     }
 }

@@ -75,16 +75,15 @@ public class BarcoHumanos implements Conversa {
 
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
         frame.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-        if(++count >= out.length) {
-            frame.removeMouseListener(this);
-            frame.getContentPane().removeAll();
-            proximo.rodaConversa(frame);
-        };
-        conversa.setText(out[count]);
-        }
-        });
+		@Override
+		public void mouseClicked(MouseEvent e) {
+		    if(++count >= out.length) {
+			frame.removeMouseListener(this);
+			frame.getContentPane().removeAll();
+			proximo.rodaConversa(frame);
+		    } else conversa.setText(out[count]);
+		}
+	    });
 
         label.add(conversa);
         frame.pack();

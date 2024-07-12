@@ -22,6 +22,5 @@ public class Pocao extends Item {
     @Override
     public void consumir(Personagem personagem) {
         personagem.setVida(personagem.getVida() + 2);
-      
     }
 }

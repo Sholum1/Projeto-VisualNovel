@@ -61,16 +61,15 @@ public class BarcoSurge implements Conversa {
 
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
         frame.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-        if(++count >= out.length) {
-            frame.removeMouseListener(this);
-            label.add(invadir);
-            label.repaint();
-        };
-        conversa.setText(out[count]);
-        }
-        });
+		@Override
+		public void mouseClicked(MouseEvent e) {
+		    if(++count >= out.length) {
+			frame.removeMouseListener(this);
+			label.add(invadir);
+			label.repaint();
+		    } else conversa.setText(out[count]);
+		}
+	    });
 
         label.add(conversa);
         frame.pack();

@@ -115,17 +115,16 @@ public class CaranguejoConversa implements Conversa {
 
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
         frame.addMouseListener(new MouseAdapter() {
-        @Override
-        public void mouseClicked(MouseEvent e) {
-        if(++count >= out.length) {
-            frame.removeMouseListener(this);
-            label.add(fugir);
-            label.add(batalhar);
-            label.repaint();
-        };
-        conversa.setText(out[count]);
-        }
-        });
+		@Override
+		public void mouseClicked(MouseEvent e) {
+		    if(++count >= out.length) {
+			frame.removeMouseListener(this);
+			label.add(fugir);
+			label.add(batalhar);
+			label.repaint();
+		    } else conversa.setText(out[count]);
+		}
+	    });
 
         label.add(conversa);
         frame.pack();

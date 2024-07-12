@@ -5,21 +5,21 @@ import java.awt.*;
 import java.awt.event.*;
 
 public class Rendicao implements Conversa {
-	private int countListener = 0;
+    private int countListener = 0;
 
     public void rodaConversa(MyFrame frame) {
-		String[] out = {"<html>&emsp;&ensp;Exausto depois da perseguição e dos desmaios, Caranguejo Marujo<html>"+
-        "<html> se rende,<br>&ensp;e vira servo de navio de Giu.<html>",
-        "<html>&emsp;&ensp;Pelos corais, o Marujo vai apresentando várias peças úteis para construir um barco:<html>",
-        "<html>&emsp;&ensp;Baú de ouro<html>",
-        "<html>&emsp;&ensp;Base da balsa<html>",
-        "<html>&emsp;&ensp;Timão do barco<html>",
-        "<html>&emsp;&ensp;...!<html>",
-        "<html>&emsp;&ensp;Ao agarrar o timão do barco, uma força o puxa de volta e uma grande sombra<html>"+
-        "<html><br>&ensp;se põe na frente deles.<html>",
-        "<html>&emsp;&ensp;Um polvo gigante os surpreende.<html>",
-        };
-	
+	String[] out =
+	    {"<html>&emsp;&ensp;Exausto depois da perseguição e dos desmaios, Caranguejo Marujo<html>"+
+	     "<html> se rende,<br>&ensp;e vira servo de navio de Giu.<html>",
+	     "<html>&emsp;&ensp;Pelos corais, o Marujo vai apresentando várias peças úteis para construir um barco:<html>",
+	     "<html>&emsp;&ensp;Baú de ouro<html>",
+	     "<html>&emsp;&ensp;Base da balsa<html>",
+	     "<html>&emsp;&ensp;Timão do barco<html>",
+	     "<html>&emsp;&ensp;...!<html>",
+	     "<html>&emsp;&ensp;Ao agarrar o timão do barco, uma força o puxa de volta e uma grande sombra<html>"+
+	     "<html><br>&ensp;se põe na frente deles.<html>",
+	     "<html>&emsp;&ensp;Um polvo gigante os surpreende.<html>"};
+
 		ImageIcon fundo = new ImageIcon("Assets/mapa polvo boss barcos quebrados.png");
         ImageIcon bau = new ImageIcon("Assets/bau.png");
         ImageIcon caranguejoFundo = new ImageIcon("Assets/carangueijo marujo.png");
@@ -48,7 +48,7 @@ public class Rendicao implements Conversa {
         giuFundo.setVerticalAlignment(JLabel.CENTER);
         giuFundo.setHorizontalAlignment(JLabel.CENTER);
         giuFundo.setBounds(-80, 120, 1350, 1010);
-	
+
 		JPanel contentPane = new JPanel(null);
 		contentPane.setPreferredSize(new Dimension(1350, 1010));
         contentPane.add(giuFundo);
@@ -75,14 +75,13 @@ public class Rendicao implements Conversa {
 		frame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				if (++countListener >= out.length) {
-					frame.removeMouseListener(this);
-                    frame.getContentPane().removeAll();
-                    proximo.rodaConversa(frame);
-				};
-				conversa.setText(out[countListener]);
+			    if (++countListener >= out.length) {
+				frame.removeMouseListener(this);
+				frame.getContentPane().removeAll();
+				proximo.rodaConversa(frame);
+			    } else conversa.setText(out[countListener]);
 			}
-		});
+		    });
 		label.add(conversa);
 		frame.pack();
     }

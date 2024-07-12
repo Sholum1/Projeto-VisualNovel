@@ -41,12 +41,12 @@ public class Mochila{
                 if (e.getSource() == algaButton) {
                     alga.consumir(giu );
                     giu.consumirItem(alga);
-                    
                 }
             }
         };
         algaButton.addActionListener(botao);
         
+<<<<<<< HEAD
         JButton raizButton = new JButton();
 		raizButton.setFocusable(false);
 		raizButton.setHorizontalTextPosition(JButton.CENTER);
@@ -57,13 +57,26 @@ public class Mochila{
 		raizButton.setBackground(new Color(242,242,242));
 		raizButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
 		raizButton.setBounds(905, 435, 300, 50);
+=======
+        JButton raizButton = new JButton("Comer raiz");
+	raizButton.setFocusable(false);
+	raizButton.setHorizontalTextPosition(JButton.CENTER);
+	raizButton.setVerticalTextPosition(JButton.CENTER);
+	raizButton.setFont(new Font("Times New Roman", Font.LAYOUT_LEFT_TO_RIGHT, 22));
+	raizButton.setForeground(new Color(29, 60, 144));
+	raizButton.setBackground(new Color(242,242,242));
+	raizButton.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
+	raizButton.setBounds(905, 335, 300, 50);
+
+	// Pode ser um botão só com if else
+	// Lembrar de arrumar
+>>>>>>> 717375b (Uma única unidade de Exception)
         ActionListener raizBotao = new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 if (e.getSource() == raizButton) {
                     raiz.consumir(giu );
                     giu.consumirItem(raiz);
-                    
                 }
             }
         };
@@ -96,15 +109,5 @@ public class Mochila{
         contentPane.add(raizButton);
         frame.setContentPane(contentPane);
         frame.pack();
-
-        
-        
-        
-        
-        
-        
-        
     }
-    
-    
 }

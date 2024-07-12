@@ -67,8 +67,7 @@ public class GiuSegue implements Conversa {
 		    frame.removeMouseListener(this);
 		    frame.getContentPane().removeAll();
 		    proximo.rodaConversa(frame);
-		};
-		conversa.setText(out[count]);
+		} else conversa.setText(out[count]);
 	    }
 	});
 

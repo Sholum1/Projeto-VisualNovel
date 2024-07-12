@@ -1,4 +1,5 @@
 package Personagem;
+
 import Boss.*;
 
 /**
@@ -94,14 +95,14 @@ public class Lua {
     }
 
     // Ação de ataque da Lua. Seu dano depende da Fase
-    public String refletir(Boss boss) {
+    public void refletir(Boss boss)
+	throws NaoAtacaException {
 	if (this.tempoAtaqueCount++ == getTempoLua()) {
 	    int novaVida = (boss.getVida() - getDanoLua());
 	    boss.setVida((novaVida < 0) ? 0 : novaVida);
-	    this.tempoAtaqueCount = 9;
-	    return null;
+	    this.tempoAtaqueCount = 0;
 	} else {
-	    return "A Lua tenta refletir luz, mas está fraca";
+	    throw new NaoAtacaException();
 	}
     }
 }
