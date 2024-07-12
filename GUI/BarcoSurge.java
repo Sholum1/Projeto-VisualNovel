@@ -36,7 +36,7 @@ public class BarcoSurge implements Conversa {
         conversa.setHorizontalAlignment(JLabel.LEFT);
         conversa.setOpaque(true);
 
-        JButton invadir = new JButton("INVADIR");
+        JButton invadir = new JButton("Invadir");
         invadir.setFocusable(false);
         invadir.setHorizontalTextPosition(JButton.CENTER);
         invadir.setVerticalTextPosition(JButton.CENTER);
