@@ -1,6 +1,5 @@
 package Personagem;
-
-import Criatura.*;
+import Boss.*;
 
 /**
  
@@ -91,13 +90,14 @@ public class Lua {
 	    this.tempoFase = 5;
 	    return "A Lua mudou para a fase "+getFase();
 	}
+	return null;
     }
 
     // Ação de ataque da Lua. Seu dano depende da Fase
-    public String refletir(Boss criatura) {
+    public String refletir(Boss boss) {
 	if (this.tempoAtaqueCount++ == getTempoLua()) {
-	    int novaVida = (criatura.getVida() - getDanoLua());
-	    criatura.setVida((novaVida < 0) ? 0 : novaVida);
+	    int novaVida = (boss.getVida() - getDanoLua());
+	    boss.setVida((novaVida < 0) ? 0 : novaVida);
 	    this.tempoAtaqueCount = 9;
 	    return null;
 	} else {

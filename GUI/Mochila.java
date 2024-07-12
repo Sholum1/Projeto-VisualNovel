@@ -3,15 +3,11 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
-import Item.Alga;
-import Item.Pocao;
-import Item.Raiz;
+import Item.*;
 import Personagem.Personagem;
 
 
 public class Mochila{
-
-    Mochila(){ }
 
     public void rodaConversa(MyFrame frame) {
     

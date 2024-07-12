@@ -1,5 +1,5 @@
+package Boss;
 import Personagem.Personagem;
-package Criatura;
 /**
  * Boss
  */
