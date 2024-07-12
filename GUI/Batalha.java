@@ -9,12 +9,28 @@ import GUI.TelaInicial;
 import Item.*;
 
 public class Batalha {
-    public void Batalhar (MyFrame frame, Personagem giu, Boss caranguejo,
-			  Alga alga, Pocao pocao, Raiz raiz) {
+    public void Batalhar (MyFrame frame, Personagem giu, Boss boss, Alga alga,
+			  Pocao pocao, Raiz raiz) {
 
 	ImageIcon fundo = new ImageIcon("Assets/mapa carangueijo boss corais.png");
-        ImageIcon marujo = new ImageIcon("Assets/carangueijo marujo amor doce.png");
+        ImageIcon bossIcon = new ImageIcon("Assets/carangueijo marujo amor doce.png");
         ImageIcon giuPerfil = new ImageIcon("Assets/giu and luna in game.png");
+
+	// ImageIcon fundo = new ImageIcon();
+        // ImageIcon bossIcon = new ImageIcon();
+	// if (boss.getNome().equals("Polvo")) {
+	// fundo.setImage("Assets/..."); //Não sei qual é o fundo do polvo
+	// bossIcon.setImage("Assets/..."); // Não sei qual é a imagem do polvo
+	// } else {
+	// fundo.setImage("Assets/mapa carangueijo boss corais.png");
+        // bossIcon.setImage("Assets/carangueijo marujo amor doce.png");
+	// }
+
+	// O resto mantem engual
+
+	// Adicionar a barra de vida tbm, botei nela como que pensei
+	// em fazer o calculo
+
 
 	JLabel label = new JLabel();
 	label.setIcon(fundo);
@@ -22,11 +38,11 @@ public class Batalha {
 	label.setHorizontalAlignment(JLabel.CENTER);
 	label.setBounds(0, 0, 1350, 1010);
 
-        JLabel caranguejoCenario = new JLabel();
-	caranguejoCenario.setIcon(marujo);
-	caranguejoCenario.setVerticalAlignment(JLabel.CENTER);
-	caranguejoCenario.setHorizontalAlignment(JLabel.CENTER);
-	caranguejoCenario.setBounds(140, -115, 1350, 1010);
+        JLabel bossCenario = new JLabel();
+	bossCenario.setIcon(bossIcon);
+	bossCenario.setVerticalAlignment(JLabel.CENTER);
+	bossCenario.setHorizontalAlignment(JLabel.CENTER);
+	bossCenario.setBounds(140, -115, 1350, 1010);
 
         JLabel giuCenario = new JLabel();
 	giuCenario .setIcon(giuPerfil);
@@ -59,22 +75,22 @@ public class Batalha {
 	giuStats.setHorizontalAlignment(JLabel.CENTER);
 	giuStats.setOpaque(true);
 
-        JLabel marujoStats = new JLabel();
-	marujoStats.setBackground(new Color(235, 217, 188));
-	marujoStats.setBounds(350, 300, 310, 120);
-        marujoStats.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 10, false));
-	marujoStats.setText("Caranguejo Marujo");
-	marujoStats.setHorizontalTextPosition(JLabel.LEFT);
-	marujoStats.setVerticalTextPosition(JLabel.TOP);
-	marujoStats.setForeground(new Color(29, 60, 144));
-	marujoStats.setFont(new Font("Times New Roman", Font.BOLD, 24));
-	marujoStats.setVerticalAlignment(JLabel.TOP);
-	marujoStats.setHorizontalAlignment(JLabel.CENTER);
-	marujoStats.setOpaque(true);
+        JLabel bossStats = new JLabel();
+	bossStats.setBackground(new Color(235, 217, 188));
+	bossStats.setBounds(350, 300, 310, 120);
+        bossStats.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 10, false));
+	bossStats.setText("Caranguejo Marujo");
+	bossStats.setHorizontalTextPosition(JLabel.LEFT);
+	bossStats.setVerticalTextPosition(JLabel.TOP);
+	bossStats.setForeground(new Color(29, 60, 144));
+	bossStats.setFont(new Font("Times New Roman", Font.BOLD, 24));
+	bossStats.setVerticalAlignment(JLabel.TOP);
+	bossStats.setHorizontalAlignment(JLabel.CENTER);
+	bossStats.setOpaque(true);
 
         JPanel contentPane = new JPanel(null);
 	contentPane.setPreferredSize(new Dimension(1350, 1010));
-        contentPane.add(caranguejoCenario);
+        contentPane.add(bossCenario);
         contentPane.add(giuCenario);
 	contentPane.add(label);
 
@@ -117,17 +133,17 @@ public class Batalha {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 		    if (e.getSource() == ataque) {
-			caranguejo.setVida(caranguejo.getVida() - giu.getDano());
-			rodaTurnos(giu, caranguejo, frame, proximo, inicio);
+			boss.setVida(boss.getVida() - giu.getDano());
+			rodaTurnos(giu, boss, frame, proximo, inicio);
 		    } else if (e.getSource() == ataqueLua) {
 			try {
-			    giu.getLua().refletir(caranguejo);
+			    giu.getLua().refletir(boss);
 			}
 			catch (NaoAtacaException m) {
 			    // Botar isso numa caixa de dialogo
 			    m.getMessage();
 			}
-			rodaTurnos(giu, caranguejo, frame, proximo, inicio);
+			rodaTurnos(giu, boss, frame, proximo, inicio);
 		    } else if (e.getSource() == mochila) {
 			abrirMochila.mostraMochila(frame, giu, alga, pocao, raiz);
 		    }
@@ -144,14 +160,14 @@ public class Batalha {
 	frame.setContentPane(contentPane);
 	label.add(opcoes);
         opcoes.add(giuStats);
-        opcoes.add(marujoStats);
+        opcoes.add(bossStats);
 	frame.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
 		}
 	    });
 	label.add(giuStats);
-	label.add(marujoStats);
+	label.add(bossStats);
 	frame.pack();
     }
     private static void rodaTurnos(Personagem giu, Boss boss, MyFrame frame,
