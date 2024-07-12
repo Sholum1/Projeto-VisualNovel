@@ -98,16 +98,18 @@ public class CaranguejoConversa implements Conversa {
         batalhar.setBounds(505, 110, 300, 50);
 
         FugaCarangueijo proximo = new FugaCarangueijo();
+        GravarArquivo escreva = new GravarArquivo();
 
         ActionListener botao = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == fugir) {
                 frame.getContentPane().removeAll();
+                escreva.escreverLog(fugir.getText());
                 proximo.rodaConversa(frame);
             } else if (e.getSource() == batalhar) {
                 frame.getContentPane().removeAll();
-                //batalha
+                escreva.escreverLog(batalhar.getText());
             }
         }
         };
@@ -123,7 +125,11 @@ public class CaranguejoConversa implements Conversa {
 			label.add(fugir);
 			label.add(batalhar);
 			label.repaint();
-		    } else conversa.setText(out[count]);
+		    } else {
+                conversa.setText(out[count]);
+                escreva.escreverLog(out[count]);
+            }
+
 		}
 	    });
 

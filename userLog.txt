@@ -1,0 +1,69 @@
+
+<html>&emsp;&ensp;Vamos, vamos em frente!<html>
+<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html><html> ouça as ondas do mar... Deixe o som te<html><html> guiar... A <br>&ensp;luz da lua te leva<html><html>... De volta ao mar.<html>
+<html>&emsp;&ensp;[LUA]&ensp;Giu, do que adianta fugir da realidade tonteante?<html><html> Se estamos no mar, temos <br><html><html>&ensp;que nadar em frente ao futuro.<html><html> Eu te trouxe ao fundo do oceano, no mais remoto<br>&ensp;bloco<html><html> de água.<br><html>
+<html>&emsp;&ensp;[LUA]&ensp;Sou a Lua, e te trouxe para<html><html> achá-la novamente.<html>
+<html>&emsp;&ensp;Suas conversas com a Lua sobre Luna geram frutos!<br><html><html>&emsp;&ensp;Você deseja:<html>
+Nadar para a superfície
+<html>&emsp;&ensp;Vamos, vamos em frente!<html>
+Nadar para a superfície
+<html>&emsp;&ensp;Vamos, vamos em frente!
+Seguir em frente
+<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html><html> ouça as ondas do mar... Deixe o som te<html><html> guiar... A <br>&ensp;luz da lua te leva<html><html>... De volta ao mar.<html>
+<html>&emsp;&ensp;[LUA]&ensp;Giu, do que adianta fugir da realidade tonteante?<html><html> Se estamos no mar, temos <br><html><html>&ensp;que nadar em frente ao futuro.<html><html> Eu te trouxe ao fundo do oceano, no mais remoto<br>&ensp;bloco<html><html> de água.<br><html>
+<html>&emsp;&ensp;[LUA]&ensp;Sou a Lua, e te trouxe para<html><html> achá-la novamente.<html>
+<html>&emsp;&ensp;Suas conversas com a Lua sobre Luna geram frutos!<br><html><html>&emsp;&ensp;Você deseja:<html>
+Seguir em frente
+<html>&emsp;&ensp;Seria ela? Nadando livremente no mar?<html>
+<html>&emsp;&ensp;[GIU] Ei! Volte aqui!<html>
+<html>&emsp;&ensp;[FLANDERS] O que quer?<html>
+<html>&emsp;&ensp;[GIU] Estou perdida nesse grande mar!<html>
+<html>&emsp;&ensp;[FLANDERS] E o que eu tenho a ver com isso?<html>
+<html>&emsp;&ensp;[GIU] Pensei que poderia me ajudar...<html>
+<html>&emsp;&ensp;Flanders, o peixe perdido de seu cardume, <html><html>respira fundo e vê Giu<br>&ensp;como uma oportunidade de se <html><html>distrair das fortes correntes<br>&ensp;marítimas que teria de enfrentar sozinho.<html>
+<html>&emsp;&ensp;[FLANDERS] Vamos nadar juntos!<html>
+Aceitar amizade
+<html>&emsp;&ensp;O azul do mar se mistura com uma sombra de<html><html> quatro patas e um pequeno chapéu<br>&ensp;na cabeça.<html>
+<html>&emsp;&ensp;[GIU] Estamos procurando a costa!<html>
+<html>&emsp;&ensp;[CARANGUEJO MARUJO] Huh... Eu já andei pela <html><html>costa... Naveguei<br>&ensp;em grandes navios... Em meus tempos de <html><html>pirata. Permitam-me uma<br>&ensp;apresentação: eu sou o Caranguejo<html><html> Marujo, da grande Garantia<br>&ensp;Vermelha.<html>
+<html>&emsp;&ensp;[CARANGUEJO MARUJO] Eu sei como ir para a costa!<html><html> Só é possível<br>&ensp;se ultrapassarem estes corais, que pertencem <html><html>à mim! Mas não<br>&ensp;permito a passagem de estranhos!<html>
+<html>&emsp;&ensp;Giu tem esperança após descobrir que está no sentido certo<br><html><html>&ensp;rumo à costa.<html>
+<html>&emsp;&ensp;[GIU] Só precisamos rapidamente nadar por entre<html><html> seus corais.<br>&ensp;Não iremos causar nenhum problema! Contorná-los<html><html> tomaria muito<br>&ensp;tempo...<html>
+<html>&emsp;&ensp;[CARANGUEJO MARUJO] O tempo é uma ilusão nesse<html><html> vasto mar...<br>&ensp;Vocês terão... que LUTAR!<html>
+Batalhar
+<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html><html> ouça as ondas do mar... Deixe o som te<html><html> guiar... A <br>&ensp;luz da lua te leva<html><html>... De volta ao mar.<html>
+<html>&emsp;&ensp;[LUA]&ensp;Giu, do que adianta fugir da realidade tonteante?<html><html> Se estamos no mar, temos <br><html><html>&ensp;que nadar em frente ao futuro.<html><html> Eu te trouxe ao fundo do oceano, no mais remoto<br>&ensp;bloco<html><html> de água.<br><html>
+<html>&emsp;&ensp;[LUA]&ensp;Sou a Lua, e te trouxe para<html><html> achá-la novamente.<html>
+<html>&emsp;&ensp;Suas conversas com a Lua sobre Luna geram frutos!<br><html><html>&emsp;&ensp;Você deseja:<html>
+Nadar para a superfície
+<html>&emsp;&ensp;Vamos, vamos em frente!<html>
+Nadar para a superfície
+<html>&emsp;&ensp;Vamos, vamos em frente!
+Seguir em frente
+<html>&emsp;&ensp;Seria ela? Nadando livremente no mar?<html>
+<html>&emsp;&ensp;[GIU] Ei! Volte aqui!<html>
+<html>&emsp;&ensp;[FLANDERS] O que quer?<html>
+<html>&emsp;&ensp;[GIU] Estou perdida nesse grande mar!<html>
+<html>&emsp;&ensp;[FLANDERS] E o que eu tenho a ver com isso?<html>
+<html>&emsp;&ensp;[GIU] Pensei que poderia me ajudar...<html>
+<html>&emsp;&ensp;A lua começa a cantar: a ninar,<html><html> ouça as ondas do mar... Deixe o som te<html><html> guiar... A <br>&ensp;luz da lua te leva<html><html>... De volta ao mar.<html>
+<html>&emsp;&ensp;[LUA]&ensp;Giu, do que adianta fugir da realidade tonteante?<html><html> Se estamos no mar, temos <br><html><html>&ensp;que nadar em frente ao futuro.<html><html> Eu te trouxe ao fundo do oceano, no mais remoto<br>&ensp;bloco<html><html> de água.<br><html>
+<html>&emsp;&ensp;[LUA]&ensp;Sou a Lua, e te trouxe para<html><html> achá-la novamente.<html>
+<html>&emsp;&ensp;Suas conversas com a Lua sobre Luna geram frutos!<br><html><html>&emsp;&ensp;Você deseja:<html>
+Nadar para a superfície
+<html>&emsp;&ensp;Vamos, vamos em frente!<html>
+Nadar para a superfície
+<html>&emsp;&ensp;Vamos, vamos em frente!
+Seguir em frente
+<html>&emsp;&ensp;Seria ela? Nadando livremente no mar?<html>
+<html>&emsp;&ensp;[GIU] Ei! Volte aqui!<html>
+<html>&emsp;&ensp;[FLANDERS] O que quer?<html>
+<html>&emsp;&ensp;[GIU] Estou perdida nesse grande mar!<html>
+<html>&emsp;&ensp;[FLANDERS] E o que eu tenho a ver com isso?<html>
+<html>&emsp;&ensp;[GIU] Pensei que poderia me ajudar...<html>
+<html>&emsp;&ensp;Flanders, o peixe perdido de seu cardume, <html><html>respira fundo e vê Giu<br>&ensp;como uma oportunidade de se <html><html>distrair das fortes correntes<br>&ensp;marítimas que teria de enfrentar sozinho.<html>
+<html>&emsp;&ensp;[FLANDERS] Vamos nadar juntos!<html>
+Aceitar amizade
+<html>&emsp;&ensp;O azul do mar se mistura com uma sombra de<html><html> quatro patas e um pequeno chapéu<br>&ensp;na cabeça.<html>
+<html>&emsp;&ensp;[GIU] Estamos procurando a costa!<html>
+<html>&emsp;&ensp;[CARANGUEJO MARUJO] Huh... Eu já andei pela <html><html>costa... Naveguei<br>&ensp;em grandes navios... Em meus tempos de <html><html>pirata. Permitam-me uma<br>&ensp;apresentação: eu sou o Caranguejo<html><html> Marujo, da grande Garantia<br>&ensp;Vermelha.<html>

@@ -88,16 +88,19 @@ public class PolvoInicioBatalha implements Conversa {
 
 		PolvoRendido rendido = new PolvoRendido();
 		CenaFinal fim = new CenaFinal();
+		GravarArquivo escreva = new GravarArquivo();
 		
         ActionListener botao = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				if (e.getSource() == matarPolvo) {
 					frame.getContentPane().removeAll();
+					escreva.escreverLog(matarPolvo.getText());
 					fim.rodaConversa(frame);
 
 				} else if (e.getSource() == renderPolvo) {
 					frame.getContentPane().removeAll();
+					escreva.escreverLog(renderPolvo.getText());
 					rendido.rodaConversa(frame);
 				}
 			}
@@ -116,6 +119,7 @@ public class PolvoInicioBatalha implements Conversa {
 				label.repaint();
 			};
 			conversa.setText(out[count]);
+			escreva.escreverLog(out[count]);
 			}
 			});
 	

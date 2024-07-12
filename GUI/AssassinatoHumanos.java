@@ -62,6 +62,8 @@ public class AssassinatoHumanos implements Conversa {
 		desmaio.setBounds(505, 370, 300, 50);
 
 		CenaFinal proximo = new CenaFinal();
+		GravarArquivo escreva = new GravarArquivo();
+		
 		ActionListener botao = new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -73,8 +75,11 @@ public class AssassinatoHumanos implements Conversa {
 						proximo.rodaConversa(frame);
 					}
 					conversa.setText(desmaioOut[countDesmaio++]);
+					escreva.escreverLog(desmaio.getText());
+					escreva.escreverLog(desmaioOut[countDesmaio++]);
 				} else if (e.getSource() == ira) {
 					frame.getContentPane().removeAll();
+					escreva.escreverLog(ira.getText());
 					proximo.rodaConversa(frame);
 				}
 			}
@@ -92,7 +97,11 @@ public class AssassinatoHumanos implements Conversa {
 				label.add(desmaio);
 				label.add(ira);
 				label.repaint();
-			    } else conversa.setText(out[countListener]);
+			    } else {
+					conversa.setText(out[countListener]);
+					escreva.escreverLog(out[countListener]);
+				}
+
 			}
 		    });
 		label.add(conversa);

@@ -66,6 +66,8 @@ public class Mochila{
 	fechar.setBackground(new Color(255, 176, 120));
 	fechar.setBorder(BorderFactory.createLineBorder(new Color(242, 112, 5), 5));
 	fechar.setBounds(1000, 300, 45, 45);
+
+
 	// Botar uma mensagem pra quando o item for usado
         ActionListener botao = new ActionListener() {
 		@Override

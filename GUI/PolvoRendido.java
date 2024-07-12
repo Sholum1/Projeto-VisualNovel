@@ -72,6 +72,8 @@ public class PolvoRendido implements Conversa {
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
 		CenaFinal proximo = new CenaFinal();
+		GravarArquivo escreva = new GravarArquivo();
+		
 		frame.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
@@ -79,8 +81,11 @@ public class PolvoRendido implements Conversa {
 			frame.removeMouseListener(this);
 			frame.getContentPane().removeAll();
 			proximo.rodaConversa(frame);
-		    };
-		    conversa.setText(out[count]);
+		    } else {
+				conversa.setText(out[count]);
+				escreva.escreverLog(out[count]);
+			}
+
 		}
 	    });
 		label.add(conversa);

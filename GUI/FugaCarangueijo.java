@@ -63,6 +63,7 @@ public class FugaCarangueijo implements Conversa {
         conversa.setOpaque(true);
 
 	Cardume proximo = new Cardume();
+	GravarArquivo escreva = new GravarArquivo();
 
 	frame.setContentPane(contentPane);
 
@@ -73,7 +74,10 @@ public class FugaCarangueijo implements Conversa {
 			frame.removeMouseListener(this);
 			frame.getContentPane().removeAll();
 			proximo.rodaConversa(frame);
-		    } else conversa.setText(out[count]);
+		    } else {
+				conversa.setText(out[count]);
+				escreva.escreverLog(out[count]);
+			}
 		}
 	    });
 

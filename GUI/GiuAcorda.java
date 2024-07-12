@@ -84,19 +84,25 @@ public class GiuAcorda implements Conversa {
         seguir.setBorder(BorderFactory.createLineBorder(new Color(255, 176, 120), 5));
 	seguir.setBounds(505, 370, 300, 50);
 
+	GravarArquivo escreva = new GravarArquivo();
 	GiuSegue proximo = new GiuSegue();
+	
 	ActionListener botao = new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 		    if (e.getSource() == nadar) {
-			if (countNadar + 1 >= nadarOut.length) {
-			    label.remove(nadar);
-			    seguir.setBounds(505, 335, 300, 50);
-			    label.repaint();
-			}
-			conversa.setText(nadarOut[countNadar++]);
+				if (countNadar + 1 >= nadarOut.length) {
+					label.remove(nadar);
+					seguir.setBounds(505, 335, 300, 50);
+					label.repaint();
+				}
+				conversa.setText(nadarOut[countNadar++]);
+				escreva.escreverLog(nadar.getText());
+				escreva.escreverLog(nadarOut[countNadar++]);
+
 		    } else if (e.getSource() == seguir) {
 			frame.getContentPane().removeAll();
+			escreva.escreverLog(seguir.getText());
 			proximo.rodaConversa(frame);
 		    }
 		}
@@ -114,11 +120,17 @@ public class GiuAcorda implements Conversa {
 			label.add(nadar);
 			label.add(seguir);
 			label.repaint();
-		    } else conversa.setText(out[countListener]);
+		    } else {
+				conversa.setText(out[countListener]);
+				escreva.escreverLog(out[countListener]);
+			}
 		}
 	    });
 	label.add(conversa);
 	frame.pack();
+
+
     }
+	
 }
 

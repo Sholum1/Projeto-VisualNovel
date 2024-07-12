@@ -70,6 +70,7 @@ public class Rendicao implements Conversa {
 		conversa.setOpaque(true);
 
 		PolvoInicioBatalha proximo = new PolvoInicioBatalha();
+		GravarArquivo escreva = new GravarArquivo();
 
 		frame.setContentPane(contentPane);
 		frame.addMouseListener(new MouseAdapter() {
@@ -79,7 +80,10 @@ public class Rendicao implements Conversa {
 				frame.removeMouseListener(this);
 				frame.getContentPane().removeAll();
 				proximo.rodaConversa(frame);
-			    } else conversa.setText(out[countListener]);
+			    } else {
+					conversa.setText(out[countListener]);
+					escreva.escreverLog(out[countListener]);
+				}
 			}
 		    });
 		label.add(conversa);

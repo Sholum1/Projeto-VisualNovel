@@ -74,6 +74,7 @@ public class Cardume implements Conversa {
         conversa.setOpaque(true);
 
 	BarcoSurge proximo = new BarcoSurge();
+	GravarArquivo escreva = new GravarArquivo();
 
 	frame.setContentPane(contentPane);
 
@@ -84,7 +85,10 @@ public class Cardume implements Conversa {
 			frame.removeMouseListener(this);
 			frame.getContentPane().removeAll();
 			proximo.rodaConversa(frame);
-		    } else conversa.setText(out[count]);
+		    } else {
+				conversa.setText(out[count]);
+				escreva.escreverLog(out[count]);
+			}
 		}
 	    });
 

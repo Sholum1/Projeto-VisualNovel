@@ -58,6 +58,8 @@ public class GiuSegue implements Conversa {
     contentPane.add(label);
 
     frame.setContentPane(contentPane);
+    
+    GravarArquivo escreva = new GravarArquivo();
     FlandersAparece proximo = new FlandersAparece();
 
     frame.addMouseListener(new MouseAdapter() {
@@ -67,7 +69,11 @@ public class GiuSegue implements Conversa {
 		    frame.removeMouseListener(this);
 		    frame.getContentPane().removeAll();
 		    proximo.rodaConversa(frame);
-		} else conversa.setText(out[count]);
+		} else {
+            conversa.setText(out[count]);
+            escreva.escreverLog(out[count]);
+        }
+
 	    }
 	});
 

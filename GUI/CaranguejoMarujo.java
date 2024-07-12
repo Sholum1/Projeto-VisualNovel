@@ -67,6 +67,7 @@ public class CaranguejoMarujo implements Conversa {
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
         CaranguejoConversa proximo = new CaranguejoConversa();
+        GravarArquivo escreva = new GravarArquivo();
 
         frame.addMouseListener(new MouseAdapter() {
 		@Override
@@ -75,7 +76,11 @@ public class CaranguejoMarujo implements Conversa {
 			frame.removeMouseListener(this);
 			frame.getContentPane().removeAll();
 			proximo.rodaConversa(frame);
-		    } else conversa.setText(out[count]);
+		    } else {
+                conversa.setText(out[count]);
+                escreva.escreverLog(out[count]);
+            }
+
 		}
 	    });
         label.add(conversa);

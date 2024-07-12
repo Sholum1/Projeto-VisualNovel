@@ -72,6 +72,7 @@ public class BarcoHumanos implements Conversa {
 
 
         AssassinatoHumanos proximo = new AssassinatoHumanos();
+		GravarArquivo escreva = new GravarArquivo();
 
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
         frame.addMouseListener(new MouseAdapter() {
@@ -81,7 +82,10 @@ public class BarcoHumanos implements Conversa {
 			frame.removeMouseListener(this);
 			frame.getContentPane().removeAll();
 			proximo.rodaConversa(frame);
-		    } else conversa.setText(out[count]);
+		    } else {
+				conversa.setText(out[count]);
+				escreva.escreverLog(out[count]);
+			}
 		}
 	    });
 

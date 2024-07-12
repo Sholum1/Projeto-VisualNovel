@@ -74,11 +74,14 @@ public class FlandersAparece implements Conversa {
 		amizade.setBounds(505, 335, 300, 50);
 
 		CaranguejoMarujo proximo = new CaranguejoMarujo();
+		GravarArquivo escreva = new GravarArquivo();
+
 		ActionListener botao = new ActionListener() {
 		@Override
 		public void actionPerformed(ActionEvent e) {
 			if (e.getSource() == amizade) {
 				frame.getContentPane().removeAll();
+				escreva.escreverLog(amizade.getText());
 				proximo.rodaConversa(frame);
 			}
 		}
@@ -93,7 +96,10 @@ public class FlandersAparece implements Conversa {
 				frame.removeMouseListener(this);
 				label.add(amizade);
 				label.repaint();
-			    } else conversa.setText(out[count]);
+			    } else {
+					conversa.setText(out[count]);
+					escreva.escreverLog(out[count]);
+				}
 			}
 		    });
 		label.add(conversa);

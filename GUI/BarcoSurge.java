@@ -48,11 +48,14 @@ public class BarcoSurge implements Conversa {
 	
 
         BarcoHumanos proximo = new BarcoHumanos();
+        GravarArquivo escreva = new GravarArquivo();
+
         ActionListener botao = new ActionListener() {
         @Override
         public void actionPerformed(ActionEvent e) {
             if (e.getSource() == invadir) {
                 frame.getContentPane().removeAll();
+                escreva.escreverLog(invadir.getText());
                 proximo.rodaConversa(frame);
             }
         }
@@ -67,7 +70,11 @@ public class BarcoSurge implements Conversa {
 			frame.removeMouseListener(this);
 			label.add(invadir);
 			label.repaint();
-		    } else conversa.setText(out[count]);
+		    } else {
+                conversa.setText(out[count]);
+                escreva.escreverLog(out[count]);
+            }
+
 		}
 	    });
 

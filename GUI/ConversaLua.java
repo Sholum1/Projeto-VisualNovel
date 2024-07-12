@@ -47,6 +47,8 @@ public class ConversaLua implements Conversa {
         frame.setContentPane(contentPane); // Define o JPanel como o conteúdo do frame
 
 	GiuAcorda giu = new GiuAcorda();
+	GravarArquivo escreva = new GravarArquivo();
+	
 	frame.addMouseListener(new MouseAdapter() {
 		@Override
 		public void mouseClicked(MouseEvent e) {
@@ -54,7 +56,11 @@ public class ConversaLua implements Conversa {
 			frame.removeMouseListener(this);
 			frame.getContentPane().removeAll();
 			giu.rodaConversa(frame);
-		    } else conversa.setText(out[count]);
+		    } else {
+				conversa.setText(out[count]);
+				escreva.escreverLog(out[count]);
+			}
+
 		}
 	    });
 	label.add(conversa);
