@@ -27,7 +27,7 @@ public class ProgressBar {
     }
     public void fill(){
         int counter =100 ;
-        while(counter >=5){ //qnd da 5 de hp o boss se rende
+        while(counter >=5){ //qnd da 5 de hp o boss se rende, o mesmo vale p Giu
 
             bar.setValue(counter);
 
